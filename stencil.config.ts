@@ -3,12 +3,16 @@ import { sass } from '@stencil/sass';
 
 export const config: Config = {
   namespace: 'stencil-ds',
+  globalStyle: 'src/assets/library/scss/abstracts.scss',
   plugins: [
     sass({
+      includePaths: [
+        'src/assets/library/scss/utilities',
+        'src/assets/library/scss/tools',
+      ],
       injectGlobalPaths: [
-          // 'src/scss/abstract/_mixins.scss',
-        ],
-      }),
+      ],
+    }),
   ],
   outputTargets: [
     {

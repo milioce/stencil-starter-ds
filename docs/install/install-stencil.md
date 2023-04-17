@@ -300,3 +300,17 @@ Añadimos a la configuracion del `main.js`
     '@storybook/addon-a11y', // Añadir addon
   ],
 ```
+
+# Arquitectura CSS
+
+## Instalar el plugin `design-tokens-utils`
+
+Instalamos el package `design-tokens-utils` de Javier Samper para generar la estructura CSS a partir de un fichero json con los design tokens.
+
+```
+$ npm install design-tokens-utils --save-dev
+```
+
+## Descargamos el fichero con los tokens
+
+./tokens/tokens.json
