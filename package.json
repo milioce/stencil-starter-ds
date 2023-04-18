@@ -25,7 +25,7 @@
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
     "storybook": "storybook dev -p 6006",
-    "design-tokens": "design-tokens-utils --tokens=./tokens/tokens.json --path=src/assets",
+    "design-tokens-utils": "design-tokens-utils --tokens=./tokens/tokens.json --path=src/assets",
     "build-storybook": "storybook build"
   },
   "dependencies": {
