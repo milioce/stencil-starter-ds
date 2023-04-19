@@ -22,11 +22,11 @@ export namespace Components {
         /**
           * The aria-expanded attribute for the button
          */
-        "ariaExpanded": boolean;
+        "ariaExpanded": string;
         /**
           * The aria-haspopup attribute for the button
          */
-        "ariaHaspopup": boolean;
+        "ariaHaspopup": string;
         /**
           * The aria-label attribute for the button
          */
@@ -38,7 +38,7 @@ export namespace Components {
         /**
           * The aria-pressed attribute for the button
          */
-        "ariaPressed": boolean;
+        "ariaPressed": string;
         /**
           * Whether the button is focused on page load
          */
@@ -151,11 +151,11 @@ declare namespace LocalJSX {
         /**
           * The aria-expanded attribute for the button
          */
-        "ariaExpanded"?: boolean;
+        "ariaExpanded"?: string;
         /**
           * The aria-haspopup attribute for the button
          */
-        "ariaHaspopup"?: boolean;
+        "ariaHaspopup"?: string;
         /**
           * The aria-label attribute for the button
          */
@@ -167,7 +167,7 @@ declare namespace LocalJSX {
         /**
           * The aria-pressed attribute for the button
          */
-        "ariaPressed"?: boolean;
+        "ariaPressed"?: string;
         /**
           * Whether the button is focused on page load
          */
