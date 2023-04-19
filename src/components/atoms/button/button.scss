@@ -1,16 +1,124 @@
 @use 'utilities';
 @use 'tools';
+@import './button.theme.scss';
 
 :host {
-  display: block;
-}
+  display: block; /* block or inline? */
 
-.ds-button {
-  padding: 10px 15px;
-  background-color: rgb(54, 5, 54)  /* var(--primary--solid-bg) */;
-  color: white   /* var(--primary--solid-text) */;
-}
+  .ds-button {
+    padding: 4px 16px;  // to REM
+    border-radius: var(--_border-radius-2);
+    display: flex;
+    font-size: var(--_font-size-075);
 
-.ds-button:hover {
-  cursor: pointer;
+    &--md {
+      padding: 8px 24px;
+      font-size: var(--_font-size-0875);
+    }
+
+    &--lg {
+      padding: 8px 24px;
+      font-size: var(--_font-size-1);
+    }
+
+    &--primary {
+
+      &--solid, &--outline {
+        &:hover {
+          background-color: var(--_background-primary-hover);
+          border: var(--_border-00625) solid var(--_background-primary-hover);
+          color: var(--_text-on-dark);
+          cursor: pointer;
+        }
+  
+        &:active {
+          background-color: var(--_background-primary-active);
+          border: var(--_border-00625) solid var(--_background-primary-active);
+          color: var(--_text-on-dark);
+        }
+  
+        &.skeleton {
+          background-color: var(--_background-disabled);
+          border-color: var(--_border-disabled);
+          color: var(--_background-disabled);
+        }
+
+        // TO DO
+        &.loading {
+  
+        }
+      }
+
+      &--solid {
+        background-color: var(--_background-primary);
+        color: var(--_text-on-dark);
+        border: var(--_border-00625) solid var(--_border-primary);
+  
+        &:disabled {
+          background-color: var(--_background-disabled);
+          color: var(--color-text-disabled);
+          border: var(--_border-00625) solid var(--_border-disabled);
+          cursor: not-allowed;
+        }
+
+        &:focus {
+          color: var(--_text-on-dark);
+          background-color: var(--_background-primary-hover);
+          border: var(--_border-00625) double var(--_border-focus);
+        }
+      }
+
+      &--outline {
+        background-color: var(--color-text-label-on-dark);
+        color: var(--_text-primary);
+        border: var(--_border-00625) solid var(--_border-primary);
+
+
+        &:focus {
+          background-color: var(--_background-primary-hover);
+          border: var(--_border-00625) double var(--_border-focus);
+          color: var(--color-text-label-on-dark);
+        }
+  
+        &:disabled {
+          background-color: transparent;
+          color: var(--_text-disabled);
+          border: var(--_border-00625) solid var(--_border-disabled);
+          cursor: not-allowed;
+  
+          &:hover {
+            cursor: not-allowed;
+          }
+        }
+      }    
+
+      &--clear {
+        border-radius: initial;
+        color: var(--_text-primary);
+        border: none;
+        background: transparent;
+
+        &:hover {
+          cursor: pointer;
+          color: var(--_text-primary);
+          background-color: var(--_background-hover);
+          opacity: var(--_opacity-lighter);
+          border: var(--_border-00625) solid var(--_border-hover);
+        }
+      }
+    }
+
+    ∫
+
+    // SECONDARY BUTTON
+
+    &--primary {
+
+      &--solid, &--outline {
+
+      }
+    }
+
+    
+  }
 }
