@@ -94,17 +94,17 @@ export class AtomsButton {
 /**
  * The aria-pressed attribute for the button
  */
-@Prop() ariaPressed: boolean;
+@Prop() ariaPressed: string;
 
 /**
  * The aria-haspopup attribute for the button
  */
-@Prop() ariaHaspopup: boolean;
+@Prop() ariaHaspopup: string;
 
 /**
  * The aria-expanded attribute for the button
  */
-@Prop() ariaExpanded: boolean;
+@Prop() ariaExpanded: string;
 
 /**
  * Emitted when the button is clicked
