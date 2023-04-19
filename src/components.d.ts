@@ -5,7 +5,67 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { ButtonColorTypes, ButtonIconPositionTypes, ButtonTypeTypes } from "./components/atoms/button/models";
+import { GlobalSizeTypes } from "@shared/model";
+export { ButtonColorTypes, ButtonIconPositionTypes, ButtonTypeTypes } from "./components/atoms/button/models";
+export { GlobalSizeTypes } from "@shared/model";
 export namespace Components {
+    interface DsButton {
+        /**
+          * Whether the button is focused on page load
+         */
+        "autofocus": boolean;
+        /**
+          * The variant of the button
+         */
+        "color": ButtonColorTypes;
+        /**
+          * Whether the button is disabled
+         */
+        "disabled": boolean;
+        /**
+          * Whether the button takes up the full width of the container
+         */
+        "full": boolean;
+        /**
+          * Whether the button has an icon
+         */
+        "hasIcon": boolean;
+        /**
+          * The code of the button's icon (used with hasIcon)
+         */
+        "icon": string;
+        /**
+          * The position of the button's icon
+         */
+        "iconPosition": ButtonIconPositionTypes;
+        /**
+          * Whether the button shows a loading icon
+         */
+        "loading": boolean;
+        /**
+          * Whether the button is outlined (only border, no background)
+         */
+        "outlined": boolean;
+        /**
+          * The size of the buton
+         */
+        "size": GlobalSizeTypes;
+        /**
+          * The type of the button
+         */
+        "type": ButtonTypeTypes;
+        /**
+          * The URL of the button (used with type link)
+         */
+        "url": string;
+    }
+    interface DsIcon {
+        "ariaLabel": string;
+        "color": string;
+        "icon": string;
+        "size": GlobalSizeTypes;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -21,7 +81,23 @@ export namespace Components {
         "middle": string;
     }
 }
+export interface DsButtonCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLDsButtonElement;
+}
 declare global {
+    interface HTMLDsButtonElement extends Components.DsButton, HTMLStencilElement {
+    }
+    var HTMLDsButtonElement: {
+        prototype: HTMLDsButtonElement;
+        new (): HTMLDsButtonElement;
+    };
+    interface HTMLDsIconElement extends Components.DsIcon, HTMLStencilElement {
+    }
+    var HTMLDsIconElement: {
+        prototype: HTMLDsIconElement;
+        new (): HTMLDsIconElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -29,10 +105,80 @@ declare global {
         new (): HTMLMyComponentElement;
     };
     interface HTMLElementTagNameMap {
+        "ds-button": HTMLDsButtonElement;
+        "ds-icon": HTMLDsIconElement;
         "my-component": HTMLMyComponentElement;
     }
 }
 declare namespace LocalJSX {
+    interface DsButton {
+        /**
+          * Whether the button is focused on page load
+         */
+        "autofocus"?: boolean;
+        /**
+          * The variant of the button
+         */
+        "color"?: ButtonColorTypes;
+        /**
+          * Whether the button is disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * Whether the button takes up the full width of the container
+         */
+        "full"?: boolean;
+        /**
+          * Whether the button has an icon
+         */
+        "hasIcon"?: boolean;
+        /**
+          * The code of the button's icon (used with hasIcon)
+         */
+        "icon"?: string;
+        /**
+          * The position of the button's icon
+         */
+        "iconPosition"?: ButtonIconPositionTypes;
+        /**
+          * Whether the button shows a loading icon
+         */
+        "loading"?: boolean;
+        /**
+          * Emitted when the button loses focus
+         */
+        "onDsBlur"?: (event: DsButtonCustomEvent<void>) => void;
+        /**
+          * Emitted when the button is clicked
+         */
+        "onDsClick"?: (event: DsButtonCustomEvent<void>) => void;
+        /**
+          * Emitted when the button gains focus
+         */
+        "onDsFocus"?: (event: DsButtonCustomEvent<void>) => void;
+        /**
+          * Whether the button is outlined (only border, no background)
+         */
+        "outlined"?: boolean;
+        /**
+          * The size of the buton
+         */
+        "size"?: GlobalSizeTypes;
+        /**
+          * The type of the button
+         */
+        "type"?: ButtonTypeTypes;
+        /**
+          * The URL of the button (used with type link)
+         */
+        "url"?: string;
+    }
+    interface DsIcon {
+        "ariaLabel"?: string;
+        "color"?: string;
+        "icon"?: string;
+        "size"?: GlobalSizeTypes;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -48,6 +194,8 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
     interface IntrinsicElements {
+        "ds-button": DsButton;
+        "ds-icon": DsIcon;
         "my-component": MyComponent;
     }
 }
@@ -55,6 +203,8 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "ds-button": LocalJSX.DsButton & JSXBase.HTMLAttributes<HTMLDsButtonElement>;
+            "ds-icon": LocalJSX.DsIcon & JSXBase.HTMLAttributes<HTMLDsIconElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }
