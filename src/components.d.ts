@@ -12,6 +12,34 @@ export { GlobalSizeTypes } from "@shared/model";
 export namespace Components {
     interface DsButton {
         /**
+          * The aria-controls attribute for the button
+         */
+        "ariaControls": string;
+        /**
+          * The aria-describedby attribute for the button
+         */
+        "ariaDescribedby": string;
+        /**
+          * The aria-expanded attribute for the button
+         */
+        "ariaExpanded": boolean;
+        /**
+          * The aria-haspopup attribute for the button
+         */
+        "ariaHaspopup": boolean;
+        /**
+          * The aria-label attribute for the button
+         */
+        "ariaLabel": string;
+        /**
+          * The aria-labelledby attribute for the button
+         */
+        "ariaLabelledby": string;
+        /**
+          * The aria-pressed attribute for the button
+         */
+        "ariaPressed": boolean;
+        /**
           * Whether the button is focused on page load
          */
         "autofocus": boolean;
@@ -112,6 +140,34 @@ declare global {
 }
 declare namespace LocalJSX {
     interface DsButton {
+        /**
+          * The aria-controls attribute for the button
+         */
+        "ariaControls"?: string;
+        /**
+          * The aria-describedby attribute for the button
+         */
+        "ariaDescribedby"?: string;
+        /**
+          * The aria-expanded attribute for the button
+         */
+        "ariaExpanded"?: boolean;
+        /**
+          * The aria-haspopup attribute for the button
+         */
+        "ariaHaspopup"?: boolean;
+        /**
+          * The aria-label attribute for the button
+         */
+        "ariaLabel"?: string;
+        /**
+          * The aria-labelledby attribute for the button
+         */
+        "ariaLabelledby"?: string;
+        /**
+          * The aria-pressed attribute for the button
+         */
+        "ariaPressed"?: boolean;
         /**
           * Whether the button is focused on page load
          */

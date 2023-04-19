@@ -45,7 +45,7 @@
     "@storybook/testing-library": "^0.0.14-next.2",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.18.11",
-    "design-tokens-utils": "^0.0.6",
+    "design-tokens-utils": "^0.0.7",
     "jest": "^27.5.1",
     "jest-cli": "^27.5.1",
     "puppeteer": "^19.5.2",
