@@ -1,0 +1,16 @@
+@use 'utilities';
+@use 'tools';
+
+:host {
+  display: block;
+}
+
+.ds-button {
+  padding: 10px 15px;
+  background-color: rgb(54, 5, 54)  /* var(--primary--solid-bg) */;
+  color: white   /* var(--primary--solid-text) */;
+}
+
+.ds-button:hover {
+  cursor: pointer;
+}
