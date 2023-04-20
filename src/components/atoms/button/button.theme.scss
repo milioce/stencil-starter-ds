@@ -67,28 +67,36 @@
     --_border-secondary: var(--color-border-action-secondary);
 }
 
-:host([variant='info']) {
+// info
+:host {
     --_background-info: var(--color-background-status-info);
-    --_background-info-hover: var(---color-background-status-info-hover);
+    --_background-info-hover: var(--color-background-status-info-hover);
     --_background-info-active: var(--color-background-status-info-active);
     --_background-info-subtle: var(--color-background-status-info-subtle);
+
+    --_border-info: var(--color-border-status-info);
+    --_border-info-hover: var(--color-border-status-info-hover);
+    --_border-info-active: var(--color-border-status-info-active);
+
+    // outline
+    --_text-info: var(--color-text-status-info);
 }
 
-:host([variant='success']) {
+:host {
     --_background-success: var(--color-background-status-success);
-    --_background-success-hover: var(---color-background-status-success-hover);
+    --_background-success-hover: var(--color-background-status-success-hover);
     --_background-success-active: var(--color-background-status-success-active);
     --_background-success-subtle: var(--color-background-status-success-subtle);
 }
 
-:host([variant='warning']) {
+:host{
     --_background-warning: var(--color-background-status-warning);
     --_background-warning-hover: var(---color-background-status-warning-hover);
     --_background-warning-active: var(--color-background-status-warning-active);
     --_background-warning-subtle: var(--color-background-status-warning-subtle);
 }
 
-:host([variant='error']) {
+:host{
     --_background-error: var(--color-background-status-error);
     --_background-error-hover: var(---color-background-status-error-hover);
     --_background-error-active: var(--color-background-status-error-active);
