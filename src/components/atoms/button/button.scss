@@ -154,7 +154,8 @@
           color: var(--_text-disabled);
           cursor: not-allowed;
           background-color: transparent;
-          border: initial;
+          border-style: solid;
+          border-color: transparent;
           box-shadow: none;
         }
       }
@@ -244,7 +245,9 @@
       &--clear {
         border-radius: initial;
         color: var(--_text-secondary);
-        border: none;
+        border-width: var(--_border-00625);
+        border-style: solid;
+        border-color: transparent;
         background: transparent;
 
         &:hover {
@@ -274,6 +277,11 @@
 
         &:disabled {
           color: var(--_text-disabled);
+          cursor: not-allowed;
+          background-color: transparent;
+          border-style: solid;
+          border-color: transparent;
+          box-shadow: none;
         }
       }
     }
