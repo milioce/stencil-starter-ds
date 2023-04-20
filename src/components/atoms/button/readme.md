@@ -11,11 +11,11 @@
 | ----------------- | ------------------ | ----------------------------------------------------------- | ---------------------------------------- | ----------- |
 | `ariaControls`    | `aria-controls`    | The aria-controls attribute for the button                  | `string`                                 | `undefined` |
 | `ariaDescribedby` | `aria-describedby` | The aria-describedby attribute for the button               | `string`                                 | `undefined` |
-| `ariaExpanded`    | `aria-expanded`    | The aria-expanded attribute for the button                  | `boolean`                                | `undefined` |
-| `ariaHaspopup`    | `aria-haspopup`    | The aria-haspopup attribute for the button                  | `boolean`                                | `undefined` |
+| `ariaExpanded`    | `aria-expanded`    | The aria-expanded attribute for the button                  | `string`                                 | `undefined` |
+| `ariaHaspopup`    | `aria-haspopup`    | The aria-haspopup attribute for the button                  | `string`                                 | `undefined` |
 | `ariaLabel`       | `aria-label`       | The aria-label attribute for the button                     | `string`                                 | `undefined` |
 | `ariaLabelledby`  | `aria-labelledby`  | The aria-labelledby attribute for the button                | `string`                                 | `undefined` |
-| `ariaPressed`     | `aria-pressed`     | The aria-pressed attribute for the button                   | `boolean`                                | `undefined` |
+| `ariaPressed`     | `aria-pressed`     | The aria-pressed attribute for the button                   | `string`                                 | `undefined` |
 | `autofocus`       | `autofocus`        | Whether the button is focused on page load                  | `boolean`                                | `false`     |
 | `color`           | `color`            | The variant of the button                                   | `"primary" \| "secondary" \| "tertiary"` | `'primary'` |
 | `disabled`        | `disabled`         | Whether the button is disabled                              | `boolean`                                | `false`     |
