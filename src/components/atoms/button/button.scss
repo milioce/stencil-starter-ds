@@ -36,14 +36,18 @@
       &--solid, &--outline {
         &:hover {
           background-color: var(--_background-primary-hover);
-          border: var(--_border-00625) solid var(--_background-primary-hover);
+          border-width: var(--_border-00625);
+          border-style: solid;
+          border-color:  var(--_background-primary-hover);
           color: var(--_text-on-dark);
           cursor: pointer;
         }
   
         &:active {
           background-color: var(--_background-primary-active);
-          border: var(--_border-00625) solid var(--_background-primary-active);
+          border-width: var(--_border-00625); 
+          border-style: solid; 
+          border-color: var(--_background-primary-active);
           color: var(--_text-on-dark);
         }
   
@@ -51,7 +55,9 @@
         &:focus {
           color: var(--_text-on-dark);
           background-color: var(--_background-primary-hover);
-          border: var(--_border-00625) double var(--_border-focus);
+          border-width: var(--_border-00625); 
+          border-style: double; 
+          border-color: var(--_border-focus);
         }
         // &.skeleton {
         //   background-color: var(--_background-disabled);
@@ -68,12 +74,16 @@
       &--solid {
         background-color: var(--_background-primary);
         color: var(--_text-on-dark);
-        border: var(--_border-00625) solid var(--_border-primary);
+        border-width: var(--_border-00625); 
+        border-style: solid;
+        border-color: var(--_border-primary);
   
         &:disabled {
           background-color: var(--_background-disabled);
           color: var(--color-text-disabled);
-          border: var(--_border-00625) solid var(--_border-disabled);
+          border-width: var(--_border-00625);
+          border-style: solid;
+          border-color: var(--_border-disabled);
           cursor: not-allowed;
           border-radius: var(--_border-radius-2);
         }
@@ -82,7 +92,9 @@
       &--outline {
         background-color: var(--color-text-label-on-dark);
         color: var(--_text-primary);
-        border: var(--_border-00625) solid var(--_border-primary);
+        border-width: var(--_border-00625);
+        border-style: solid;
+        border-color: var(--_border-primary);
 
         &:focus {
           background-color: var(--_background-primary-hover);
@@ -95,7 +107,9 @@
         &:disabled {
           background-color: transparent;
           color: var(--_text-disabled);
-          border: var(--_border-00625) solid var(--_border-disabled);
+          border-width: var(--_border-00625); 
+          border-style: solid;
+          border-color: var(--_border-disabled);
           cursor: not-allowed;
   
           &:hover {
@@ -157,14 +171,18 @@
       &--solid, &--outline {
         &:hover {
           background-color: var(--_background-secondary-hover);
-          border: var(--_border-00625) solid var(--_background-secondary-hover);
+          border-width: var(--_border-00625);
+          border-style: solid;
+          border-color: var(--_background-secondary-hover);
           color: var(--_text-action);
           cursor: pointer;
         }
   
         &:active {
           background-color: var(--_background-secondary-active);
-          border: var(--_border-00625) solid var(--_background-secondary-active);
+          border-width: var(--_border-00625);
+          border-style: solid;
+          border-color: var(--_background-secondary-active);
           color: var(--_text-action);
         }
   
@@ -178,38 +196,49 @@
       &--solid {
         background-color: var(--_background-secondary);
         color: var(---_text-action);
-        border: var(--_border-00625) solid var(--_border-secondary);
+        border-width: var(--_border-00625);
+        border-style: solid;
+        border-color: var(--_border-secondary);
   
         &:disabled {
           background-color: var(--_background-disabled);
           color: var(---_text-disabled);
-          border: var(--_border-00625) solid var(--_border-disabled);
+          border-width: var(--_border-00625);
+          border-style: solid;
+          border-color: var(--_border-disabled);
           cursor: not-allowed;
         }
 
         &:focus {
           // color: var(--_text-on-dark);
           background-color: var(--_background-secondary-hover);
-          border: var(--_border-00625) double var(--_border-focus);
+          border-width: var(--_border-00625);
+          border-style: double;
+          border-color: var(--_border-focus);
         }
       }
 
       &--outline {
         background-color: var(--color-text-label-on-dark);
         color: var(--_text-secondary);
-        border: var(--_border-00625) solid var(--_border-secondary);
-
+        border-width: var(--_border-00625);
+        border-style: solid;
+        border-color: var(--_border-secondary);
 
         &:focus {
           background-color: var(--_background-secondary-hover);
-          border: var(--_border-00625) double var(--_border-focus);
+          border-width: var(--_border-00625);
+          border-style: double;
+          border-color: var(--_border-focus);
           color: var(---_text-action);
         }
   
         &:disabled {
           background-color: transparent;
           color: var(--_text-disabled);
-          border: var(--_border-00625) solid var(--_border-disabled);
+          border-width: var(--_border-00625);
+          border-style: solid;
+          border-color: var(--_border-disabled);
           cursor: not-allowed;
   
           &:hover {
