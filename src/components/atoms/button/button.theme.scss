@@ -31,6 +31,7 @@
     --_opacity-light: var(--opacity-light);
 }
 
+// PRIMARY
 :host([color='primary']){
     --_background-input-primary:var(--color-background-input-primary);
     --_background-primary: var(--color-background-action-primary);
@@ -52,6 +53,7 @@
     --_border-025: var(--border-width-md);
 }
 
+// SECONDARY
 :host {
     --_background-secondary: var(--color-background-action-secondary);
     --_background-secondary-hover: var(--color-background-action-secondary-hover);
@@ -67,7 +69,7 @@
     --_border-secondary: var(--color-border-action-secondary);
 }
 
-// info
+// INFO
 :host {
     --_background-info: var(--color-background-status-info);
     --_background-info-hover: var(--color-background-status-info-hover);
@@ -82,11 +84,18 @@
     --_text-info: var(--color-text-status-info);
 }
 
+
+// SUCCESS
 :host {
     --_background-success: var(--color-background-status-success);
     --_background-success-hover: var(--color-background-status-success-hover);
     --_background-success-active: var(--color-background-status-success-active);
     --_background-success-subtle: var(--color-background-status-success-subtle);
+
+    --_border-success: var(--color-border-status-success);
+    --_border-success-hover: var(--color-border-status-success-hover);
+    --_border-success-active: var(--color-border-status-success-active);
+
 }
 
 :host{

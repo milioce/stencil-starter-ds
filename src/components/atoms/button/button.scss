@@ -29,7 +29,7 @@
       border-radius: var(--_border-radius-2);
     }
 
-    // PRIMARY VARIANT
+    //////////////////////////// PRIMARY VARIANT
 
     &--primary {
 
@@ -163,7 +163,7 @@
 
   
 
-    // SECONDARY VARIANT
+    //////////////////////////// SECONDARY VARIANT
 
     &--secondary {
 
@@ -287,7 +287,7 @@
     }
 
 
-    // INFO BUTTON
+    ////////////////////////// INFO BUTTON
 
     &--info {
     &--solid, &--outline {
@@ -421,5 +421,139 @@
       }
     }
     
+
+    ////////////////////////// SUCCESS BUTTON
+    
+    &--success {
+      &--solid, &--outline {
+          &:hover {
+            color: var(--_text-action);
+            background-color: var(--_background-success-hover);
+            border-width: var(--_border-00625);
+            border-style: solid;
+            border-color: var(--_border-success-hover);
+            cursor: pointer;
+          }
+    
+          &:active {
+            color: var(--_text-on-dark);
+            background-color: var(--_background-success-active);
+            border-width: var(--_border-00625); 
+            border-style: solid; 
+            border-color: var(--_border-success-active);
+          }
+  
+          &:focus {
+            color: var(--_text-action);
+            background-color: var(--_background-success-hover);
+            border-width: var(--_border-00625);
+            border-style: solid;
+            border-color: var(--_border-focus);
+            box-shadow: inset 0px 0px 0px 2px var(--_text-main-on-dark);
+          }
+  
+          // &.skeleton {
+          //   background-color: var(--_background-disabled);
+          //   border-color: var(--_border-disabled);
+          //   color: var(--_background-disabled);
+          // }
+  
+          // TO DO
+          &.loading {
+    
+          }
+        }
+  
+        &--solid {
+          background-color: var(--_background-success);
+          color: var(--_text-action);
+          border-width: var(--_border-00625); 
+          border-style: solid;
+          border-color: var(--_border-success);
+    
+          &:disabled {
+            background-color: var(--_background-disabled);
+            color: var(--color-text-disabled);
+            border-width: var(--_border-00625);
+            border-style: solid;
+            border-color: var(--_border-disabled);
+            cursor: not-allowed;
+            border-radius: var(--_border-radius-2);
+            box-shadow: none;
+          }
+        }
+  
+        &--outline {
+          background-color: transparent;
+          color: var(--_text-info);
+          border-width: var(--_border-00625);
+          border-style: solid;
+          border-color: var(--_border-success);
+    
+          &:disabled {
+            background-color: transparent;
+            color: var(--_text-disabled);
+            border-width: var(--_border-00625); 
+            border-style: solid;
+            border-color: var(--_border-disabled);
+            box-shadow: none;
+            cursor: not-allowed;
+    
+            &:hover {
+              cursor: not-allowed;
+            }
+          }
+        }    
+  
+        &--clear {
+          border-radius: initial;
+          color: var(--_text-info);
+          border-width: var(--_border-00625);
+          border-style: solid;
+          border-color: transparent;
+          background: transparent;
+  
+          &:hover {
+            cursor: pointer;
+            color: var(--_text-info);
+            /* TO-DO */
+            background-color: /* var(--_background-hover) */ rgb(238, 238, 238);
+            // opacity: var(--_opacity-light);
+            border-width: var(--_border-00625);
+            border-style: solid;
+            /* TO-DO */
+            //opacity border lighter
+            border-color: var(--_border-hover);
+          }
+  
+          &:active {
+            /* TO-DO */
+            background-color: /* var(--_background-active) */ rgb(223, 223, 223);;
+            // opacity: var(--_opacity-light);
+            border-width: var(--_border-00625);
+            border-style: solid;
+            border-color: var(--_border-info-active);
+          }
+  
+          &:focus {
+            /* TO-DO */
+            background-color: /* var(--_background-hover) */ rgb(238, 238, 238);
+            // opacity: var(--_opacity-light);
+            border-width: var(--_border-00625);
+            border-style: solid;
+            border-color: var(--_border-focus);
+            box-shadow: inset 0px 0px 0px 2px var(--_text-main-on-dark);
+          }
+  
+          &:disabled {
+            color: var(--_text-disabled);
+            cursor: not-allowed;
+            background-color: transparent;
+            border-style: solid;
+            border-color: transparent;
+            box-shadow: none;
+          }
+        }
+      }
   }
 }

@@ -49,7 +49,7 @@ export class AtomsButton {
 /**
  * Whether the button is outlined (only border, no background)
  */
-@Prop() outlined: boolean = false;
+@Prop() fill: string = 'solid';
 
 /**
  * Whether the button takes up the full width of the container
@@ -136,16 +136,17 @@ private handleBlur = () => {
 
 private getHostClassNames = () => {
   const classes = `ds-button ds-button--${this.color} ds-button--${this.size}` +
-   (this.hasIcon ? ` ds-button--icon ds-button--icon-${this.iconPosition}` : '');
+    (this.fill ? `ds-button--${this.fill}` : '') +
+    (this.hasIcon ? ` ds-button--icon ds-button--icon-${this.iconPosition}` : '');
 
   return classes;
 }
 
 private getButtonClassNames = () => {
-  const classes = (this.outlined ? ' button--outlined' : '') +
-    (this.full ? ' button--full' : '') +
-    (this.loading ? ' button--loading' : '') +
-    (this.disabled ? ' button--disabled' : '');
+  const classes = 
+    (this.full ? 'ds-button--full' : '') +
+    (this.loading ? 'ds-button--loading' : '') +
+    (this.disabled ? 'ds-button--disabled' : '');
 
   return classes;
 }

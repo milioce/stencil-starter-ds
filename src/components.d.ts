@@ -52,6 +52,10 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
+          * Whether the button is outlined (only border, no background)
+         */
+        "fill": string;
+        /**
           * Whether the button takes up the full width of the container
          */
         "full": boolean;
@@ -71,10 +75,6 @@ export namespace Components {
           * Whether the button shows a loading icon
          */
         "loading": boolean;
-        /**
-          * Whether the button is outlined (only border, no background)
-         */
-        "outlined": boolean;
         /**
           * The size of the buton
          */
@@ -181,6 +181,10 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
+          * Whether the button is outlined (only border, no background)
+         */
+        "fill"?: string;
+        /**
           * Whether the button takes up the full width of the container
          */
         "full"?: boolean;
@@ -212,10 +216,6 @@ declare namespace LocalJSX {
           * Emitted when the button gains focus
          */
         "onDsFocus"?: (event: DsButtonCustomEvent<void>) => void;
-        /**
-          * Whether the button is outlined (only border, no background)
-         */
-        "outlined"?: boolean;
         /**
           * The size of the buton
          */
