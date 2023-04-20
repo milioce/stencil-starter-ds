@@ -314,3 +314,132 @@ $ npm install design-tokens-utils --save-dev
 ## Descargamos el fichero con los tokens
 
 ./tokens/tokens.json
+
+# Configuración de ESLINT, Prettier
+
+## Instalar ESLINT
+
+https://github.com/stencil-community/stencil-eslint
+
+```bash
+$ npm install --save-dev @stencil-community/eslint-plugin
+
+added 101 packages, changed 1 package, and audited 1653 packages in 54s
+
+230 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+```
+
+Crear un fichero de configuración `.eslintrc.json` con el siguiente contenido
+
+```json
+{
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "extends": [
+    "plugin:@stencil-community/recommended"
+  ]
+}
+```
+
+Y añadimos el script lint al package.json
+
+```json
+{
+  "scripts": {
+    "lint": "eslint src/**/*{.ts,.tsx}"
+  }
+}
+```
+
+Añadimos un fichero `.eslintignore` donde añadiremos todas las carpetas que genera el compilador
+
+```conf
+# place any directories created by the Stencil compilation process here
+dist
+loader
+www
+```
+
+Lista de `rules` recomendadas
+
+```json
+"rules": {
+  "@stencil-community/async-methods": "error",
+  "@stencil-community/ban-prefix": ["error", ["stencil", "stnl", "st"]],
+  "@stencil-community/decorators-context": "error",
+  "@stencil-community/decorators-style": [
+    "error", {
+      "prop": "inline",
+      "state": "inline",
+      "element": "inline",
+      "event": "inline",
+      "method": "multiline",
+      "watch": "multiline",
+      "listen": "multiline"
+    }],
+  "@stencil-community/element-type": "error",
+  "@stencil-community/host-data-deprecated": "error",
+  "@stencil-community/methods-must-be-public": "error",
+  "@stencil-community/no-unused-watch": "error",
+  "@stencil-community/own-methods-must-be-private": "error",
+  "@stencil-community/own-props-must-be-private": "error",
+  "@stencil-community/prefer-vdom-listener": "error",
+  "@stencil-community/props-must-be-public": "error",
+  "@stencil-community/props-must-be-readonly": "error",
+  "@stencil-community/render-returns-host": "error",
+  "@stencil-community/required-jsdoc": "error",
+  "@stencil-community/reserved-member-names": "error",
+  "@stencil-community/single-export": "error",
+  "@stencil-community/strict-mutable": "error"
+}
+```
+
+En el proyecto añadimos alguna y desactivamos otras
+
+```json
+   "@typescript-eslint/no-empty-interface": "error",
+   "@typescript-eslint/explicit-function-return-type": "error",
+   "@typescript-eslint/no-explicit-any": "error",
+
+   "@stencil-community/props-must-be-readonly": "off",
+   "@stencil-community/strict-boolean-conditions": "off"
+```
+
+## Instalar prettier
+
+```bash
+$  npm install --save-dev prettier
+```
+
+Stencil ya ha generado un fichero de configuración de prettier
+
+```json
+{
+  "arrowParens": "avoid",
+  "bracketSpacing": true,
+  "jsxBracketSameLine": false,
+  "jsxSingleQuote": false,
+  "quoteProps": "consistent",
+  "printWidth": 180,
+  "semi": true,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "all",
+  "useTabs": false
+}
+```
+
+```bash
+$ npm install --save-dev eslint-config-prettier
+```
+
+Añadir un script para formatear el código
+
+```json
+"format": "npx prettier --check \"src/**/*.{js,ts,tsx,css,scss,html,json}\"",
+```
+

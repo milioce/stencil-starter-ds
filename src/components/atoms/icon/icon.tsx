@@ -1,4 +1,4 @@
-import { Component, Prop, Element, h, JSX } from '@stencil/core';
+import { Component, Prop, Element, h, JSX, ComponentInterface } from '@stencil/core';
 import { GlobalSizeTypes } from '@shared/model';
 
 @Component({
@@ -6,37 +6,36 @@ import { GlobalSizeTypes } from '@shared/model';
   styleUrls: ['icon.scss'],
   shadow: true,
 })
+export class AtomsIcon implements ComponentInterface {
+  @Element() el: HTMLElement | null;
 
-export class AtomsIcon {
+  /**
+   * The icon color
+   */
+  @Prop() color: string;
 
-    @Element() el: HTMLElement;
+  /**
+   * The icon name
+   */
+  @Prop() icon: string;
 
-    /* Specifies the color of icon */
-    @Prop() color: string;
+  /**
+   * The size of the icon
+   */
+  @Prop() size: GlobalSizeTypes = 'sm';
 
-    /* Icon SVG format */
-    @Prop() icon: string;
+  /**
+   * The aria-label attribute of the icon
+   */
+  @Prop() ariaLabel: string;
 
-    /* Size of icon */
-    @Prop() size: GlobalSizeTypes = 'sm';
+  private classNames = () => {
+    const classes = `ds-icon ds-icon--${this.color} ds-icon--${this.size} ds-icon--${this.icon}`;
 
-    /* Aria-label of icon */
-    @Prop() ariaLabel: string;
+    return classes;
+  };
 
-    private classNames = () => {
-      const classes = `ds-icon ds-icon--${this.color} ds-icon--${this.size} ds-icon--${this.icon}`;
-
-      return classes;
-    }
-
-
-    render(): JSX.Element {
-        return (
-          <i
-              class = {this.classNames()}
-              color = {this.color}
-              aria-label = {this.ariaLabel}>
-          </i>
-        )
-    }
+  render(): JSX.Element {
+    return <i class={this.classNames()} color={this.color} aria-label={this.ariaLabel}></i>;
+  }
 }
