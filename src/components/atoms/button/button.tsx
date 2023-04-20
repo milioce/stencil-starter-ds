@@ -72,6 +72,41 @@ export class AtomsButton {
 @Prop() autofocus: boolean = false;
 
 /**
+ * The aria-label attribute for the button
+ */
+@Prop() ariaLabel: string;
+
+/**
+ * The aria-labelledby attribute for the button
+ */
+@Prop() ariaLabelledby: string;
+
+/**
+ * The aria-describedby attribute for the button
+ */
+@Prop() ariaDescribedby: string;
+
+/**
+ * The aria-controls attribute for the button
+ */
+@Prop() ariaControls: string;
+
+/**
+ * The aria-pressed attribute for the button
+ */
+@Prop() ariaPressed: string;
+
+/**
+ * The aria-haspopup attribute for the button
+ */
+@Prop() ariaHaspopup: string;
+
+/**
+ * The aria-expanded attribute for the button
+ */
+@Prop() ariaExpanded: string;
+
+/**
  * Emitted when the button is clicked
  */
 @Event() dsClick: EventEmitter<void>;
@@ -115,6 +150,24 @@ private getButtonClassNames = () => {
   return classes;
 }
 
+private getAttributes = () => {
+  const props = {};
+
+  if (this.ariaLabel !== undefined) {
+    props['aria-label'] = this.ariaLabel;
+  }
+
+  if (this.ariaLabelledby !== undefined) {
+    props['aria-labelledby'] = this.ariaLabelledby;
+  }
+
+  if (this.ariaDescribedby !== undefined) {
+    props['aria-labelledby'] = this.ariaLabelledby;
+  }
+
+  return props;
+}
+
 render(): JSX.Element {
     const hostClass = this.getHostClassNames();
     const buttonClass = this.getButtonClassNames();
@@ -123,7 +176,7 @@ render(): JSX.Element {
       <Host class={hostClass}>
         {this.type === 'link'
           ? (
-            <a
+            <a {...this.getAttributes()}
               class={buttonClass}
               onClick={this.handleClick}
               onFocus={this.handleFocus}
@@ -134,7 +187,7 @@ render(): JSX.Element {
           </a>
           )
           : (
-            <button
+            <button {...this.getAttributes()}
               type={this.type}
               class={buttonClass}
               onClick={this.handleClick}
