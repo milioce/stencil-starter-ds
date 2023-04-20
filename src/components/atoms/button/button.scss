@@ -50,14 +50,14 @@
           border-color: var(--_background-primary-active);
           color: var(--_text-on-dark);
         }
-  
 
         &:focus {
           color: var(--_text-on-dark);
           background-color: var(--_background-primary-hover);
-          border-width: var(--_border-00625); 
-          border-style: double; 
+          border-width: var(--_border-00625);
+          border-style: solid;
           border-color: var(--_border-focus);
+          box-shadow: inset 0px 0px 0px 2px var(--_text-main-on-dark);
         }
         // &.skeleton {
         //   background-color: var(--_background-disabled);
@@ -86,6 +86,7 @@
           border-color: var(--_border-disabled);
           cursor: not-allowed;
           border-radius: var(--_border-radius-2);
+          box-shadow: none;
         }
       }
 
@@ -95,14 +96,6 @@
         border-width: var(--_border-00625);
         border-style: solid;
         border-color: var(--_border-primary);
-
-        &:focus {
-          background-color: var(--_background-primary-hover);
-          border-width: var(--_border-025); 
-          border-style: double;
-          border-color: /* var(--_border-focus) */ white;  /* TO-DO */
-          color: var(--color-text-label-on-dark);
-        }
   
         &:disabled {
           background-color: transparent;
@@ -110,6 +103,7 @@
           border-width: var(--_border-00625); 
           border-style: solid;
           border-color: var(--_border-disabled);
+          box-shadow: none;
           cursor: not-allowed;
   
           &:hover {
@@ -150,7 +144,8 @@
           // opacity: var(--_opacity-light);
           border-width: var(--_border-00625);
           border-style: solid;
-          border-color: var(--_color-border-focus);
+          border-color: var(--_border-focus);
+          box-shadow: inset 0px 0px 0px 2px var(--_text-main-on-dark);
         }
 
         &:disabled {
@@ -158,6 +153,7 @@
           cursor: not-allowed;
           background-color: transparent;
           border: initial;
+          box-shadow: none;
         }
       }
     }
@@ -185,6 +181,15 @@
           border-color: var(--_background-secondary-active);
           color: var(--_text-action);
         }
+
+        &:focus {
+          // color: var(--_text-on-dark);
+          background-color: var(--_background-secondary-hover);
+          border-width: var(--_border-00625);
+          border-style: solid;
+          border-color: var(--_border-focus);
+          box-shadow: inset 0px 0px 0px 2px var(--_text-main-on-dark);
+        }
   
         // &.skeleton {
         //   background-color: var(--_background-disabled);
@@ -209,13 +214,6 @@
           cursor: not-allowed;
         }
 
-        &:focus {
-          // color: var(--_text-on-dark);
-          background-color: var(--_background-secondary-hover);
-          border-width: var(--_border-00625);
-          border-style: double;
-          border-color: var(--_border-focus);
-        }
       }
 
       &--outline {
