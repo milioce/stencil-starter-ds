@@ -1,4 +1,5 @@
 import {defineCustomElements} from '../loader';
+import '../dist/stencil-ds/stencil-ds.css';
 
 defineCustomElements();
 
