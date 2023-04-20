@@ -84,7 +84,6 @@
         color: var(--_text-primary);
         border: var(--_border-00625) solid var(--_border-primary);
 
-
         &:focus {
           background-color: var(--_background-primary-hover);
           border-width: var(--_border-025); 
@@ -139,17 +138,12 @@
           border-style: solid;
           border-color: var(--_color-border-focus);
         }
-      }
-
-      &--clear {
-        border-radius: initial;
-        color: var(--_text-primary);
-        border: none;
-        background: transparent;
 
         &:disabled {
           color: var(--_text-disabled);
           cursor: not-allowed;
+          background-color: transparent;
+          border: initial;
         }
       }
     }
