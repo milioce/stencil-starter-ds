@@ -52,7 +52,7 @@
     --_border-025: var(--border-width-md);
 }
 
-:host([color='secondary']) {
+:host {
     --_background-secondary: var(--color-background-action-secondary);
     --_background-secondary-hover: var(--color-background-action-secondary-hover);
     --_background-secondary-active: var(--color-background-action-secondary-active);
