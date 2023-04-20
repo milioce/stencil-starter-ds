@@ -115,7 +115,9 @@
       &--clear {
         border-radius: initial;
         color: var(--_text-primary);
-        border: none;
+        border-width: var(--_border-00625);
+        border-style: solid;
+        border-color: transparent;
         background: transparent;
 
         &:hover {
@@ -212,6 +214,7 @@
           border-style: solid;
           border-color: var(--_border-disabled);
           cursor: not-allowed;
+          box-shadow: none;
         }
 
       }
@@ -222,14 +225,6 @@
         border-width: var(--_border-00625);
         border-style: solid;
         border-color: var(--_border-secondary);
-
-        &:focus {
-          background-color: var(--_background-secondary-hover);
-          border-width: var(--_border-00625);
-          border-style: double;
-          border-color: var(--_border-focus);
-          color: var(---_text-action);
-        }
   
         &:disabled {
           background-color: transparent;
@@ -238,6 +233,7 @@
           border-style: solid;
           border-color: var(--_border-disabled);
           cursor: not-allowed;
+          box-shadow: none;
   
           &:hover {
             cursor: not-allowed;
