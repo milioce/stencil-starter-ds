@@ -53,7 +53,7 @@
 }
 
 // PRIMARY
-:host(.ds-button--primary) {
+:host(.ds-button--primary), :host(.ds-button--solid) {
     --background-base-color: var(--color-background-action-primary);
     --background-base-color-hover: var(--color-background-action-primary-hover);
     --background-base-disabled: var(--color-background-disabled);
