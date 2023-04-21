@@ -5,7 +5,6 @@
     --_padding-button-sm: var(--spacing-inset-squish-xs-double);
     --_color-base: var(--color-background-surface-00);
     --_font-size-075: var(--font-size-02);
-    --_font-size-0875: var(--font-size-03);
     --_padding-button-left: var(--spacing-07);
     /*
     --_hover-cursor: pointer;
@@ -37,19 +36,19 @@
 // SM
 :host(.ds-button--sm) {
     --font-size: var(--font-size-02);
-    --padding-inside: var(--_padding-button-sm);
+    --padding-inside: calc(0.25rem - 1px) calc(1rem - 1px);
 }
 
 // MD
 :host(.ds-button--md) {
     --font-size: var(--font-size-03);
-    --padding-inside: var(--_padding-button);
+    --padding-inside: calc(0.25rem - 1px) calc(1rem - 1px);
 }
 
 // LG
 :host(.ds-button--lg) {
     --font-size: var(--font-size-04);
-    --padding-inside: var(--_padding-button);
+    --padding-inside: calc(0.25rem - 1px) calc(1rem - 1px);
 }
 
 // PRIMARY
