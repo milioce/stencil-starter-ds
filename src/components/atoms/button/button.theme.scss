@@ -57,7 +57,7 @@
     --background-base-color: var(--color-background-action-primary);
     --background-base-color-hover: var(--color-background-action-primary-hover);
     --background-base-disabled: var(--color-background-disabled);
-    --background-base-active: var(--color-background-action-primary-active);
+    --background-base-color-active: var(--color-background-action-primary-active);
     --background-base-focus: var(--color-background-action-primary-hover);
     --label-base-color: var(--color-text-action-on-dark);
     --label-base-color-hover: var(--color-text-action-on-dark);
@@ -85,7 +85,7 @@
 :host(.ds-button--primary.ds-button--clear) {
     --background-base-color: transparent;
     --background-base-color-hover: var(--color-background-hover);
-    --background-base-active: var(--color-background-active);
+    --background-base-color-active: var(--color-background-active);
     --background-base-focus: var(---color-background-hover);
     --background-base-disabled: transparent;
     --label-base-color: var(--color-text-primary);
@@ -107,7 +107,7 @@
     --background-base-color: var(--color-background-action-secondary);
     --background-base-color-hover: var(--color-background-action-secondary-hover);
     --background-base-disabled: var(--color-background-disabled);
-    --background-base-active: var(--color-background-action-secondary-active);
+    --background-base-color-active: var(--color-background-action-secondary-active);
     --background-base-focus: var(--color-background-action-secondary-hover);
     --label-base-color: var(--color-text-action);
     --label-base-color-hover: var(--color-text-action);
@@ -149,7 +149,7 @@
     --background-base-color: var(--color-background-status-info);
     --background-base-color-hover: var(--color-background-status-info-hover);
     --background-base-disabled: var(--color-background-disabled);
-    --background-base-active: var(--color-background-status-info-active);
+    --background-base-color-active: var(--color-background-status-info-active);
     --background-base-focus: var(--color-background-status-info-hover);
     --label-base-color: var(--color-text-action);
     --label-base-color-hover: var(--color-text-action);
@@ -178,7 +178,7 @@
     --background-base-color: transparent;
     --background-base-disabled: transparent;
     --background-base-color-hover: var(--color-background-hover);
-    --background-base-active: var(--color-background-active);
+    --background-base-color-active: var(--color-background-active);
     --background-base-color-hover: var(--color-background-hover);
     --label-base-color: var(--color-text-status-info);
     --label-base-color-hover: var(--color-text-status-info);
@@ -196,7 +196,7 @@
     --background-base-color: var(--color-background-status-warning);
     --background-base-color-hover: var(--color-background-status-warning-hover);
     --background-base-disabled: var(--color-background-disabled);
-    --background-base-active: var(--color-background-status-warning-active);
+    --background-base-color-active: var(--color-background-status-warning-active);
     --background-base-focus: var(--color-background-status-warning-hover);
     --label-base-color: var(--color-text-action);
     --label-base-color-hover: var(--color-text-action);
@@ -225,7 +225,7 @@
     --background-base-color: transparent;
     --background-base-disabled: transparent;
     --background-base-color-hover: var(--color-background-hover);
-    --background-base-active: var(--color-background-active);
+    --background-base-color-active: var(--color-background-active);
     --background-base--color-focus: var(--color-background-hover);
     --label-base-color: var(--color-text-status-warning);
     --label-base-color-hover: var(--color-text-status-warning);
@@ -242,7 +242,7 @@
     --background-base-color: var(--color-background-status-success);
     --background-base-color-hover: var(--color-background-status-success-hover);
     --background-base-disabled: var(--color-background-disabled);
-    --background-base-active: var(--color-background-status-success-active);
+    --background-base-color-active: var(--color-background-status-success-active);
     --background-base-focus: var(--color-background-status-success-hover);
     --label-base-color: var(--color-text-action);
     --label-base-color-hover: var(--color-text-action);
@@ -263,7 +263,7 @@
     --background-base-color: transparent;
     --background-base-color-hover: var(--color-background-status-success-hover);
     --background-base-disabled: transparent;
-    --background-base-active: var(--color-background-status-success-active);
+    --background-base-color-active: var(--color-background-status-success-active);
     --background-base-focus: var(--color-background-status-success-hover);
     --label-base-color: var(--color-text-status-success);
     --label-base-color-hover: var(--color-text-action);
@@ -284,7 +284,7 @@
     --background-base-color: transparent;
     --background-base-color-hover: var(--color-background-hover);
     --background-base-disabled: transparent;
-    --background-base-active: var(--color-background-active);
+    --background-base-color-active: var(--color-background-active);
     --background-base-focus: var(--color-background-hover);
     --label-base-color: var(--color-text-status-success);
     --label-base-color-hover: var(--color-text-action);
@@ -305,7 +305,7 @@
     --background-base-color: var(--color-background-status-error);
     --background-base-color-hover: var(--color-background-status-error-hover);
     --background-base-disabled: var(--color-background-disabled);
-    --background-base-active: var(--color-background-status-error-active);
+    --background-base-color-active: var(--color-background-status-error-active);
     --background-base-focus: var(--color-background-status-error-hover);
     --label-base-color: var(--color-text-action-on-dark);
     --label-base-color-hover: var(--color-text-action-on-dark);
@@ -326,7 +326,7 @@
     --background-base-color: transparent;
     --background-base-color-hover: var(--color-background-status-error-hover);
     --background-base-disabled: var(--color-background-disabled);
-    --background-base-active: var(--color-background-status-error-active);
+    --background-base-color-active: var(--color-background-status-error-active);
     --background-base-focus: var(--color-background-status-error-hover);
     --label-base-color: var(--color-text-status-error);
     --label-base-color-hover: var(--color-text-action-on-dark);
@@ -347,7 +347,7 @@
     --background-base-color: transparent;
     --background-base-color-hover: var(--color-background-hover);
     --background-base-disabled: var(--color-background-disabled);
-    --background-base-active: var(--color-background-active);
+    --background-base-color-active: var(--color-background-active);
     --background-base-focus: var(--color-background-hover);
     --label-base-color: var(--color-text-status-error);
     --label-base-color-hover: var(--color-text-status-error);

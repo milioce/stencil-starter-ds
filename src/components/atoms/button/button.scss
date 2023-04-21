@@ -1,6 +1,7 @@
 @use 'utilities';
 @use 'tools';
 @import './button.theme.scss';
+
 :host {
   display: block;
   /* block or inline? */
@@ -12,7 +13,7 @@
     border-color: var(--border-base-color);
     color: var(--label-base-color);
     font-size: var(--font-size);
-    //padding: var(--padding-inside);
+    padding: var(--padding-inside);
     cursor: var(--_hover-cursor);
     &:hover {
       background-color: var(--background-base-color-hover);
