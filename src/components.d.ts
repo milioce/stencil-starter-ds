@@ -5,9 +5,9 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { ButtonColorTypes, ButtonIconPositionTypes, ButtonTypeTypes } from "./components/atoms/button/models";
+import { ButtonColorTypes, ButtonFillTypes, ButtonIconPositionTypes, ButtonTypeTypes } from "./components/atoms/button/models";
 import { GlobalSizeTypes } from "@shared/model";
-export { ButtonColorTypes, ButtonIconPositionTypes, ButtonTypeTypes } from "./components/atoms/button/models";
+export { ButtonColorTypes, ButtonFillTypes, ButtonIconPositionTypes, ButtonTypeTypes } from "./components/atoms/button/models";
 export { GlobalSizeTypes } from "@shared/model";
 export namespace Components {
     interface DsButton {
@@ -48,15 +48,15 @@ export namespace Components {
          */
         "color": ButtonColorTypes;
         /**
-          * Whether the button is disabled
+          * The button is disabled
          */
         "disabled": boolean;
         /**
-          * Whether the button is outlined (only border, no background)
+          * The fill of the button (background and border color)
          */
-        "fill": string;
+        "fill": ButtonFillTypes;
         /**
-          * Whether the button takes up the full width of the container
+          * The button takes up the full width of the container
          */
         "full": boolean;
         /**
@@ -89,9 +89,21 @@ export namespace Components {
         "url": string;
     }
     interface DsIcon {
+        /**
+          * The aria-label attribute of the icon
+         */
         "ariaLabel": string;
+        /**
+          * The icon color
+         */
         "color": string;
+        /**
+          * The icon name
+         */
         "icon": string;
+        /**
+          * The size of the icon
+         */
         "size": GlobalSizeTypes;
     }
     interface MyComponent {
@@ -177,15 +189,15 @@ declare namespace LocalJSX {
          */
         "color"?: ButtonColorTypes;
         /**
-          * Whether the button is disabled
+          * The button is disabled
          */
         "disabled"?: boolean;
         /**
-          * Whether the button is outlined (only border, no background)
+          * The fill of the button (background and border color)
          */
-        "fill"?: string;
+        "fill"?: ButtonFillTypes;
         /**
-          * Whether the button takes up the full width of the container
+          * The button takes up the full width of the container
          */
         "full"?: boolean;
         /**
@@ -230,9 +242,21 @@ declare namespace LocalJSX {
         "url"?: string;
     }
     interface DsIcon {
+        /**
+          * The aria-label attribute of the icon
+         */
         "ariaLabel"?: string;
+        /**
+          * The icon color
+         */
         "color"?: string;
+        /**
+          * The icon name
+         */
         "icon"?: string;
+        /**
+          * The size of the icon
+         */
         "size"?: GlobalSizeTypes;
     }
     interface MyComponent {
