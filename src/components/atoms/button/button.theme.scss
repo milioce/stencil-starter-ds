@@ -285,7 +285,7 @@
     --label-base-color-hover: var(--color-text-action);
     --label-base-color-focus: var(--color-text-action);
     --label-base-color-active: var(--color-text-status-success);
-    --label-base-color-disabled: var(--color-text-action);
+    --label-base-color-disabled: var(--color-text-disabled);
     --border-base-color: transparent;
     --border-base-color-hover: var(--color-border-hover);
     --border-base-color-active: var(--color-border-active);
@@ -319,7 +319,7 @@
 :host(.ds-button--error.ds-button--outline) {
     --background-base-color: transparent;
     --background-base-color-hover: var(--color-background-status-error-hover);
-    --background-base-disabled: var(--color-background-disabled);
+    --background-base-disabled: transparent;
     --background-base-color-active: var(--color-background-status-error-active);
     --background-base-focus: var(--color-background-status-error-hover);
     --label-base-color: var(--color-text-status-error);
@@ -339,7 +339,7 @@
 :host(.ds-button--error.ds-button--clear) {
     --background-base-color: transparent;
     --background-base-color-hover: var(--color-background-hover);
-    --background-base-disabled: var(--color-background-disabled);
+    --background-base-disabled: transparent;
     --background-base-color-active: var(--color-background-active);
     --background-base-focus: var(--color-background-hover);
     --label-base-color: var(--color-text-status-error);
