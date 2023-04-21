@@ -238,7 +238,7 @@
 }
 
 // SUCCESS
-:host(.ds-button--success, .ds-button-solid) {
+:host(.ds-button--success) {
     --background-base-color: var(--color-background-status-success);
     --background-base-color-hover: var(--color-background-status-success-hover);
     --background-base-disabled: var(--color-background-disabled);
@@ -301,7 +301,7 @@
 }
 
 // ERROR
-:host(.ds-button--error, .ds-button--solid) {
+:host(.ds-button--error) {
     --background-base-color: var(--color-background-status-error);
     --background-base-color-hover: var(--color-background-status-error-hover);
     --background-base-disabled: var(--color-background-disabled);

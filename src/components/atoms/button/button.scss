@@ -27,8 +27,8 @@
       color: var(--label-base-color-hover);
     }
     &:active {
-      background-color: var(--background-base-active);
-      border-color: var(--background-base-active);
+      background-color: var(--background-base-color-active);
+      border-color: var(--background-base-color-active);
       color: var(--label-base-color-active);
     }
     &.ds-button[disabled=''] {
