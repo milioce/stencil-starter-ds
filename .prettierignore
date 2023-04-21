@@ -1,0 +1,8 @@
+# Ignore artifacts:
+*.md
+*.d.ts
+doc/**
+src/assets/**
+build
+coverage
+tokens

@@ -5,16 +5,16 @@ export default {
   parameters: {
     actions: {
       argTypesRegex: '^on.*',
-      handles: ['click'] // you can add custom events to this array to trigger actions
-    }
+      handles: ['click'], // you can add custom events to this array to trigger actions
+    },
   },
 };
 
-const Template = (args) => `<my-component first="${args.first}" middle="${args.middle}" last="${args.last}"></my-component>`;
+const Template = args => `<my-component first="${args.first}" middle="${args.middle}" last="${args.last}"></my-component>`;
 
 export const Example = Template.bind({});
 Example.args = {
-first: 'Winnie',
-middle: 'The',
-last: 'Pooh'
+  first: 'Winnie',
+  middle: 'The',
+  last: 'Pooh',
 };
