@@ -97,7 +97,6 @@
     --border-base-color-active: var(--color-border-active);
     --border-base-color-focus: var(--color-border-focus);
     --border-base-color-disabled: transparent;
-    --border-shadow-color: transparent;
     --border-radius: none;
 }
 
@@ -140,7 +139,6 @@
     --background-base-disabled: transparent;
     --border-base-color: transparent;
     --border-base-color-disabled: transparent;
-    --border-shadow-color: transparent;
     --border-radius: none;
 }
 
@@ -186,7 +184,6 @@
     --label-base-color-focus: var(--color-text-status-info);
     --border-base-color: transparent;
     --border-base-color-disabled: transparent;
-    --border-shadow-color: transparent;
     --border-radius: none;
 }
 
@@ -232,7 +229,6 @@
     --label-base-color-active: var(--color-text-status-warning);
     --label-base-color-focus: var(--color-text-status-warning);
     --border-base-color: transparent;
-    --border-shadow-color:transparent;
     --border-radius: none;
     --border-base-color-disabled: transparent;
 }
@@ -249,13 +245,14 @@
     --label-base-color-focus: var(--color-text-action);
     --label-base-color-active: var(--color-text-action-on-dark);
     --label-base-color-disabled: var(--color-text-disabled);
-    --border-base-color: var(--color-border-success-error);
+    --border-base-color: var(--color-border-status-success);
     --border-base-color-hover: var(--color-border-status-success-hover);
     --border-base-color-active: var(--color-border-status-success-active);
     --border-base-color-focus: var(--color-border-focus);
     --border-base-color-disabled: var(--color-border-disabled);
     --border-shadow-color: var(--color-background-surface-00);
     --border-radius: var(--border-radius-xl);
+    --border-shadow-color-disabled:transparent;
 }
 
 // SUCCESS OUTLINE
@@ -275,7 +272,6 @@
     --border-base-color-active: var(--color-border-status-success-active);
     --border-base-color-focus: var(--color-border-focus);
     --border-base-color-disabled: var(--color-border-disabled);
-    --border-shadow-color: var(--color-background-surface-00);
     --border-radius: var(--border-radius-xl);
 }
 
@@ -296,7 +292,6 @@
     --border-base-color-active: var(--color-border-active);
     --border-base-color-focus: var(--color-border-focus);
     --border-base-color-disabled: transparent;
-    --border-shadow-color: var(--color-background-surface-00);
     --border-radius: none;
 }
 
@@ -338,7 +333,6 @@
     --border-base-color-active: var(--color-border-status-error-active);
     --border-base-color-focus: var(--color-border-focus);
     --border-base-color-disabled: var(--color-background-disabled);
-    --border-shadow-color: var(--color-background-surface-00);
     --border-radius: var(--border-radius-xl);
 }
 
@@ -359,6 +353,5 @@
     --border-base-color-active: var(--color-border-active);
     --border-base-color-focus: var(--color-border-focus);
     --border-base-color-disabled: transparent;
-    --border-shadow-color: none;
     --border-radius: none;
 }
