@@ -136,14 +136,14 @@ private handleBlur = () => {
 
 private getHostClassNames = () => {
   const classes = `ds-button ds-button--${this.color} ds-button--${this.size}` +
-    (this.fill ? `ds-button--${this.fill}` : '') +
+    (this.fill ? ` ds-button--${this.fill}` : '') +
     (this.hasIcon ? ` ds-button--icon ds-button--icon-${this.iconPosition}` : '');
 
   return classes;
 }
 
 private getButtonClassNames = () => {
-  const classes = 
+  const classes =
     (this.full ? 'ds-button--full' : '') +
     (this.loading ? 'ds-button--loading' : '') +
     (this.disabled ? 'ds-button--disabled' : '');
@@ -190,7 +190,8 @@ render(): JSX.Element {
           : (
             <button {...this.getAttributes()}
               type={this.type}
-              class={buttonClass}
+              class={{
+                'ds-clear': true}}
               onClick={this.handleClick}
               onFocus={this.handleFocus}
               onBlur={this.handleBlur}
