@@ -29,12 +29,14 @@
     &:active {
       background-color: var(--background-base-active);
       border-color: var(--background-base-active);
-      color: var(--label-base-color-hover);
+      color: var(--label-base-color-active);
     }
     &.ds-button[disabled=''] {
       background-color: var(--background-base-disabled);
-      border-color: var(--background-base-disabled);
-      color: var(--label-text-disabled);
+      border-color: var(--border-base-color-disabled);
+      color: var(--label-base-color-disabled);
+      box-shadow: var(--border-shadow-color-disabled);
+      cursor: not-allowed;
     }
   }
 }

@@ -48,7 +48,7 @@
 
 // LG
 :host(.ds-button--lg) {
-    --font-size: var(--font-size-03);
+    --font-size: var(--font-size-04);
     --padding-inside: var(--_padding-button);
 }
 
@@ -73,6 +73,35 @@
     --border-radius: var(--border-radius-xl);
 }
 
+// PRIMARY OUTLINE
+:host(.ds-button--primary.ds-button--outline) {
+    --background-base-color: transparent;
+    --label-base-color: var(--color-text-primary);
+    --background-base-disabled: transparent;
+    --border-base-color: var(--color-border-action-primary);
+}
+
+// PRIMARY CLEAR
+:host(.ds-button--primary.ds-button--clear) {
+    --background-base-color: transparent;
+    --background-base-color-hover: var(--color-background-hover);
+    --background-base-active: var(--color-background-active);
+    --background-base-focus: var(---color-background-hover);
+    --background-base-disabled: transparent;
+    --label-base-color: var(--color-text-primary);
+    --label-base-color-hover: var(--color-text-primary);
+    --label-base-color-focus: var(--color-text-primary);
+    --label-base-color-active: var(--color-text-primary);
+    --border-base-color: transparent;
+    --border-base-color-hover: var(--color-border-hover);
+    --border-base-color-active: var(--color-border-active);
+    --border-base-color-focus: var(--color-border-focus);
+    --border-base-color-disabled: transparent;
+    --border-shadow-color: transparent;
+    --border-radius: none;
+}
+
+
 // SECONDARY
 :host(.ds-button--secondary) {
     --background-base-color: var(--color-background-action-secondary);
@@ -90,8 +119,29 @@
     --border-base-color-active: var(--color-border-secondary-active);
     --border-base-color-focus: var(--color-border-focus);
     --border-base-color-disabled: var(--color-border-disabled);
-    --border-shadow-color: var(--color-background-surface-00);
     --border-radius: var(--border-radius-xl);
+    --border-shadow-color: var(--color-background-surface-00);
+    --border-shadow-color-disabled: transparent;
+}
+
+// SECONDARY OUTLINE
+:host(.ds-button--secondary.ds-button--outline) {
+    --background-base-color: transparent;
+    --label-base-color: var(--color-text-secondary);
+    --background-base-disabled: transparent;
+    --border-base-color: var(--color-border-action-secondary);
+    --border-shadow-color-disabled: transparent;
+}
+
+// SECONDARY CLEAR
+:host(.ds-button--secondary.ds-button--clear) {
+    --background-base-color: transparent;
+    --label-base-color: var(--color-text-secondary);
+    --background-base-disabled: transparent;
+    --border-base-color: transparent;
+    --border-base-color-disabled: transparent;
+    --border-shadow-color: transparent;
+    --border-radius: none;
 }
 
 // INFO
@@ -106,7 +156,7 @@
     --label-base-color-focus: var(--color-text-action);
     --label-base-color-active: var(--color-text-action-on-dark);
     --label-base-color-disabled: var(--color-text-disabled);
-    --border-base-color: var(--color-border-info-error);
+    --border-base-color: var(--color-border-status-info);
     --border-base-color-hover: var(--color-border-status-info-hover);
     --border-base-color-active: var(--color-border-status-info-active);
     --border-base-color-focus: var(--color-border-focus);
@@ -114,6 +164,32 @@
     --border-shadow-color: var(--color-background-surface-00);
     --border-radius: var(--border-radius-xl);
 }
+
+// INFO OUTLINE
+:host(.ds-button--info.ds-button--outline) {
+    --background-base-color: transparent;
+    --label-base-color: var(--color-text-status-info);
+    --background-base-disabled: transparent;
+    --border-shadow-color-disabled: transparent;
+}
+
+// INFO CLEAR
+:host(.ds-button--info.ds-button--clear) {
+    --background-base-color: transparent;
+    --background-base-disabled: transparent;
+    --background-base-color-hover: var(--color-background-hover);
+    --background-base-active: var(--color-background-active);
+    --background-base-color-hover: var(--color-background-hover);
+    --label-base-color: var(--color-text-status-info);
+    --label-base-color-hover: var(--color-text-status-info);
+    --label-base-color-active: var(--color-text-status-info);
+    --label-base-color-focus: var(--color-text-status-info);
+    --border-base-color: transparent;
+    --border-base-color-disabled: transparent;
+    --border-shadow-color: transparent;
+    --border-radius: none;
+}
+
 
 // WARNING
 :host(.ds-button--warning) {
@@ -124,8 +200,9 @@
     --background-base-focus: var(--color-background-status-warning-hover);
     --label-base-color: var(--color-text-action);
     --label-base-color-hover: var(--color-text-action);
+    --label-base-color-active: var(--color-text-action-on-dark);
     --label-base-color-focus: var(--color-text-action);
-    --label-text-disabled: var(--color-text-disabled);
+    --label-base-color-disabled: var(--color-text-disabled);
     --border-base-color: var(--color-border-status-warning);
     --border-base-color-hover: var(--color-border-status-warning-hover);
     --border-base-color-active: var(--color-background-status-warning-active);
@@ -133,6 +210,31 @@
     --border-base-color-disabled: var(--color-border-disabled);
     --border-shadow-color: var(--color-background-surface-00);
     --border-radius: var(--border-radius-xl);
+}
+
+// WARNING OUTLINE
+:host(.ds-button--warning.ds-button--outline) {
+    --background-base-color: transparent;
+    --background-base-disabled: transparent;
+    --label-base-color: var(--color-text-status-warning);
+    --border-base-color: var(--color-border-status-warning);
+}
+
+// WARNING CLEAR
+:host(.ds-button--warning.ds-button--clear) {
+    --background-base-color: transparent;
+    --background-base-disabled: transparent;
+    --background-base-color-hover: var(--color-background-hover);
+    --background-base-active: var(--color-background-active);
+    --background-base--color-focus: var(--color-background-hover);
+    --label-base-color: var(--color-text-status-warning);
+    --label-base-color-hover: var(--color-text-status-warning);
+    --label-base-color-active: var(--color-text-status-warning);
+    --label-base-color-focus: var(--color-text-status-warning);
+    --border-base-color: transparent;
+    --border-shadow-color:transparent;
+    --border-radius: none;
+    --border-base-color-disabled: transparent;
 }
 
 // SUCCESS
