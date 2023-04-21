@@ -27,7 +27,7 @@
     "storybook": "storybook dev -p 6006",
     "design-tokens-utils": "design-tokens-utils --tokens=./tokens/tokens.json --path=src/assets",
     "build-storybook": "storybook build",
-    "format": "npx prettier --check \"src/**/*.{js,ts,tsx,css,scss,html,json}\"",
+    "format": "npx prettier --write \"src/**/*.{js,ts,tsx,css,scss,html,json}\"",
     "lint": "eslint src/**/*{.ts,.tsx}"
   },
   "dependencies": {
