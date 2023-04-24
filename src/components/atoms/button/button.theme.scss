@@ -36,19 +36,19 @@
 // SM
 :host(.ds-button--sm) {
     --font-size: var(--font-size-02);
-    --padding-inside: calc(0.25rem - 1px) calc(1rem - 1px);
+    --padding-inside: var(--_padding-button);
 }
 
 // MD
 :host(.ds-button--md) {
     --font-size: var(--font-size-03);
-    --padding-inside: calc(0.25rem - 1px) calc(1rem - 1px);
+    --padding-inside: var(--_padding-button);
 }
 
 // LG
 :host(.ds-button--lg) {
     --font-size: var(--font-size-04);
-    --padding-inside: calc(0.25rem - 1px) calc(1rem - 1px);
+    --padding-inside: var(--_padding-button);
 }
 
 // PRIMARY
