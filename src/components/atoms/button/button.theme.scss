@@ -1,8 +1,8 @@
 :host {
     --_hover-cursor: pointer;
     --_border-00625: var(--border-width-xs);
-    --_padding-button: var(--spacing-inset-squish-2xs-double);
-    --_padding-button-sm: var(--spacing-inset-squish-xs-double);
+    --_padding-button-sm: var(--spacing-inset-squish-2xs-double);
+    --_padding-button: var(--spacing-inset-squish-xs-double);
     --_color-base: var(--color-background-surface-00);
     --_font-size-075: var(--font-size-02);
     --_padding-button-left: var(--spacing-07);
@@ -36,19 +36,19 @@
 // SM
 :host(.ds-button--sm) {
     --font-size: var(--font-size-02);
-    --padding-inside: calc(0.25rem - 1px) calc(1rem - 1px);
+    --padding-inside: var(--_padding-button-sm);
 }
 
 // MD
 :host(.ds-button--md) {
     --font-size: var(--font-size-03);
-    --padding-inside: calc(0.25rem - 1px) calc(1rem - 1px);
+    --padding-inside: var(--_padding-button);
 }
 
 // LG
 :host(.ds-button--lg) {
     --font-size: var(--font-size-04);
-    --padding-inside: calc(0.25rem - 1px) calc(1rem - 1px);
+    --padding-inside: var(--_padding-button);
 }
 
 // PRIMARY
