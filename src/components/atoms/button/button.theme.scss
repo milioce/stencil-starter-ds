@@ -1,13 +1,12 @@
 :host {
-  --_hover-cursor: pointer;
-  --_border-00625: var(--border-width-xs);
-  --_padding-button: var(--spacing-inset-squish-2xs-double);
-  --_padding-button-sm: var(--spacing-inset-squish-xs-double);
-  --_color-base: var(--color-background-surface-00);
-  --_font-size-075: var(--font-size-02);
-  --_font-size-0875: var(--font-size-03);
-  --_padding-button-left: var(--spacing-07);
-  /*
+    --_hover-cursor: pointer;
+    --_border-00625: var(--border-width-xs);
+    --_padding-button-sm: var(--spacing-inset-squish-2xs-double);
+    --_padding-button: var(--spacing-inset-squish-xs-double);
+    --_color-base: var(--color-background-surface-00);
+    --_font-size-075: var(--font-size-02);
+    --_padding-button-left: var(--spacing-07);
+    /*
     --_hover-cursor: pointer;
     --_pointer-vents: auto;
     --_border-radius-2: var(--border-radius-xl);
@@ -36,185 +35,322 @@
 
 // SM
 :host(.ds-button--sm) {
-  --font-size: var(--font-size-02);
-  --padding-inside: var(--_padding-button-sm);
+    --font-size: var(--font-size-02);
+    --padding-inside: var(--_padding-button-sm);
 }
 
 // MD
 :host(.ds-button--md) {
-  --font-size: var(--font-size-03);
-  --padding-inside: var(--_padding-button);
+    --font-size: var(--font-size-03);
+    --padding-inside: var(--_padding-button);
 }
 
 // LG
 :host(.ds-button--lg) {
-  --font-size: var(--font-size-03);
-  --padding-inside: var(--_padding-button);
+    --font-size: var(--font-size-04);
+    --padding-inside: var(--_padding-button);
 }
 
 // PRIMARY
-:host(.ds-button--primary) {
-  --background-base-color: var(--color-background-action-primary);
-  --background-base-color-hover: var(--color-background-action-primary-hover);
-  --background-base-disabled: var(--color-background-disabled);
-  --background-base-active: var(--color-background-action-primary-active);
-  --background-base-focus: var(--color-background-action-primary-hover);
-  --label-base-color: var(--color-text-action-on-dark);
-  --label-base-color-hover: var(--color-text-action-on-dark);
-  --label-base-color-focus: var(--color-text-action-on-dark);
-  --label-base-color-active: var(--color-text-action-on-dark);
-  --label-base-color-disabled: var(--color-text-disabled);
-  --border-base-color: var(--color-border-action-primary);
-  --border-base-color-hover: var(--color-border-action-primary-hover);
-  --border-base-color-active: var(--color-border-action-primary-active);
-  --border-base-color-focus: var(--color-border-focus);
-  --border-base-color-disabled: var(--color-border-disabled);
-  --border-shadow-color: var(--color-background-surface-00);
-  --border-radius: var(--border-radius-xl);
+:host(.ds-button--primary), :host(.ds-button--solid) {
+    --background-base-color: var(--color-background-action-primary);
+    --background-base-color-hover: var(--color-background-action-primary-hover);
+    --background-base-disabled: var(--color-background-disabled);
+    --background-base-color-active: var(--color-background-action-primary-active);
+    --background-base-focus: var(--color-background-action-primary-hover);
+    --label-base-color: var(--color-text-action-on-dark);
+    --label-base-color-hover: var(--color-text-action-on-dark);
+    --label-base-color-focus: var(--color-text-action-on-dark);
+    --label-base-color-active: var(--color-text-action-on-dark);
+    --label-base-color-disabled: var(--color-text-disabled);
+    --border-base-color: var(--color-border-action-primary);
+    --border-base-color-hover: var(--color-border-action-primary-hover);
+    --border-base-color-active: var(--color-border-action-primary-active);
+    --border-base-color-focus: var(--color-border-focus);
+    --border-base-color-disabled: var(--color-border-disabled);
+    --border-shadow-color: var(--color-background-surface-00);
+    --border-radius: var(--border-radius-xl);
 }
+
+// PRIMARY OUTLINE
+:host(.ds-button--primary.ds-button--outline) {
+    --background-base-color: transparent;
+    --label-base-color: var(--color-text-primary);
+    --background-base-disabled: transparent;
+    --border-base-color: var(--color-border-action-primary);
+}
+
+// PRIMARY CLEAR
+:host(.ds-button--primary.ds-button--clear) {
+    --background-base-color: transparent;
+    --background-base-color-hover: var(--color-background-hover);
+    --background-base-color-active: var(--color-background-active);
+    --background-base-focus: var(---color-background-hover);
+    --background-base-disabled: transparent;
+    --label-base-color: var(--color-text-primary);
+    --label-base-color-hover: var(--color-text-primary);
+    --label-base-color-focus: var(--color-text-primary);
+    --label-base-color-active: var(--color-text-primary);
+    --border-base-color: transparent;
+    --border-base-color-hover: var(--color-border-hover);
+    --border-base-color-active: var(--color-border-active);
+    --border-base-color-focus: var(--color-border-focus);
+    --border-base-color-disabled: transparent;
+    --border-radius: none;
+}
+
 
 // SECONDARY
 :host(.ds-button--secondary) {
-  --background-base-color: var(--color-background-action-secondary);
-  --background-base-color-hover: var(--color-background-action-secondary-hover);
-  --background-base-disabled: var(--color-background-disabled);
-  --background-base-active: var(--color-background-action-secondary-active);
-  --background-base-focus: var(--color-background-action-secondary-hover);
-  --label-base-color: var(--color-text-action);
-  --label-base-color-hover: var(--color-text-action);
-  --label-base-color-focus: var(--color-text-action);
-  --label-base-color-active: var(--color-text-action);
-  --label-base-color-disabled: var(--color-text-disabled);
-  --border-base-color: var(--color-border-action-secondary);
-  --border-base-color-hover: var(--color-border-secondary-hover);
-  --border-base-color-active: var(--color-border-secondary-active);
-  --border-base-color-focus: var(--color-border-focus);
-  --border-base-color-disabled: var(--color-border-disabled);
-  --border-shadow-color: var(--color-background-surface-00);
-  --border-radius: var(--border-radius-xl);
+    --background-base-color: var(--color-background-action-secondary);
+    --background-base-color-hover: var(--color-background-action-secondary-hover);
+    --background-base-disabled: var(--color-background-disabled);
+    --background-base-color-active: var(--color-background-action-secondary-active);
+    --background-base-focus: var(--color-background-action-secondary-hover);
+    --label-base-color: var(--color-text-action);
+    --label-base-color-hover: var(--color-text-action);
+    --label-base-color-focus: var(--color-text-action);
+    --label-base-color-active: var(--color-text-action);
+    --label-base-color-disabled: var(--color-text-disabled);
+    --border-base-color: var(--color-border-action-secondary);
+    --border-base-color-hover: var(--color-border-secondary-hover);
+    --border-base-color-active: var(--color-border-secondary-active);
+    --border-base-color-focus: var(--color-border-focus);
+    --border-base-color-disabled: var(--color-border-disabled);
+    --border-radius: var(--border-radius-xl);
+    --border-shadow-color: var(--color-background-surface-00);
+    --border-shadow-color-disabled: transparent;
+}
+
+// SECONDARY OUTLINE
+:host(.ds-button--secondary.ds-button--outline) {
+    --background-base-color: transparent;
+    --label-base-color: var(--color-text-secondary);
+    --background-base-disabled: transparent;
+    --border-base-color: var(--color-border-action-secondary);
+    --border-shadow-color-disabled: transparent;
+}
+
+// SECONDARY CLEAR
+:host(.ds-button--secondary.ds-button--clear) {
+    --background-base-color: transparent;
+    --label-base-color: var(--color-text-secondary);
+    --background-base-disabled: transparent;
+    --border-base-color: transparent;
+    --border-base-color-disabled: transparent;
+    --border-radius: none;
 }
 
 // INFO
 :host(.ds-button--info) {
-  --background-base-color: var(--color-background-status-info);
-  --background-base-color-hover: var(--color-background-status-info-hover);
-  --background-base-disabled: var(--color-background-disabled);
-  --background-base-active: var(--color-background-status-info-active);
-  --background-base-focus: var(--color-background-status-info-hover);
-  --label-base-color: var(--color-text-action);
-  --label-base-color-hover: var(--color-text-action);
-  --label-base-color-focus: var(--color-text-action);
-  --label-base-color-active: var(--color-text-action-on-dark);
-  --label-base-color-disabled: var(--color-text-disabled);
-  --border-base-color: var(--color-border-info-error);
-  --border-base-color-hover: var(--color-border-status-info-hover);
-  --border-base-color-active: var(--color-border-status-info-active);
-  --border-base-color-focus: var(--color-border-focus);
-  --border-base-color-disabled: var(--color-border-disabled);
-  --border-shadow-color: var(--color-background-surface-00);
-  --border-radius: var(--border-radius-xl);
+    --background-base-color: var(--color-background-status-info);
+    --background-base-color-hover: var(--color-background-status-info-hover);
+    --background-base-disabled: var(--color-background-disabled);
+    --background-base-color-active: var(--color-background-status-info-active);
+    --background-base-focus: var(--color-background-status-info-hover);
+    --label-base-color: var(--color-text-action);
+    --label-base-color-hover: var(--color-text-action);
+    --label-base-color-focus: var(--color-text-action);
+    --label-base-color-active: var(--color-text-action-on-dark);
+    --label-base-color-disabled: var(--color-text-disabled);
+    --border-base-color: var(--color-border-status-info);
+    --border-base-color-hover: var(--color-border-status-info-hover);
+    --border-base-color-active: var(--color-border-status-info-active);
+    --border-base-color-focus: var(--color-border-focus);
+    --border-base-color-disabled: var(--color-border-disabled);
+    --border-shadow-color: var(--color-background-surface-00);
+    --border-radius: var(--border-radius-xl);
 }
+
+// INFO OUTLINE
+:host(.ds-button--info.ds-button--outline) {
+    --background-base-color: transparent;
+    --label-base-color: var(--color-text-status-info);
+    --background-base-disabled: transparent;
+    --border-shadow-color-disabled: transparent;
+}
+
+// INFO CLEAR
+:host(.ds-button--info.ds-button--clear) {
+    --background-base-color: transparent;
+    --background-base-disabled: transparent;
+    --background-base-color-hover: var(--color-background-hover);
+    --background-base-color-active: var(--color-background-active);
+    --background-base-color-hover: var(--color-background-hover);
+    --label-base-color: var(--color-text-status-info);
+    --label-base-color-hover: var(--color-text-status-info);
+    --label-base-color-active: var(--color-text-status-info);
+    --label-base-color-focus: var(--color-text-status-info);
+    --border-base-color: transparent;
+    --border-base-color-disabled: transparent;
+    --border-radius: none;
+}
+
 
 // WARNING
 :host(.ds-button--warning) {
-  --background-base-color: var(--color-background-status-warning);
-  --background-base-color-hover: var(--color-background-status-warning-hover);
-  --background-base-disabled: var(--color-background-disabled);
-  --background-base-active: var(--color-background-status-warning-active);
-  --background-base-focus: var(--color-background-status-warning-hover);
-  --label-base-color: var(--color-text-action);
-  --label-base-color-hover: var(--color-text-action);
-  --label-base-color-focus: var(--color-text-action);
-  --label-text-disabled: var(--color-text-disabled);
-  --border-base-color: var(--color-border-status-warning);
-  --border-base-color-hover: var(--color-border-status-warning-hover);
-  --border-base-color-active: var(--color-background-status-warning-active);
-  --border-base-color-focus: var(--color-border-focus);
-  --border-base-color-disabled: var(--color-border-disabled);
-  --border-shadow-color: var(--color-background-surface-00);
-  --border-radius: var(--border-radius-xl);
+    --background-base-color: var(--color-background-status-warning);
+    --background-base-color-hover: var(--color-background-status-warning-hover);
+    --background-base-disabled: var(--color-background-disabled);
+    --background-base-color-active: var(--color-background-status-warning-active);
+    --background-base-focus: var(--color-background-status-warning-hover);
+    --label-base-color: var(--color-text-action);
+    --label-base-color-hover: var(--color-text-action);
+    --label-base-color-active: var(--color-text-action-on-dark);
+    --label-base-color-focus: var(--color-text-action);
+    --label-base-color-disabled: var(--color-text-disabled);
+    --border-base-color: var(--color-border-status-warning);
+    --border-base-color-hover: var(--color-border-status-warning-hover);
+    --border-base-color-active: var(--color-background-status-warning-active);
+    --border-base-color-focus: var(--color-border-focus);
+    --border-base-color-disabled: var(--color-border-disabled);
+    --border-shadow-color: var(--color-background-surface-00);
+    --border-radius: var(--border-radius-xl);
+}
+
+// WARNING OUTLINE
+:host(.ds-button--warning.ds-button--outline) {
+    --background-base-color: transparent;
+    --background-base-disabled: transparent;
+    --label-base-color: var(--color-text-status-warning);
+    --border-base-color: var(--color-border-status-warning);
+}
+
+// WARNING CLEAR
+:host(.ds-button--warning.ds-button--clear) {
+    --background-base-color: transparent;
+    --background-base-disabled: transparent;
+    --background-base-color-hover: var(--color-background-hover);
+    --background-base-color-active: var(--color-background-active);
+    --background-base--color-focus: var(--color-background-hover);
+    --label-base-color: var(--color-text-status-warning);
+    --label-base-color-hover: var(--color-text-status-warning);
+    --label-base-color-active: var(--color-text-status-warning);
+    --label-base-color-focus: var(--color-text-status-warning);
+    --border-base-color: transparent;
+    --border-radius: none;
+    --border-base-color-disabled: transparent;
 }
 
 // SUCCESS
 :host(.ds-button--success) {
-  --background-base-color: var(--color-background-status-success);
-  --background-base-color-hover: var(--color-background-status-success-hover);
-  --background-base-disabled: var(--color-background-disabled);
-  --background-base-active: var(--color-background-status-success-active);
-  --background-base-focus: var(--color-background-status-success-hover);
-  --label-base-color: var(--color-text-action);
-  --label-base-color-hover: var(--color-text-action);
-  --label-base-color-focus: var(--color-text-action);
-  --label-base-color-active: var(--color-text-action-on-dark);
-  --label-base-color-disabled: var(--color-text-disabled);
-  --border-base-color: var(--color-border-success-error);
-  --border-base-color-hover: var(--color-border-status-success-hover);
-  --border-base-color-active: var(--color-border-status-success-active);
-  --border-base-color-focus: var(--color-border-focus);
-  --border-base-color-disabled: var(--color-border-disabled);
-  --border-shadow-color: var(--color-background-surface-00);
-  --border-radius: var(--border-radius-xl);
+    --background-base-color: var(--color-background-status-success);
+    --background-base-color-hover: var(--color-background-status-success-hover);
+    --background-base-disabled: var(--color-background-disabled);
+    --background-base-color-active: var(--color-background-status-success-active);
+    --background-base-focus: var(--color-background-status-success-hover);
+    --label-base-color: var(--color-text-action);
+    --label-base-color-hover: var(--color-text-action);
+    --label-base-color-focus: var(--color-text-action);
+    --label-base-color-active: var(--color-text-action-on-dark);
+    --label-base-color-disabled: var(--color-text-disabled);
+    --border-base-color: var(--color-border-status-success);
+    --border-base-color-hover: var(--color-border-status-success-hover);
+    --border-base-color-active: var(--color-border-status-success-active);
+    --border-base-color-focus: var(--color-border-focus);
+    --border-base-color-disabled: var(--color-border-disabled);
+    --border-shadow-color: var(--color-background-surface-00);
+    --border-radius: var(--border-radius-xl);
+    --border-shadow-color-disabled:transparent;
+}
+
+// SUCCESS OUTLINE
+:host(.ds-button--success.ds-button--outline) {
+    --background-base-color: transparent;
+    --background-base-color-hover: var(--color-background-status-success-hover);
+    --background-base-disabled: transparent;
+    --background-base-color-active: var(--color-background-status-success-active);
+    --background-base-focus: var(--color-background-status-success-hover);
+    --label-base-color: var(--color-text-status-success);
+    --label-base-color-hover: var(--color-text-action);
+    --label-base-color-focus: var(--color-text-action);
+    --label-base-color-active: var(--color-text-action-on-dark);
+    --label-base-color-disabled: var(--color-text-disabled);
+    --border-base-color: var(--color-border-status-success);
+    --border-base-color-hover: var(--color-border-status-success-hover);
+    --border-base-color-active: var(--color-border-status-success-active);
+    --border-base-color-focus: var(--color-border-focus);
+    --border-base-color-disabled: var(--color-border-disabled);
+    --border-radius: var(--border-radius-xl);
+}
+
+// SUCCESS CLEAR
+:host(.ds-button--success.ds-button--clear) {
+    --background-base-color: transparent;
+    --background-base-color-hover: var(--color-background-hover);
+    --background-base-disabled: transparent;
+    --background-base-color-active: var(--color-background-active);
+    --background-base-focus: var(--color-background-hover);
+    --label-base-color: var(--color-text-status-success);
+    --label-base-color-hover: var(--color-text-action);
+    --label-base-color-focus: var(--color-text-action);
+    --label-base-color-active: var(--color-text-status-success);
+    --label-base-color-disabled: var(--color-text-disabled);
+    --border-base-color: transparent;
+    --border-base-color-hover: var(--color-border-hover);
+    --border-base-color-active: var(--color-border-active);
+    --border-base-color-focus: var(--color-border-focus);
+    --border-base-color-disabled: transparent;
+    --border-radius: none;
 }
 
 // ERROR
 :host(.ds-button--error) {
-  --background-base-color: var(--color-background-status-error);
-  --background-base-color-hover: var(--color-background-status-error-hover);
-  --background-base-disabled: var(--color-background-disabled);
-  --background-base-active: var(--color-background-status-error-active);
-  --background-base-focus: var(--color-background-status-error-hover);
-  --label-base-color: var(--color-text-action-on-dark);
-  --label-base-color-hover: var(--color-text-action-on-dark);
-  --label-base-color-focus: var(--color-text-action-on-dark);
-  --label-base-color-active: var(--color-text-action-on-dark);
-  --label-base-color-disabled: var(--color-text-disabled);
-  --border-base-color: var(--color-border-status-error);
-  --border-base-color-hover: var(--color-border-status-error-hover);
-  --border-base-color-active: var(--color-border-status-error-active);
-  --border-base-color-focus: var(--color-border-focus);
-  --border-base-color-disabled: var(--color-border-disabled);
-  --border-shadow-color: var(--color-background-surface-00);
-  --border-radius: var(--border-radius-xl);
+    --background-base-color: var(--color-background-status-error);
+    --background-base-color-hover: var(--color-background-status-error-hover);
+    --background-base-disabled: var(--color-background-disabled);
+    --background-base-color-active: var(--color-background-status-error-active);
+    --background-base-focus: var(--color-background-status-error-hover);
+    --label-base-color: var(--color-text-action-on-dark);
+    --label-base-color-hover: var(--color-text-action-on-dark);
+    --label-base-color-focus: var(--color-text-action-on-dark);
+    --label-base-color-active: var(--color-text-action-on-dark);
+    --label-base-color-disabled: var(--color-text-disabled);
+    --border-base-color: var(--color-border-status-error);
+    --border-base-color-hover: var(--color-border-status-error-hover);
+    --border-base-color-active: var(--color-border-status-error-active);
+    --border-base-color-focus: var(--color-border-focus);
+    --border-base-color-disabled: var(--color-border-disabled);
+    --border-shadow-color: var(--color-background-surface-00);
+    --border-radius: var(--border-radius-xl);
 }
 
 // ERROR OUTLINE
 :host(.ds-button--error.ds-button--outline) {
-  --background-base-color: transparent;
-  --background-base-color-hover: var(--color-background-status-error-hover);
-  --background-base-disabled: var(--color-background-disabled);
-  --background-base-active: var(--color-background-status-error-active);
-  --background-base-focus: var(--color-background-status-error-hover);
-  --label-base-color: var(--color-text-status-error);
-  --label-base-color-hover: var(--color-text-action-on-dark);
-  --label-base-color-focus: var(--color-text-action-on-dark);
-  --label-base-color-active: var(--color-text-action-on-dark);
-  --label-base-color-disabled: var(--color-text-disabled-on-dark);
-  --border-base-color: var(--color-border-status-error-hover);
-  --border-base-color-hover: var(--color-border-status-error-hover);
-  --border-base-color-active: var(--color-border-status-error-active);
-  --border-base-color-focus: var(--color-border-focus);
-  --border-base-color-disabled: var(--color-background-disabled);
-  --border-shadow-color: var(--color-background-surface-00);
-  --border-radius: var(--border-radius-xl);
+    --background-base-color: transparent;
+    --background-base-color-hover: var(--color-background-status-error-hover);
+    --background-base-disabled: transparent;
+    --background-base-color-active: var(--color-background-status-error-active);
+    --background-base-focus: var(--color-background-status-error-hover);
+    --label-base-color: var(--color-text-status-error);
+    --label-base-color-hover: var(--color-text-action-on-dark);
+    --label-base-color-focus: var(--color-text-action-on-dark);
+    --label-base-color-active: var(--color-text-action-on-dark);
+    --label-base-color-disabled: var(--color-text-disabled-on-dark);
+    --border-base-color: var(--color-border-status-error-hover);
+    --border-base-color-hover: var(--color-border-status-error-hover);
+    --border-base-color-active: var(--color-border-status-error-active);
+    --border-base-color-focus: var(--color-border-focus);
+    --border-base-color-disabled: var(--color-background-disabled);
+    --border-radius: var(--border-radius-xl);
 }
 
 // ERROR CLEAR
 :host(.ds-button--error.ds-button--clear) {
-  --background-base-color: transparent;
-  --background-base-color-hover: var(--color-background-hover);
-  --background-base-disabled: var(--color-background-disabled);
-  --background-base-active: var(--color-background-active);
-  --background-base-focus: var(--color-background-hover);
-  --label-base-color: var(--color-text-status-error);
-  --label-base-color-hover: var(--color-text-status-error);
-  --label-base-color-focus: var(--color-text-status-error);
-  --label-base-color-active: var(--color-text-status-error);
-  --label-base-color-disabled: var(--color-text-disabled);
-  --border-base-color: transparent;
-  --border-base-color-hover: var(--color-border-hover);
-  --border-base-color-active: var(--color-border-active);
-  --border-base-color-focus: var(--color-border-focus);
-  --border-base-color-disabled: transparent;
-  --border-shadow-color: none;
-  --border-radius: none;
+    --background-base-color: transparent;
+    --background-base-color-hover: var(--color-background-hover);
+    --background-base-disabled: transparent;
+    --background-base-color-active: var(--color-background-active);
+    --background-base-focus: var(--color-background-hover);
+    --label-base-color: var(--color-text-status-error);
+    --label-base-color-hover: var(--color-text-status-error);
+    --label-base-color-focus: var(--color-text-status-error);
+    --label-base-color-active: var(--color-text-status-error);
+    --label-base-color-disabled: var(--color-text-disabled);
+    --border-base-color: transparent;
+    --border-base-color-hover: var(--color-border-hover);
+    --border-base-color-active: var(--color-border-active);
+    --border-base-color-focus: var(--color-border-focus);
+    --border-base-color-disabled: transparent;
+    --border-radius: none;
 }
