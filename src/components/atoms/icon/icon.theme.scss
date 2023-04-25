@@ -1,0 +1,52 @@
+:host {
+}
+
+// XS
+:host(.ds-icon--xs) {
+    
+}
+
+// SM
+:host(.ds-icon--sm) {
+
+}
+
+// MD
+:host(.ds-icon--md) {
+
+}
+
+// LG
+:host(.ds-icon--lg) {
+
+}
+
+// XL
+:host(.ds-icon--xl) {
+
+}
+
+
+// PRIMARY
+:host(.ds-icon--primary) :host(.ds-icon--solid) {
+    --background-base-color: transparent;
+    // el color de background lo recoge del botón
+    --color-icon: var(-color-text-action-on-dark);
+    --color-icon-hover: var(--color-text-action-on-dark);
+    --color-icon-focus: var(--color-text-action-on-dark);
+    --color-icon-active: var(--color-text-action-on-dark);
+    --color-icon-disabled: var(--color-text-disabled);
+}
+
+// PRIMARY OUTLINE
+:host(.ds-icon--outline) {
+    --color-icon: var(--color-text-primary);
+}
+
+// PRIMARY CLEAR
+:host(.ds-icon--clear) {
+    --color-icon: var(--color-text-primary);
+    --color-icon-hover: var(--color-text-primary);
+    --color-icon-focus: var(--color-text-primary);
+    --color-icon-active: var(--color-text-primary);
+}
