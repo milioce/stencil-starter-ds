@@ -1,6 +1,6 @@
-import {defineCustomElements} from '../loader';
+import { defineCustomElements } from '../loader';
 import '../dist/stencil-ds/stencil-ds.css';
-import { setStencilDocJson, extractArgTypesFactory, extractComponentDescription  } from '@pxtrn/storybook-addon-docs-stencil';
+import { setStencilDocJson, extractArgTypesFactory, extractComponentDescription } from '@pxtrn/storybook-addon-docs-stencil';
 import docJson from '../path/to/docs.json';
 
 if (docJson) {
@@ -22,7 +22,7 @@ const preview = {
     },
     docs: {
       extractArgTypes: extractArgTypesFactory({ dashCase: true }),
-      extractComponentDescription
+      extractComponentDescription,
     },
   },
 };

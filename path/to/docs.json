@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-04-21T06:56:36",
+  "timestamp": "2023-04-25T06:57:53",
   "compiler": {
     "name": "@stencil/core",
     "version": "3.2.1",
@@ -10,7 +10,7 @@
       "filePath": "./src/components/atoms/button/button.tsx",
       "encapsulation": "shadow",
       "tag": "ds-button",
-      "readme": "<!-- # ds-button -->\n\n",
+      "readme": "<!-- # ds-button -->\r\n\r\n\r",
       "docs": "<!-- # ds-button -->",
       "docsTags": [],
       "usage": {},
@@ -175,8 +175,8 @@
           "type": "boolean",
           "mutable": false,
           "attr": "disabled",
-          "reflectToAttr": false,
-          "docs": "Whether the button is disabled",
+          "reflectToAttr": true,
+          "docs": "The button is disabled",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -188,12 +188,38 @@
           "required": false
         },
         {
+          "name": "fill",
+          "type": "\"clear\" | \"outline\" | \"solid\"",
+          "mutable": false,
+          "attr": "fill",
+          "reflectToAttr": false,
+          "docs": "The fill of the button (background and border color)",
+          "docsTags": [],
+          "default": "'solid'",
+          "values": [
+            {
+              "value": "clear",
+              "type": "string"
+            },
+            {
+              "value": "outline",
+              "type": "string"
+            },
+            {
+              "value": "solid",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
           "name": "full",
           "type": "boolean",
           "mutable": false,
           "attr": "full",
           "reflectToAttr": false,
-          "docs": "Whether the button takes up the full width of the container",
+          "docs": "The button takes up the full width of the container",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -266,23 +292,6 @@
           "attr": "loading",
           "reflectToAttr": false,
           "docs": "Whether the button shows a loading icon",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "outlined",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "outlined",
-          "reflectToAttr": false,
-          "docs": "Whether the button is outlined (only border, no background)",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -421,7 +430,7 @@
           "mutable": false,
           "attr": "aria-label",
           "reflectToAttr": false,
-          "docs": "",
+          "docs": "The aria-label attribute of the icon",
           "docsTags": [],
           "values": [
             {
@@ -437,7 +446,7 @@
           "mutable": false,
           "attr": "color",
           "reflectToAttr": false,
-          "docs": "",
+          "docs": "The icon color",
           "docsTags": [],
           "values": [
             {
@@ -453,7 +462,7 @@
           "mutable": false,
           "attr": "icon",
           "reflectToAttr": false,
-          "docs": "",
+          "docs": "The icon name",
           "docsTags": [],
           "values": [
             {
@@ -469,7 +478,7 @@
           "mutable": false,
           "attr": "size",
           "reflectToAttr": false,
-          "docs": "",
+          "docs": "The size of the icon",
           "docsTags": [],
           "default": "'sm'",
           "values": [
