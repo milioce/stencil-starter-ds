@@ -443,3 +443,12 @@ Añadir un script para formatear el código
 "format": "npx prettier --check \"src/**/*.{js,ts,tsx,css,scss,html,json}\"",
 ```
 
+# Plugin Angular Output Target
+
+```bash
+$ npm install @stencil/angular-output-target --save-dev
+```
+
+In the `stencil.config.ts` add the output target
+
+
