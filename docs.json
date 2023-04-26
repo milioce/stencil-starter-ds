@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-04-26T07:46:55",
+  "timestamp": "2023-04-26T11:30:08",
   "compiler": {
     "name": "@stencil/core",
     "version": "3.2.1",
@@ -34,7 +34,7 @@
         },
         {
           "name": "color",
-          "type": "\"primary\" | \"secondary\" | \"tertiary\"",
+          "type": "\"error\" | \"info\" | \"primary\" | \"secondary\" | \"success\" | \"warning\"",
           "mutable": false,
           "attr": "color",
           "reflectToAttr": false,
@@ -42,6 +42,14 @@
           "docsTags": [],
           "default": "'primary'",
           "values": [
+            {
+              "value": "error",
+              "type": "string"
+            },
+            {
+              "value": "info",
+              "type": "string"
+            },
             {
               "value": "primary",
               "type": "string"
@@ -51,7 +59,11 @@
               "type": "string"
             },
             {
-              "value": "tertiary",
+              "value": "success",
+              "type": "string"
+            },
+            {
+              "value": "warning",
               "type": "string"
             }
           ],
@@ -109,7 +121,7 @@
         },
         {
           "name": "dsAriaExpanded",
-          "type": "string",
+          "type": "boolean",
           "mutable": false,
           "attr": "ds-aria-expanded",
           "reflectToAttr": false,
@@ -117,7 +129,7 @@
           "docsTags": [],
           "values": [
             {
-              "type": "string"
+              "type": "boolean"
             }
           ],
           "optional": false,
@@ -125,7 +137,7 @@
         },
         {
           "name": "dsAriaHaspopup",
-          "type": "string",
+          "type": "boolean",
           "mutable": false,
           "attr": "ds-aria-haspopup",
           "reflectToAttr": false,
@@ -133,7 +145,7 @@
           "docsTags": [],
           "values": [
             {
-              "type": "string"
+              "type": "boolean"
             }
           ],
           "optional": false,
@@ -173,7 +185,7 @@
         },
         {
           "name": "dsAriaPressed",
-          "type": "string",
+          "type": "boolean",
           "mutable": false,
           "attr": "ds-aria-pressed",
           "reflectToAttr": false,
@@ -181,7 +193,7 @@
           "docsTags": [],
           "values": [
             {
-              "type": "string"
+              "type": "boolean"
             }
           ],
           "optional": false,
@@ -292,6 +304,23 @@
           "attr": "loading",
           "reflectToAttr": false,
           "docs": "Whether the button shows a loading icon",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "onlyIcon",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "only-icon",
+          "reflectToAttr": false,
+          "docs": "Whether the button has an icon",
           "docsTags": [],
           "default": "false",
           "values": [
