@@ -12,34 +12,6 @@ export { GlobalSizeTypes } from "@shared/model";
 export namespace Components {
     interface DsButton {
         /**
-          * The aria-controls attribute for the button
-         */
-        "ariaControls": string;
-        /**
-          * The aria-describedby attribute for the button
-         */
-        "ariaDescribedby": string;
-        /**
-          * The aria-expanded attribute for the button
-         */
-        "ariaExpanded": string;
-        /**
-          * The aria-haspopup attribute for the button
-         */
-        "ariaHaspopup": string;
-        /**
-          * The aria-label attribute for the button
-         */
-        "ariaLabel": string;
-        /**
-          * The aria-labelledby attribute for the button
-         */
-        "ariaLabelledby": string;
-        /**
-          * The aria-pressed attribute for the button
-         */
-        "ariaPressed": string;
-        /**
           * Whether the button is focused on page load
          */
         "autofocus": boolean;
@@ -51,6 +23,34 @@ export namespace Components {
           * The button is disabled
          */
         "disabled": boolean;
+        /**
+          * The aria-controls attribute for the button
+         */
+        "dsAriaControls": string;
+        /**
+          * The aria-describedby attribute for the button
+         */
+        "dsAriaDescribedby": string;
+        /**
+          * The aria-expanded attribute for the button
+         */
+        "dsAriaExpanded": string;
+        /**
+          * The aria-haspopup attribute for the button
+         */
+        "dsAriaHaspopup": string;
+        /**
+          * The aria-label attribute for the button
+         */
+        "dsAriaLabel": string;
+        /**
+          * The aria-labelledby attribute for the button
+         */
+        "dsAriaLabelledby": string;
+        /**
+          * The aria-pressed attribute for the button
+         */
+        "dsAriaPressed": string;
         /**
           * The fill of the button (background and border color)
          */
@@ -153,34 +153,6 @@ declare global {
 declare namespace LocalJSX {
     interface DsButton {
         /**
-          * The aria-controls attribute for the button
-         */
-        "ariaControls"?: string;
-        /**
-          * The aria-describedby attribute for the button
-         */
-        "ariaDescribedby"?: string;
-        /**
-          * The aria-expanded attribute for the button
-         */
-        "ariaExpanded"?: string;
-        /**
-          * The aria-haspopup attribute for the button
-         */
-        "ariaHaspopup"?: string;
-        /**
-          * The aria-label attribute for the button
-         */
-        "ariaLabel"?: string;
-        /**
-          * The aria-labelledby attribute for the button
-         */
-        "ariaLabelledby"?: string;
-        /**
-          * The aria-pressed attribute for the button
-         */
-        "ariaPressed"?: string;
-        /**
           * Whether the button is focused on page load
          */
         "autofocus"?: boolean;
@@ -192,6 +164,34 @@ declare namespace LocalJSX {
           * The button is disabled
          */
         "disabled"?: boolean;
+        /**
+          * The aria-controls attribute for the button
+         */
+        "dsAriaControls"?: string;
+        /**
+          * The aria-describedby attribute for the button
+         */
+        "dsAriaDescribedby"?: string;
+        /**
+          * The aria-expanded attribute for the button
+         */
+        "dsAriaExpanded"?: string;
+        /**
+          * The aria-haspopup attribute for the button
+         */
+        "dsAriaHaspopup"?: string;
+        /**
+          * The aria-label attribute for the button
+         */
+        "dsAriaLabel"?: string;
+        /**
+          * The aria-labelledby attribute for the button
+         */
+        "dsAriaLabelledby"?: string;
+        /**
+          * The aria-pressed attribute for the button
+         */
+        "dsAriaPressed"?: string;
         /**
           * The fill of the button (background and border color)
          */
