@@ -41,13 +41,40 @@ describe('ds-button', () => {
       expect(page.root).toHaveClass('ds-button--secondary');
     });
 
-    it('should set the tertiary color class when color is tertiary', async () => {
+    it('should set the success color class when color is success', async () => {
       const page = await newSpecPage({
         components: [AtomsButton],
-        html: `<ds-button color="tertiary"></ds-button>`,
+        html: `<ds-button color="success"></ds-button>`,
         supportsShadowDom: false,
       });
-      expect(page.root).toHaveClass('ds-button--tertiary');
+      expect(page.root).toHaveClass('ds-button--success');
+    });
+
+    it('should set the warning color class when color is warning', async () => {
+      const page = await newSpecPage({
+        components: [AtomsButton],
+        html: `<ds-button color="warning"></ds-button>`,
+        supportsShadowDom: false,
+      });
+      expect(page.root).toHaveClass('ds-button--warning');
+    });
+
+    it('should set the info color class when color is info', async () => {
+      const page = await newSpecPage({
+        components: [AtomsButton],
+        html: `<ds-button color="info"></ds-button>`,
+        supportsShadowDom: false,
+      });
+      expect(page.root).toHaveClass('ds-button--info');
+    });
+
+    it('should set the error color class when color is error', async () => {
+      const page = await newSpecPage({
+        components: [AtomsButton],
+        html: `<ds-button color="error"></ds-button>`,
+        supportsShadowDom: false,
+      });
+      expect(page.root).toHaveClass('ds-button--error');
     });
 
     it('should set the small size class when size is sm', async () => {
@@ -165,75 +192,75 @@ describe('ds-button', () => {
       expect(button).toHaveClass('button--loading');
     });
 
-    // it('should set the aria-label attribute when ariaLabel is defined', async () => {
-    //   const page = await newSpecPage({
-    //     components: [AtomsButton],
-    //     html: `<ds-button ariaLabel="aria-label-text"></ds-button>`,
-    //     supportsShadowDom: false,
-    //   });
-    //   const button = page.root.querySelector('button');
-    //   expect(button.getAttribute('aria-label')).toBe('aria-label-text');
-    // });
+    it('should set the aria-label attribute when dsAriaLabel is defined', async () => {
+      const page = await newSpecPage({
+        components: [AtomsButton],
+        html: `<ds-button ds-aria-label="aria-label-text"></ds-button>`,
+        supportsShadowDom: false,
+      });
+      const button = page.root.querySelector('button');
+      expect(button.getAttribute('aria-label')).toBe('aria-label-text');
+    });
 
-    // it('should set the aria-labelby attribute when ariaLabelledby is defined', async () => {
-    //   const page = await newSpecPage({
-    //     components: [AtomsButton],
-    //     html: `<ds-button ariaLabelledby="aria-label-text"></ds-button>`,
-    //     supportsShadowDom: false,
-    //   });
-    //   const button = page.root.querySelector('button');
-    //   expect(button.getAttribute('aria-labelledby')).toBe('aria-label-text');
-    // });
+    it('should set the aria-labelby attribute when dsAriaLabelledby is defined', async () => {
+      const page = await newSpecPage({
+        components: [AtomsButton],
+        html: `<ds-button ds-aria-labelledby="aria-label-text"></ds-button>`,
+        supportsShadowDom: false,
+      });
+      const button = page.root.querySelector('button');
+      expect(button.getAttribute('aria-labelledby')).toBe('aria-label-text');
+    });
 
-    // it('should set the aria-describedby attribute when ariaDescribedby is defined', async () => {
-    //   const page = await newSpecPage({
-    //     components: [AtomsButton],
-    //     html: `<ds-button ariaDescribedby="aria-label-text"></ds-button>`,
-    //     supportsShadowDom: false,
-    //   });
-    //   const button = page.root.querySelector('button');
-    //   expect(button.getAttribute('aria-describedby')).toBe('aria-label-text');
-    // });
+    it('should set the aria-describedby attribute when dsAriaDescribedby is defined', async () => {
+      const page = await newSpecPage({
+        components: [AtomsButton],
+        html: `<ds-button ds-aria-describedby="aria-label-text"></ds-button>`,
+        supportsShadowDom: false,
+      });
+      const button = page.root.querySelector('button');
+      expect(button.getAttribute('aria-describedby')).toBe('aria-label-text');
+    });
 
-    // it('should set the aria-controls attribute when ariaControls is defined', async () => {
-    //   const page = await newSpecPage({
-    //     components: [AtomsButton],
-    //     html: `<ds-button ariaControls="aria-label-text"></ds-button>`,
-    //     supportsShadowDom: false,
-    //   });
-    //   const button = page.root.querySelector('button');
-    //   expect(button.getAttribute('aria-controls')).toBe('aria-label-text');
-    // });
+    it('should set the aria-controls attribute when dsAriaControls is defined', async () => {
+      const page = await newSpecPage({
+        components: [AtomsButton],
+        html: `<ds-button ds-aria-controls="aria-label-text"></ds-button>`,
+        supportsShadowDom: false,
+      });
+      const button = page.root.querySelector('button');
+      expect(button.getAttribute('aria-controls')).toBe('aria-label-text');
+    });
 
-    // it('should set the aria-pressed attribute when ariaPressed is defined', async () => {
-    //   const page = await newSpecPage({
-    //     components: [AtomsButton],
-    //     html: `<ds-button ariaPressed="'true'"></ds-button>`,
-    //     supportsShadowDom: false,
-    //   });
-    //   const button = page.root.querySelector('button');
-    //   expect(button.getAttribute('aria-pressed')).toBe('true');
-    // });
+    it('should set the aria-pressed attribute when dsAriaPressed is defined', async () => {
+      const page = await newSpecPage({
+        components: [AtomsButton],
+        html: `<ds-button ds-aria-pressed="true"></ds-button>`,
+        supportsShadowDom: false,
+      });
+      const button = page.root.querySelector('button');
+      expect(button.getAttribute('aria-pressed')).toBe('true');
+    });
 
-    // it('should set the aria-expanded attribute when ariaExpanded is defined', async () => {
-    //   const page = await newSpecPage({
-    //     components: [AtomsButton],
-    //     html: `<ds-button ariaExpanded="'true'"></ds-button>`,
-    //     supportsShadowDom: false,
-    //   });
-    //   const button = page.root.querySelector('button');
-    //   expect(button.getAttribute('aria-expanded')).toBe('true');
-    // });
+    it('should set the aria-expanded attribute when dsAriaExpanded is defined', async () => {
+      const page = await newSpecPage({
+        components: [AtomsButton],
+        html: `<ds-button ds-aria-expanded="true"></ds-button>`,
+        supportsShadowDom: false,
+      });
+      const button = page.root.querySelector('button');
+      expect(button.getAttribute('aria-expanded')).toBe('true');
+    });
 
-    // it('should set the aria-haspopup attribute when ariaHaspopup is defined', async () => {
-    //   const page = await newSpecPage({
-    //     components: [AtomsButton],
-    //     html: `<ds-button ds-aria-haspopup="'true'"></ds-button>`,
-    //     supportsShadowDom: false,
-    //   });
-    //   const button = page.root.querySelector('button');
-    //   expect(button.getAttribute('aria-haspopup')).toBe('true');
-    // });
+    it('should set the aria-haspopup attribute when dsAriaHaspopup is defined', async () => {
+      const page = await newSpecPage({
+        components: [AtomsButton],
+        html: `<ds-button ds-aria-haspopup="true"></ds-button>`,
+        supportsShadowDom: false,
+      });
+      const button = page.root.querySelector('button');
+      expect(button.getAttribute('aria-haspopup')).toBe('true');
+    });
   });
 
   describe('action', () => {

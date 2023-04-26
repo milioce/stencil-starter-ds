@@ -160,7 +160,7 @@ export class AtomsButton implements ComponentInterface {
     }
 
     if (this.dsAriaDescribedby !== undefined) {
-      attributes['aria-labelledby'] = this.dsAriaLabelledby;
+      attributes['aria-describedby'] = this.dsAriaDescribedby;
     }
 
     if (this.dsAriaControls !== undefined) {
@@ -185,8 +185,6 @@ export class AtomsButton implements ComponentInterface {
   render(): JSX.Element {
     const hostClass = this.getHostClassNames();
     const buttonClass = this.getButtonClassNames();
-
-    console.log('getAttributes()', this.getAttributes());
 
     return (
       <Host class={hostClass}>
