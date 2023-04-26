@@ -1,27 +1,27 @@
 import { getStencilDocJson } from '@pxtrn/storybook-addon-docs-stencil';
 
 console.log('GET', getStencilDocJson());
-const getDocs = () => {
-  return getStencilDocJson()
-    .components.find(f => f.tag === 'ds-button')
-    .props.map(prop => {
-      return { [prop.attr]: getDefaultValue(prop.default, prop.type) };
-    });
-};
+// const getDocs = () => {
+//   return getStencilDocJson()
+//     .components.find(f => f.tag === 'ds-button')
+//     .props.map(prop => {
+//       return { [prop.attr]: getDefaultValue(prop.default, prop.type) };
+//     });
+// };
 
-const getDefaultValue = (value, type) => {
-  if (value) {
-    console.log('value', value, type);
-    if (type === 'boolean') {
-      return value === 'true';
-    } else {
-      return value.replaceAll("'", '');
-    }
-  }
-};
+// const getDefaultValue = (value, type) => {
+//   if (value) {
+//     console.log('value', value, type);
+//     if (type === 'boolean') {
+//       return value === 'true';
+//     } else {
+//       return value.replaceAll("'", '');
+//     }
+//   }
+// };
 
 export default {
-  title: 'Components/Button-pluggin',
+  title: 'Components/Button',
   parameters: {
     docs: {
       description: {
@@ -91,7 +91,7 @@ const ColorTemplate = args => `
   <div style="display: flex; justify-content: space-evenly;">
     <div>
       <div>Solid</div>
-      <ds-button color="primary" fill="solid">${args.text}</ds-button>
+      <ds-button color="${args.color}" fill="solid">${args.text}</ds-button>
     </div>
     <div>
       <div>Outline</div>
@@ -108,6 +108,7 @@ export const Primary = ColorTemplate.bind({});
 Primary.args = {
   color: 'primary',
 };
+Primary.title = 'Components/Button/Color';
 
 export const Secondary = ColorTemplate.bind({});
 Secondary.args = {
