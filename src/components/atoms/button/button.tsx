@@ -73,37 +73,37 @@ export class AtomsButton implements ComponentInterface {
   /**
    * The aria-label attribute for the button
    */
-  @Prop() ariaLabel: string;
+  @Prop() dsAriaLabel: string;
 
   /**
    * The aria-labelledby attribute for the button
    */
-  @Prop() ariaLabelledby: string;
+  @Prop() dsAriaLabelledby: string;
 
   /**
    * The aria-describedby attribute for the button
    */
-  @Prop() ariaDescribedby: string;
+  @Prop() dsAriaDescribedby: string;
 
   /**
    * The aria-controls attribute for the button
    */
-  @Prop() ariaControls: string;
+  @Prop() dsAriaControls: string;
 
   /**
    * The aria-pressed attribute for the button
    */
-  @Prop() ariaPressed: string;
+  @Prop() dsAriaPressed: string;
 
   /**
    * The aria-haspopup attribute for the button
    */
-  @Prop() ariaHaspopup: string;
+  @Prop() dsAriaHaspopup: string;
 
   /**
    * The aria-expanded attribute for the button
    */
-  @Prop() ariaExpanded: string;
+  @Prop() dsAriaExpanded: string;
 
   /**
    * Emitted when the button is clicked
@@ -149,42 +149,44 @@ export class AtomsButton implements ComponentInterface {
   };
 
   private getAttributes = () => {
-    const props = {};
+    const attributes = {};
 
-    if (this.ariaLabel !== undefined) {
-      props['aria-label'] = this.ariaLabel;
+    if (this.dsAriaLabel !== undefined) {
+      attributes['aria-label'] = this.dsAriaLabel;
     }
 
-    if (this.ariaLabelledby !== undefined) {
-      props['aria-labelledby'] = this.ariaLabelledby;
+    if (this.dsAriaLabelledby !== undefined) {
+      attributes['aria-labelledby'] = this.dsAriaLabelledby;
     }
 
-    if (this.ariaDescribedby !== undefined) {
-      props['aria-labelledby'] = this.ariaLabelledby;
+    if (this.dsAriaDescribedby !== undefined) {
+      attributes['aria-labelledby'] = this.dsAriaLabelledby;
     }
 
-    if (this.ariaControls !== undefined) {
-      props['aria-controls'] = this.ariaControls;
+    if (this.dsAriaControls !== undefined) {
+      attributes['aria-controls'] = this.dsAriaControls;
     }
 
-    if (this.ariaPressed !== undefined) {
-      props['aria-pressed'] = this.ariaPressed === 'true' ? 'true' : 'false';
+    if (this.dsAriaPressed !== undefined) {
+      attributes['aria-pressed'] = this.dsAriaPressed === 'true' ? 'true' : 'false';
     }
 
-    if (this.ariaExpanded !== undefined) {
-      props['aria-expanded'] = this.ariaExpanded === 'true' ? 'true' : 'false';
+    if (this.dsAriaExpanded !== undefined) {
+      attributes['aria-expanded'] = this.dsAriaExpanded === 'true' ? 'true' : 'false';
     }
 
-    if (this.ariaHaspopup !== undefined) {
-      props['aria-haspopup'] = this.ariaHaspopup === 'true' ? 'true' : 'false';
+    if (this.dsAriaHaspopup !== undefined) {
+      attributes['aria-haspopup'] = this.dsAriaHaspopup === 'true' ? 'true' : 'false';
     }
 
-    return props;
+    return attributes;
   };
 
   render(): JSX.Element {
     const hostClass = this.getHostClassNames();
     const buttonClass = this.getButtonClassNames();
+
+    console.log('getAttributes()', this.getAttributes());
 
     return (
       <Host class={hostClass}>

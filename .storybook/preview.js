@@ -1,4 +1,11 @@
-import {defineCustomElements} from '../loader';
+import { defineCustomElements } from '../loader';
+import { setStencilDocJson, extractArgTypesFactory, extractComponentDescription } from '@pxtrn/storybook-addon-docs-stencil';
+import docJson from '../docs.json';
+import '../dist/stencil-ds/stencil-ds.css';
+
+if (docJson) {
+  setStencilDocJson(docJson);
+}
 
 defineCustomElements();
 
@@ -11,6 +18,11 @@ const preview = {
         color: /(background|color)$/i,
         date: /Date$/,
       },
+      hideNoControlsWarning: true,
+    },
+    docs: {
+      extractArgTypes: extractArgTypesFactory({ dashCase: true }),
+      extractComponentDescription,
     },
   },
 };
