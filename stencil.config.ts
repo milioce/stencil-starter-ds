@@ -15,6 +15,12 @@ export const config: Config = {
     {
       type: 'dist',
       esmLoaderPath: '../loader',
+      copy: [
+        {
+          src: 'assets',
+          dest: 'assets',
+        },
+      ],
     },
     angularOutputTarget({
       componentCorePackage: 'stencil-ds',
@@ -30,6 +36,10 @@ export const config: Config = {
     {
       type: 'www',
       serviceWorker: null, // disable service workers
+    },
+    {
+      type: 'docs-json',
+      file: 'docs.json',
     },
   ],
 };
