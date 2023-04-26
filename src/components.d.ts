@@ -88,6 +88,8 @@ export namespace Components {
          */
         "url": string;
     }
+    interface DsButtonSplit {
+    }
     interface DsIcon {
         /**
           * The aria-label attribute of the icon
@@ -132,6 +134,12 @@ declare global {
         prototype: HTMLDsButtonElement;
         new (): HTMLDsButtonElement;
     };
+    interface HTMLDsButtonSplitElement extends Components.DsButtonSplit, HTMLStencilElement {
+    }
+    var HTMLDsButtonSplitElement: {
+        prototype: HTMLDsButtonSplitElement;
+        new (): HTMLDsButtonSplitElement;
+    };
     interface HTMLDsIconElement extends Components.DsIcon, HTMLStencilElement {
     }
     var HTMLDsIconElement: {
@@ -146,6 +154,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "ds-button": HTMLDsButtonElement;
+        "ds-button-split": HTMLDsButtonSplitElement;
         "ds-icon": HTMLDsIconElement;
         "my-component": HTMLMyComponentElement;
     }
@@ -241,6 +250,8 @@ declare namespace LocalJSX {
          */
         "url"?: string;
     }
+    interface DsButtonSplit {
+    }
     interface DsIcon {
         /**
           * The aria-label attribute of the icon
@@ -275,6 +286,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "ds-button": DsButton;
+        "ds-button-split": DsButtonSplit;
         "ds-icon": DsIcon;
         "my-component": MyComponent;
     }
@@ -284,6 +296,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "ds-button": LocalJSX.DsButton & JSXBase.HTMLAttributes<HTMLDsButtonElement>;
+            "ds-button-split": LocalJSX.DsButtonSplit & JSXBase.HTMLAttributes<HTMLDsButtonSplitElement>;
             "ds-icon": LocalJSX.DsIcon & JSXBase.HTMLAttributes<HTMLDsIconElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
