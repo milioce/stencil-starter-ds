@@ -106,6 +106,8 @@ export namespace Components {
          */
         "size": GlobalSizeTypes;
     }
+    interface DsInput {
+    }
     interface MyComponent {
         /**
           * The first name
@@ -138,6 +140,12 @@ declare global {
         prototype: HTMLDsIconElement;
         new (): HTMLDsIconElement;
     };
+    interface HTMLDsInputElement extends Components.DsInput, HTMLStencilElement {
+    }
+    var HTMLDsInputElement: {
+        prototype: HTMLDsInputElement;
+        new (): HTMLDsInputElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -147,6 +155,7 @@ declare global {
     interface HTMLElementTagNameMap {
         "ds-button": HTMLDsButtonElement;
         "ds-icon": HTMLDsIconElement;
+        "ds-input": HTMLDsInputElement;
         "my-component": HTMLMyComponentElement;
     }
 }
@@ -259,6 +268,8 @@ declare namespace LocalJSX {
          */
         "size"?: GlobalSizeTypes;
     }
+    interface DsInput {
+    }
     interface MyComponent {
         /**
           * The first name
@@ -276,6 +287,7 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "ds-button": DsButton;
         "ds-icon": DsIcon;
+        "ds-input": DsInput;
         "my-component": MyComponent;
     }
 }
@@ -285,6 +297,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "ds-button": LocalJSX.DsButton & JSXBase.HTMLAttributes<HTMLDsButtonElement>;
             "ds-icon": LocalJSX.DsIcon & JSXBase.HTMLAttributes<HTMLDsIconElement>;
+            "ds-input": LocalJSX.DsInput & JSXBase.HTMLAttributes<HTMLDsInputElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }
