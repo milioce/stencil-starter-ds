@@ -1,52 +1,57 @@
 :host {
-}
-
-// XS
-:host(.ds-icon--xs) {
-    
+    --font-size-icon: var(--font-size-icon-xs);
 }
 
 // SM
-:host(.ds-icon--sm) {
-
+:host(.ds-icon.size-icon-sm) {
+    --font-size-icon: var(--font-size-icon-xs);
 }
 
 // MD
-:host(.ds-icon--md) {
-
+:host(.ds-icon.size-icon-md) {
+    --font-size-icon: var(--font-size-icon-xs);
 }
 
 // LG
-:host(.ds-icon--lg) {
-
+:host(.ds-icon.size-icon-lg) {
+    --font-size-icon: var(--font-size-icon-md);
 }
-
-// XL
-:host(.ds-icon--xl) {
-
-}
-
 
 // PRIMARY
 :host(.ds-icon--primary) :host(.ds-icon--solid) {
     --background-base-color: transparent;
     // el color de background lo recoge del botón
-    --color-icon: var(-color-text-action-on-dark);
-    --color-icon-hover: var(--color-text-action-on-dark);
-    --color-icon-focus: var(--color-text-action-on-dark);
-    --color-icon-active: var(--color-text-action-on-dark);
-    --color-icon-disabled: var(--color-text-disabled);
+    --color-icon: var(--color-fill-icon-on-dark);
+    --color-icon-hover: var(--color-fill-icon-on-dark);
+    --color-icon-focus: var(--color-fill-icon-on-dark);
+    --color-icon-active: var(--color-fill-icon-on-dark);
+    --color-icon-disabled: var(--color-fill-icon-disabled);
 }
 
 // PRIMARY OUTLINE
-:host(.ds-icon--outline) {
+:host(.ds-icon--primary.ds-icon--outline) {
     --color-icon: var(--color-text-primary);
 }
 
 // PRIMARY CLEAR
-:host(.ds-icon--clear) {
+:host(.ds-icon--primary.ds-icon--clear) {
     --color-icon: var(--color-text-primary);
     --color-icon-hover: var(--color-text-primary);
     --color-icon-focus: var(--color-text-primary);
     --color-icon-active: var(--color-text-primary);
 }
+
+// SECONDARY
+:host(.ds-icon--secondary) {
+    --color-icon: var(--color-text-action);
+    --color-icon-hover: var(--color-text-action);
+    --color-icon-focus: var(--color-text-action);
+    --color-icon-active: var(--color-text-action);
+    --color-icon-disabled: var(--color-text-disabled);
+}
+
+// SECONDARY OUTLINE and SECONDARY CLEAR
+:host(.ds-icon--secondary.ds-icon--outline), :host(.ds-icon--secondary.ds-icon--clear) {
+    --color-icon: var(--color-text-secondary);
+}
+
