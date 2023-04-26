@@ -5,7 +5,7 @@ import { Component, Host, h } from '@stencil/core';
   styleUrls: ['input.scss'],
   shadow: true,
 })
-export class DsInput {
+export class AttomsInput {
 
   render() {
     return (

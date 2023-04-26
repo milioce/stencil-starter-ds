@@ -1,10 +1,10 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { DsInput } from '../ds-input';
+import { AttomsInput } from '../input/input';
 
 describe('ds-input', () => {
   it('renders', async () => {
     const page = await newSpecPage({
-      components: [DsInput],
+      components: [AttomsInput],
       html: `<ds-input></ds-input>`,
     });
     expect(page.root).toEqualHtml(`
