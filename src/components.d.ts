@@ -5,9 +5,9 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { ButtonColorTypes, ButtonFillTypes, ButtonIconPositionTypes, ButtonTypeTypes } from "./components/atoms/button/models";
+import { ButtonColorTypes, ButtonFillTypes, ButtonIconPositionTypes, ButtonTypeTypes } from "./components/atoms/button/button.model";
 import { GlobalSizeTypes } from "@shared/model";
-export { ButtonColorTypes, ButtonFillTypes, ButtonIconPositionTypes, ButtonTypeTypes } from "./components/atoms/button/models";
+export { ButtonColorTypes, ButtonFillTypes, ButtonIconPositionTypes, ButtonTypeTypes } from "./components/atoms/button/button.model";
 export { GlobalSizeTypes } from "@shared/model";
 export namespace Components {
     interface DsButton {
@@ -34,11 +34,11 @@ export namespace Components {
         /**
           * The aria-expanded attribute for the button
          */
-        "dsAriaExpanded": string;
+        "dsAriaExpanded": boolean;
         /**
           * The aria-haspopup attribute for the button
          */
-        "dsAriaHaspopup": string;
+        "dsAriaHaspopup": boolean;
         /**
           * The aria-label attribute for the button
          */
@@ -50,7 +50,7 @@ export namespace Components {
         /**
           * The aria-pressed attribute for the button
          */
-        "dsAriaPressed": string;
+        "dsAriaPressed": boolean;
         /**
           * The fill of the button (background and border color)
          */
@@ -75,6 +75,10 @@ export namespace Components {
           * Whether the button shows a loading icon
          */
         "loading": boolean;
+        /**
+          * Whether the button has an icon
+         */
+        "onlyIcon": boolean;
         /**
           * The size of the buton
          */
@@ -175,11 +179,11 @@ declare namespace LocalJSX {
         /**
           * The aria-expanded attribute for the button
          */
-        "dsAriaExpanded"?: string;
+        "dsAriaExpanded"?: boolean;
         /**
           * The aria-haspopup attribute for the button
          */
-        "dsAriaHaspopup"?: string;
+        "dsAriaHaspopup"?: boolean;
         /**
           * The aria-label attribute for the button
          */
@@ -191,7 +195,7 @@ declare namespace LocalJSX {
         /**
           * The aria-pressed attribute for the button
          */
-        "dsAriaPressed"?: string;
+        "dsAriaPressed"?: boolean;
         /**
           * The fill of the button (background and border color)
          */
@@ -228,6 +232,10 @@ declare namespace LocalJSX {
           * Emitted when the button gains focus
          */
         "onDsFocus"?: (event: DsButtonCustomEvent<void>) => void;
+        /**
+          * Whether the button has an icon
+         */
+        "onlyIcon"?: boolean;
         /**
           * The size of the buton
          */
