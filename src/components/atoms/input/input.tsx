@@ -109,7 +109,7 @@ export class AttomsInput implements ComponentInterface{
 
   private getHostClassNames = () => {
     const classes =
-      `ds-button ds-button--${this.type} ds-button--${this.size}`;
+      `ds-input ds-input--${this.type} ds-input--${this.size}`;
 
     return classes;
   };
@@ -118,6 +118,7 @@ export class AttomsInput implements ComponentInterface{
     const hostClass = this.getHostClassNames();
     return (
       <Host class={hostClass}>
+        <label>Label input</label>
         <input type={this.type} placeholder={this.placeholder}/>
         <span>Helper text</span>
       </Host>
