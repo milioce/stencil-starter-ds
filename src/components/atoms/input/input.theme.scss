@@ -1,0 +1,26 @@
+:host {
+    --_hover-cursor: pointer;
+    --_font-size-075: var(--font-size-02);
+    --_font-size-0875: var(--font-size-03);
+    --_font-size-075: var(--font-size-04);
+}
+
+// SM
+:host(.ds-button--sm) {
+    --font-size: var(--font-size-02);
+    --padding-inside: var(--_padding-button-sm);
+}
+
+// MD
+:host(.ds-button--md) {
+    --font-size: var(--font-size-03);
+    --padding-inside: var(--_padding-button);
+}
+
+// LG
+:host(.ds-button--lg) {
+    --font-size: var(--font-size-04);
+    --padding-inside: var(--_padding-button);
+}
+
+:host(.ds-input--text) {}

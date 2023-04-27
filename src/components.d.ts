@@ -7,8 +7,10 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { ButtonColorTypes, ButtonFillTypes, ButtonIconPositionTypes, ButtonTypeTypes } from "./components/atoms/button/models";
 import { GlobalSizeTypes } from "@shared/model";
+import { InputTypeTypes } from "./components/atoms/input/models";
 export { ButtonColorTypes, ButtonFillTypes, ButtonIconPositionTypes, ButtonTypeTypes } from "./components/atoms/button/models";
 export { GlobalSizeTypes } from "@shared/model";
+export { InputTypeTypes } from "./components/atoms/input/models";
 export namespace Components {
     interface DsButton {
         /**
@@ -107,6 +109,58 @@ export namespace Components {
         "size": GlobalSizeTypes;
     }
     interface DsInput {
+        /**
+          * If true, the user cannot interact with the input.
+         */
+        "disabled"?: boolean;
+        /**
+          * Show the error.
+         */
+        "errorText": string;
+        /**
+          * Determinate when show the error.
+         */
+        "hasError": boolean;
+        /**
+          * Message to help the user fills the input value
+         */
+        "helperMessage": string;
+        /**
+          * Represents the caption of the input
+         */
+        "label": string;
+        /**
+          * Represents the caption of the input
+         */
+        "labelPosition": string;
+        /**
+          * The name of the input. Submitted with the form as part of a name/value pair
+         */
+        "name": string;
+        /**
+          * Instructional text that shows before the input has a value.
+         */
+        "placeholder": string;
+        /**
+          * If true, the user cannot modify the value.
+         */
+        "readonly": boolean;
+        /**
+          * If true, the user must fill in a value before submitting a form.
+         */
+        "required": boolean;
+        /**
+          * The size of the input
+         */
+        "size": GlobalSizeTypes;
+        /**
+          * The type of the input
+         */
+        "type": InputTypeTypes;
+        /**
+          * Current value of the form control. Submitted with the form as part of a name/value pair.
+         */
+        "value": string;
     }
     interface MyComponent {
         /**
@@ -126,6 +180,10 @@ export namespace Components {
 export interface DsButtonCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLDsButtonElement;
+}
+export interface DsInputCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLDsInputElement;
 }
 declare global {
     interface HTMLDsButtonElement extends Components.DsButton, HTMLStencilElement {
@@ -269,6 +327,78 @@ declare namespace LocalJSX {
         "size"?: GlobalSizeTypes;
     }
     interface DsInput {
+        /**
+          * If true, the user cannot interact with the input.
+         */
+        "disabled"?: boolean;
+        /**
+          * Show the error.
+         */
+        "errorText"?: string;
+        /**
+          * Determinate when show the error.
+         */
+        "hasError"?: boolean;
+        /**
+          * Message to help the user fills the input value
+         */
+        "helperMessage"?: string;
+        /**
+          * Represents the caption of the input
+         */
+        "label"?: string;
+        /**
+          * Represents the caption of the input
+         */
+        "labelPosition"?: string;
+        /**
+          * The name of the input. Submitted with the form as part of a name/value pair
+         */
+        "name"?: string;
+        /**
+          * Emitted when the button gains focus
+         */
+        "onDsFocus"?: (event: DsInputCustomEvent<void>) => void;
+        /**
+          * Emitted when the value has changed. This event doesn't fire until the control loses focus.
+         */
+        "onDsInputChange"?: (event: DsInputCustomEvent<string>) => void;
+        /**
+          * Emitted when the component is cleared
+         */
+        "onDsInputClear"?: (event: DsInputCustomEvent<string>) => void;
+        /**
+          * Emitted when the component is clicked
+         */
+        "onDsInputClick"?: (event: DsInputCustomEvent<string>) => void;
+        /**
+          * Emitted every time the value is updated by introducing a change
+         */
+        "onDsInputInput"?: (event: DsInputCustomEvent<string>) => void;
+        /**
+          * Instructional text that shows before the input has a value.
+         */
+        "placeholder"?: string;
+        /**
+          * If true, the user cannot modify the value.
+         */
+        "readonly"?: boolean;
+        /**
+          * If true, the user must fill in a value before submitting a form.
+         */
+        "required"?: boolean;
+        /**
+          * The size of the input
+         */
+        "size"?: GlobalSizeTypes;
+        /**
+          * The type of the input
+         */
+        "type"?: InputTypeTypes;
+        /**
+          * Current value of the form control. Submitted with the form as part of a name/value pair.
+         */
+        "value"?: string;
     }
     interface MyComponent {
         /**
