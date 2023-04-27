@@ -131,6 +131,10 @@ export interface DsButtonCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLDsButtonElement;
 }
+export interface DsButtonSplitCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLDsButtonSplitElement;
+}
 declare global {
     interface HTMLDsButtonElement extends Components.DsButton, HTMLStencilElement {
     }
@@ -259,6 +263,10 @@ declare namespace LocalJSX {
         "url"?: string;
     }
     interface DsButtonSplit {
+        /**
+          * Track component events (activation of dropdown component)
+         */
+        "onOnToggle"?: (event: DsButtonSplitCustomEvent<any>) => void;
     }
     interface DsIcon {
         /**
