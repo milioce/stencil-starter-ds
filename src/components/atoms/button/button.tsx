@@ -1,5 +1,5 @@
 import { Component, Prop, Element, h, JSX, Host, Event, EventEmitter, ComponentInterface } from '@stencil/core';
-import { ButtonColorTypes, ButtonTypeTypes, ButtonIconPositionTypes, ButtonFillTypes } from './models'; // local models
+import { ButtonColorTypes, ButtonTypeTypes, ButtonIconPositionTypes, ButtonFillTypes } from './button.model';
 import { GlobalSizeTypes } from '@shared/model';
 
 @Component({
@@ -44,6 +44,11 @@ export class AtomsButton implements ComponentInterface {
    * The position of the button's icon
    */
   @Prop() iconPosition: ButtonIconPositionTypes = 'left';
+
+  /**
+   * Whether the button has an icon
+   */
+  @Prop() onlyIcon: boolean = false;
 
   /**
    * The fill of the button (background and border color)
@@ -93,17 +98,17 @@ export class AtomsButton implements ComponentInterface {
   /**
    * The aria-pressed attribute for the button
    */
-  @Prop() dsAriaPressed: string;
+  @Prop() dsAriaPressed: boolean;
 
   /**
    * The aria-haspopup attribute for the button
    */
-  @Prop() dsAriaHaspopup: string;
+  @Prop() dsAriaHaspopup: boolean;
 
   /**
    * The aria-expanded attribute for the button
    */
-  @Prop() dsAriaExpanded: string;
+  @Prop() dsAriaExpanded: boolean;
 
   /**
    * Emitted when the button is clicked
@@ -137,7 +142,8 @@ export class AtomsButton implements ComponentInterface {
       `ds-button ds-button--${this.color} ds-button--${this.size}` +
       (this.fill ? ` ds-button--${this.fill}` : '') +
       (this.full ? ' ds-button--full' : '') +
-      (this.hasIcon ? ` ds-button--icon ds-button--icon-${this.iconPosition}` : '');
+      (this.hasIcon ? ` ds-button--icon ds-button--icon-${this.iconPosition}` : '') +
+      (this.onlyIcon ? ' ds-button--icon-only' : '');
 
     return classes;
   };
@@ -168,15 +174,15 @@ export class AtomsButton implements ComponentInterface {
     }
 
     if (this.dsAriaPressed !== undefined) {
-      attributes['aria-pressed'] = this.dsAriaPressed === 'true' ? 'true' : 'false';
+      attributes['aria-pressed'] = this.dsAriaPressed ? 'true' : 'false';
     }
 
     if (this.dsAriaExpanded !== undefined) {
-      attributes['aria-expanded'] = this.dsAriaExpanded === 'true' ? 'true' : 'false';
+      attributes['aria-expanded'] = this.dsAriaExpanded ? 'true' : 'false';
     }
 
     if (this.dsAriaHaspopup !== undefined) {
-      attributes['aria-haspopup'] = this.dsAriaHaspopup === 'true' ? 'true' : 'false';
+      attributes['aria-haspopup'] = this.dsAriaHaspopup ? 'true' : 'false';
     }
 
     return attributes;
