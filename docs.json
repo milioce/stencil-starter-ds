@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-04-26T11:30:08",
+  "timestamp": "2023-04-27T07:34:40",
   "compiler": {
     "name": "@stencil/core",
     "version": "3.2.1",
@@ -10,8 +10,8 @@
       "filePath": "./src/components/atoms/button/button.tsx",
       "encapsulation": "shadow",
       "tag": "ds-button",
-      "readme": "# ds-button\n\n\n",
-      "docs": "",
+      "readme": "<!-- # ds-button -->\r\n\r\n\r",
+      "docs": "<!-- # ds-button -->",
       "docsTags": [],
       "usage": {},
       "props": [
@@ -448,7 +448,7 @@
       "filePath": "./src/components/atoms/icon/icon.tsx",
       "encapsulation": "shadow",
       "tag": "ds-icon",
-      "readme": "# ds-icon\n\n\n",
+      "readme": "# ds-icon\r\n\r\n\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -548,7 +548,7 @@
       "filePath": "./src/components/my-component/my-component.tsx",
       "encapsulation": "shadow",
       "tag": "my-component",
-      "readme": "# my-component\n\n\n",
+      "readme": "# my-component\r\n\r\n\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},

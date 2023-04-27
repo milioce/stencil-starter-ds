@@ -134,6 +134,43 @@ describe('ds-button', () => {
       expect(link).toBeTruthy();
     });
 
+    // it('should display button with an icon in the left side', async () => {
+    //   const icon = 'ds_icon_add';
+    //   const page = await newSpecPage({
+    //     components: [AtomsButton],
+    //     html: `<ds-button has-icon="true" icon="${icon}" icon-position="left">Button</ds-button>`,
+    //     supportsShadowDom: false,
+    //   });
+    //   const iconPage = page.root.querySelector('i');
+    //   expect(page.root).toHaveClasses(['ds-button--icon', 'ds-button--icon-left']);
+    //   expect(iconPage).toHaveClass(`icon-${icon}`);
+    // });
+
+    // it('should display button with an icon in the right side', async () => {
+    //   const icon = 'ds_icon_add';
+    //   const page = await newSpecPage({
+    //     components: [AtomsButton],
+    //     html: `<ds-button has-icon="true" icon="${icon}" icon-position="right">Button</ds-button>`,
+    //     supportsShadowDom: false,
+    //   });
+    //   const iconPage = page.root.querySelector('i');
+    //   expect(page.root).toHaveClasses(['ds-button--icon', 'ds-button--icon-right']);
+    //   expect(iconPage).toHaveClass(`icon-${icon}`);
+    // });
+
+    // it('should display only icon button', async () => {
+    //   const icon = 'ds_icon_add';
+    //   const page = await newSpecPage({
+    //     components: [AtomsButton],
+    //     html: `<ds-button has-icon="true" icon="ds_icon_add" only-icon="true"></ds-button>`,
+    //     supportsShadowDom: false,
+    //   });
+    //   const iconPage = page.root.querySelector('i');
+    //   expect(page.root).toHaveClasses(['ds-button--icon', 'ds-button--icon-left', 'ds-button--icon-only']);
+    //   expect(iconPage).toHaveClass(`icon-${icon}`);
+    //   expect(page.root.textContent).toBe('');
+    // });
+
     it('should set the solid fill class when fill is solid', async () => {
       const page = await newSpecPage({
         components: [AtomsButton],
