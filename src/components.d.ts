@@ -7,10 +7,10 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { ButtonColorTypes, ButtonFillTypes, ButtonIconPositionTypes, ButtonTypeTypes } from "./components/atoms/button/button.model";
 import { GlobalSizeTypes } from "@shared/model";
-import { InputTypeTypes } from "./components/atoms/input/models";
-export { ButtonColorTypes, ButtonFillTypes, ButtonIconPositionTypes, ButtonTypeTypes } from "./components/atoms/button/models";
+import { InputLabelPositionTypes, InputTypeTypes } from "./components/atoms/input/input.models";
+export { ButtonColorTypes, ButtonFillTypes, ButtonIconPositionTypes, ButtonTypeTypes } from "./components/atoms/button/button.model";
 export { GlobalSizeTypes } from "@shared/model";
-export { InputTypeTypes } from "./components/atoms/input/models";
+export { InputLabelPositionTypes, InputTypeTypes } from "./components/atoms/input/input.models";
 export namespace Components {
     interface DsButton {
         /**
@@ -134,9 +134,9 @@ export namespace Components {
          */
         "label": string;
         /**
-          * Represents the caption of the input
+          * Represents the position caption of the input
          */
-        "labelPosition": string;
+        "labelPosition": InputLabelPositionTypes;
         /**
           * The name of the input. Submitted with the form as part of a name/value pair
          */
@@ -158,13 +158,17 @@ export namespace Components {
          */
         "size": GlobalSizeTypes;
         /**
+          * Show the success message
+         */
+        "successText": string;
+        /**
           * The type of the input
          */
         "type": InputTypeTypes;
         /**
           * Current value of the form control. Submitted with the form as part of a name/value pair.
          */
-        "value": string;
+        "value": string | number;
     }
     interface MyComponent {
         /**
@@ -356,15 +360,15 @@ declare namespace LocalJSX {
          */
         "label"?: string;
         /**
-          * Represents the caption of the input
+          * Represents the position caption of the input
          */
-        "labelPosition"?: string;
+        "labelPosition"?: InputLabelPositionTypes;
         /**
           * The name of the input. Submitted with the form as part of a name/value pair
          */
         "name"?: string;
         /**
-          * Emitted when the button gains focus
+          * Emitted when the input gains focus
          */
         "onDsFocus"?: (event: DsInputCustomEvent<void>) => void;
         /**
@@ -400,13 +404,17 @@ declare namespace LocalJSX {
          */
         "size"?: GlobalSizeTypes;
         /**
+          * Show the success message
+         */
+        "successText"?: string;
+        /**
           * The type of the input
          */
         "type"?: InputTypeTypes;
         /**
           * Current value of the form control. Submitted with the form as part of a name/value pair.
          */
-        "value"?: string;
+        "value"?: string | number;
     }
     interface MyComponent {
         /**
