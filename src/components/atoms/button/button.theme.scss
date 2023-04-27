@@ -83,7 +83,7 @@
 }
 
 // PRIMARY CLEAR
-:host(.ds-button--primary.ds-button--clear){
+:host(.ds-button--primary.ds-button--clear), .ds-button--primary.ds-button--clear a {
     --background-base-color: transparent;
     --background-base-color-hover: var(--color-background-hover);
     --background-base-color-active: var(--color-background-active);
@@ -134,11 +134,17 @@
 }
 
 // SECONDARY CLEAR
-:host(.ds-button--secondary.ds-button--clear), button[type="link"] {
+:host(.ds-button--secondary.ds-button--clear), .ds-button--secondary.ds-button--clear a{
     --background-base-color: transparent;
+    --background-base-color-hover: var(--color-background-hover);
+    --background-base-color-active: var(--color-background-active);
+    --background-base-focus: var(--color-background-hover);
     --label-base-color: var(--color-text-secondary);
+    --label-base-color-hover: var(--color-text-secondary);
+    --label-base-color-focus: var(--color-text-secondary);
+    --label-base-color-active: var(--color-text-secondary);
     --background-base-disabled: transparent;
-    --border-base-color: llamo transparent;
+    --border-base-color: transparent;
     --border-base-color-disabled: transparent;
     --border-radius: none;
 }
