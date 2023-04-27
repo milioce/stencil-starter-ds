@@ -5,7 +5,7 @@
 :host {
   display: block;
   /* block or inline? */
-  button {
+  button, button.ds-button-icon-only {
     background-color: var(--background-base-color);
     border-radius: var(--border-radius);
     border-width: var(--_border-00625);

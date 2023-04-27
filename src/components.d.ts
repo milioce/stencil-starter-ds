@@ -5,40 +5,12 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { ButtonColorTypes, ButtonFillTypes, ButtonIconPositionTypes, ButtonTypeTypes } from "./components/atoms/button/models";
+import { ButtonColorTypes, ButtonFillTypes, ButtonIconPositionTypes, ButtonTypeTypes } from "./components/atoms/button/button.model";
 import { GlobalSizeTypes } from "@shared/model";
-export { ButtonColorTypes, ButtonFillTypes, ButtonIconPositionTypes, ButtonTypeTypes } from "./components/atoms/button/models";
+export { ButtonColorTypes, ButtonFillTypes, ButtonIconPositionTypes, ButtonTypeTypes } from "./components/atoms/button/button.model";
 export { GlobalSizeTypes } from "@shared/model";
 export namespace Components {
     interface DsButton {
-        /**
-          * The aria-controls attribute for the button
-         */
-        "ariaControls": string;
-        /**
-          * The aria-describedby attribute for the button
-         */
-        "ariaDescribedby": string;
-        /**
-          * The aria-expanded attribute for the button
-         */
-        "ariaExpanded": string;
-        /**
-          * The aria-haspopup attribute for the button
-         */
-        "ariaHaspopup": string;
-        /**
-          * The aria-label attribute for the button
-         */
-        "ariaLabel": string;
-        /**
-          * The aria-labelledby attribute for the button
-         */
-        "ariaLabelledby": string;
-        /**
-          * The aria-pressed attribute for the button
-         */
-        "ariaPressed": string;
         /**
           * Whether the button is focused on page load
          */
@@ -51,6 +23,34 @@ export namespace Components {
           * The button is disabled
          */
         "disabled": boolean;
+        /**
+          * The aria-controls attribute for the button
+         */
+        "dsAriaControls": string;
+        /**
+          * The aria-describedby attribute for the button
+         */
+        "dsAriaDescribedby": string;
+        /**
+          * The aria-expanded attribute for the button
+         */
+        "dsAriaExpanded": boolean;
+        /**
+          * The aria-haspopup attribute for the button
+         */
+        "dsAriaHaspopup": boolean;
+        /**
+          * The aria-label attribute for the button
+         */
+        "dsAriaLabel": string;
+        /**
+          * The aria-labelledby attribute for the button
+         */
+        "dsAriaLabelledby": string;
+        /**
+          * The aria-pressed attribute for the button
+         */
+        "dsAriaPressed": boolean;
         /**
           * The fill of the button (background and border color)
          */
@@ -75,6 +75,10 @@ export namespace Components {
           * Whether the button shows a loading icon
          */
         "loading": boolean;
+        /**
+          * Whether the button has an icon
+         */
+        "onlyIcon": boolean;
         /**
           * The size of the buton
          */
@@ -162,34 +166,6 @@ declare global {
 declare namespace LocalJSX {
     interface DsButton {
         /**
-          * The aria-controls attribute for the button
-         */
-        "ariaControls"?: string;
-        /**
-          * The aria-describedby attribute for the button
-         */
-        "ariaDescribedby"?: string;
-        /**
-          * The aria-expanded attribute for the button
-         */
-        "ariaExpanded"?: string;
-        /**
-          * The aria-haspopup attribute for the button
-         */
-        "ariaHaspopup"?: string;
-        /**
-          * The aria-label attribute for the button
-         */
-        "ariaLabel"?: string;
-        /**
-          * The aria-labelledby attribute for the button
-         */
-        "ariaLabelledby"?: string;
-        /**
-          * The aria-pressed attribute for the button
-         */
-        "ariaPressed"?: string;
-        /**
           * Whether the button is focused on page load
          */
         "autofocus"?: boolean;
@@ -201,6 +177,34 @@ declare namespace LocalJSX {
           * The button is disabled
          */
         "disabled"?: boolean;
+        /**
+          * The aria-controls attribute for the button
+         */
+        "dsAriaControls"?: string;
+        /**
+          * The aria-describedby attribute for the button
+         */
+        "dsAriaDescribedby"?: string;
+        /**
+          * The aria-expanded attribute for the button
+         */
+        "dsAriaExpanded"?: boolean;
+        /**
+          * The aria-haspopup attribute for the button
+         */
+        "dsAriaHaspopup"?: boolean;
+        /**
+          * The aria-label attribute for the button
+         */
+        "dsAriaLabel"?: string;
+        /**
+          * The aria-labelledby attribute for the button
+         */
+        "dsAriaLabelledby"?: string;
+        /**
+          * The aria-pressed attribute for the button
+         */
+        "dsAriaPressed"?: boolean;
         /**
           * The fill of the button (background and border color)
          */
@@ -237,6 +241,10 @@ declare namespace LocalJSX {
           * Emitted when the button gains focus
          */
         "onDsFocus"?: (event: DsButtonCustomEvent<void>) => void;
+        /**
+          * Whether the button has an icon
+         */
+        "onlyIcon"?: boolean;
         /**
           * The size of the buton
          */
