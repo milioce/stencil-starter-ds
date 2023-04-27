@@ -1,0 +1,11 @@
+@use 'utilities';
+@use 'tools';
+@import './input.theme.scss';
+:host {
+    display: block;
+    input {
+        span {
+            display: block;
+        }
+    }
+}
