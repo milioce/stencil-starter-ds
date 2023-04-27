@@ -1,5 +1,5 @@
 import { Component, Host, h, Element, Prop, Event, EventEmitter, ComponentInterface } from '@stencil/core';
-import { InputTypeTypes } from './models'; // local models
+import { InputTypeTypes, InputLabelPositionTypes } from './input.models'; // local models
 import { GlobalSizeTypes } from '@shared/model';
 
 @Component({
@@ -7,8 +7,7 @@ import { GlobalSizeTypes } from '@shared/model';
   styleUrls: ['input.scss'],
   shadow: true,
 })
-export class AttomsInput implements ComponentInterface{
-
+export class AttomsInput implements ComponentInterface {
   @Element() el: HTMLElement | null;
 
   /**
@@ -22,9 +21,9 @@ export class AttomsInput implements ComponentInterface{
   @Prop() label: string;
 
   /**
-   * Represents the caption of the input
+   * Represents the position caption of the input
    */
-  @Prop() labelPosition: string;
+  @Prop() labelPosition: InputLabelPositionTypes = 'stack';
 
   /**
    * The type of the input
@@ -44,7 +43,7 @@ export class AttomsInput implements ComponentInterface{
   /**
    * Current value of the form control. Submitted with the form as part of a name/value pair.
    */
-  @Prop({ mutable: true, reflect: true }) value = '';
+  @Prop({ mutable: true, reflect: true }) value: string | number;
 
   /**
    * If true, the user must fill in a value before submitting a form.
@@ -76,9 +75,13 @@ export class AttomsInput implements ComponentInterface{
    */
   @Prop() errorText: string;
 
+  /**
+   * Show the success message
+   */
+  @Prop() successText: string;
 
   /**
-   * Emitted when the button gains focus
+   * Emitted when the input gains focus
    */
   @Event() dsFocus: EventEmitter<void>;
 
@@ -103,26 +106,52 @@ export class AttomsInput implements ComponentInterface{
    */
   @Event() dsInputClick: EventEmitter<string>;
 
-
-
-
-
   private getHostClassNames = () => {
     const classes =
-      `ds-input ds-input--${this.type} ds-input--${this.size}`;
+      `ds-input ds-input--${this.type} ds-input--${this.size}` + (this.labelPosition ? ` ds-input--label-${this.labelPosition}` : '') + (this.hasError ? ' ds-input--error' : '');
 
     return classes;
   };
 
+  private getInputClassNames = () => {
+    const classes = (this.disabled ? ' input--disabled' : '') + (this.readonly ? ' input--readonly' : '');
+
+    return classes;
+  };
+
+  private setMessage = (type: string) => {
+    // TODO icono
+    return (
+      <div>
+        {type !== 'helper' && <ds-icon size={this.size} icon={`${type}.svg`}></ds-icon>}
+        <span>{type === 'helper' ? this.helperMessage : ''}</span>
+        <span>{type === 'error' ? this.errorText : ''}</span>
+        <span>{type === 'success' ? this.successText : ''}</span>
+      </div>
+    );
+  };
+
   render() {
     const hostClass = this.getHostClassNames();
+    const inputClass = this.getInputClassNames();
     return (
       <Host class={hostClass}>
-        <label>Label input</label>
-        <input type={this.type} placeholder={this.placeholder}/>
-        <span>Helper text</span>
+        <label htmlFor={this.name}>{this.label}</label>
+        <input
+          class={inputClass}
+          type={this.type}
+          id={this.name}
+          name={this.name}
+          placeholder={this.placeholder}
+          value={this.value}
+          required={this.required}
+          disabled={this.disabled}
+          readOnly={this.readonly}
+        />
+        {this.helperMessage && this.setMessage('helper')}
+        {this.hasError && this.errorText && this.setMessage('error')}
+        {this.successText && this.setMessage('success')}
       </Host>
     );
   }
-
 }

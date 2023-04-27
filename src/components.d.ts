@@ -5,42 +5,14 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { ButtonColorTypes, ButtonFillTypes, ButtonIconPositionTypes, ButtonTypeTypes } from "./components/atoms/button/models";
+import { ButtonColorTypes, ButtonFillTypes, ButtonIconPositionTypes, ButtonTypeTypes } from "./components/atoms/button/button.model";
 import { GlobalSizeTypes } from "@shared/model";
-import { InputTypeTypes } from "./components/atoms/input/models";
-export { ButtonColorTypes, ButtonFillTypes, ButtonIconPositionTypes, ButtonTypeTypes } from "./components/atoms/button/models";
+import { InputLabelPositionTypes, InputTypeTypes } from "./components/atoms/input/input.models";
+export { ButtonColorTypes, ButtonFillTypes, ButtonIconPositionTypes, ButtonTypeTypes } from "./components/atoms/button/button.model";
 export { GlobalSizeTypes } from "@shared/model";
-export { InputTypeTypes } from "./components/atoms/input/models";
+export { InputLabelPositionTypes, InputTypeTypes } from "./components/atoms/input/input.models";
 export namespace Components {
     interface DsButton {
-        /**
-          * The aria-controls attribute for the button
-         */
-        "ariaControls": string;
-        /**
-          * The aria-describedby attribute for the button
-         */
-        "ariaDescribedby": string;
-        /**
-          * The aria-expanded attribute for the button
-         */
-        "ariaExpanded": string;
-        /**
-          * The aria-haspopup attribute for the button
-         */
-        "ariaHaspopup": string;
-        /**
-          * The aria-label attribute for the button
-         */
-        "ariaLabel": string;
-        /**
-          * The aria-labelledby attribute for the button
-         */
-        "ariaLabelledby": string;
-        /**
-          * The aria-pressed attribute for the button
-         */
-        "ariaPressed": string;
         /**
           * Whether the button is focused on page load
          */
@@ -53,6 +25,34 @@ export namespace Components {
           * The button is disabled
          */
         "disabled": boolean;
+        /**
+          * The aria-controls attribute for the button
+         */
+        "dsAriaControls": string;
+        /**
+          * The aria-describedby attribute for the button
+         */
+        "dsAriaDescribedby": string;
+        /**
+          * The aria-expanded attribute for the button
+         */
+        "dsAriaExpanded": boolean;
+        /**
+          * The aria-haspopup attribute for the button
+         */
+        "dsAriaHaspopup": boolean;
+        /**
+          * The aria-label attribute for the button
+         */
+        "dsAriaLabel": string;
+        /**
+          * The aria-labelledby attribute for the button
+         */
+        "dsAriaLabelledby": string;
+        /**
+          * The aria-pressed attribute for the button
+         */
+        "dsAriaPressed": boolean;
         /**
           * The fill of the button (background and border color)
          */
@@ -77,6 +77,10 @@ export namespace Components {
           * Whether the button shows a loading icon
          */
         "loading": boolean;
+        /**
+          * Whether the button has an icon
+         */
+        "onlyIcon": boolean;
         /**
           * The size of the buton
          */
@@ -130,9 +134,9 @@ export namespace Components {
          */
         "label": string;
         /**
-          * Represents the caption of the input
+          * Represents the position caption of the input
          */
-        "labelPosition": string;
+        "labelPosition": InputLabelPositionTypes;
         /**
           * The name of the input. Submitted with the form as part of a name/value pair
          */
@@ -154,13 +158,17 @@ export namespace Components {
          */
         "size": GlobalSizeTypes;
         /**
+          * Show the success message
+         */
+        "successText": string;
+        /**
           * The type of the input
          */
         "type": InputTypeTypes;
         /**
           * Current value of the form control. Submitted with the form as part of a name/value pair.
          */
-        "value": string;
+        "value": string | number;
     }
     interface MyComponent {
         /**
@@ -220,34 +228,6 @@ declare global {
 declare namespace LocalJSX {
     interface DsButton {
         /**
-          * The aria-controls attribute for the button
-         */
-        "ariaControls"?: string;
-        /**
-          * The aria-describedby attribute for the button
-         */
-        "ariaDescribedby"?: string;
-        /**
-          * The aria-expanded attribute for the button
-         */
-        "ariaExpanded"?: string;
-        /**
-          * The aria-haspopup attribute for the button
-         */
-        "ariaHaspopup"?: string;
-        /**
-          * The aria-label attribute for the button
-         */
-        "ariaLabel"?: string;
-        /**
-          * The aria-labelledby attribute for the button
-         */
-        "ariaLabelledby"?: string;
-        /**
-          * The aria-pressed attribute for the button
-         */
-        "ariaPressed"?: string;
-        /**
           * Whether the button is focused on page load
          */
         "autofocus"?: boolean;
@@ -259,6 +239,34 @@ declare namespace LocalJSX {
           * The button is disabled
          */
         "disabled"?: boolean;
+        /**
+          * The aria-controls attribute for the button
+         */
+        "dsAriaControls"?: string;
+        /**
+          * The aria-describedby attribute for the button
+         */
+        "dsAriaDescribedby"?: string;
+        /**
+          * The aria-expanded attribute for the button
+         */
+        "dsAriaExpanded"?: boolean;
+        /**
+          * The aria-haspopup attribute for the button
+         */
+        "dsAriaHaspopup"?: boolean;
+        /**
+          * The aria-label attribute for the button
+         */
+        "dsAriaLabel"?: string;
+        /**
+          * The aria-labelledby attribute for the button
+         */
+        "dsAriaLabelledby"?: string;
+        /**
+          * The aria-pressed attribute for the button
+         */
+        "dsAriaPressed"?: boolean;
         /**
           * The fill of the button (background and border color)
          */
@@ -295,6 +303,10 @@ declare namespace LocalJSX {
           * Emitted when the button gains focus
          */
         "onDsFocus"?: (event: DsButtonCustomEvent<void>) => void;
+        /**
+          * Whether the button has an icon
+         */
+        "onlyIcon"?: boolean;
         /**
           * The size of the buton
          */
@@ -348,15 +360,15 @@ declare namespace LocalJSX {
          */
         "label"?: string;
         /**
-          * Represents the caption of the input
+          * Represents the position caption of the input
          */
-        "labelPosition"?: string;
+        "labelPosition"?: InputLabelPositionTypes;
         /**
           * The name of the input. Submitted with the form as part of a name/value pair
          */
         "name"?: string;
         /**
-          * Emitted when the button gains focus
+          * Emitted when the input gains focus
          */
         "onDsFocus"?: (event: DsInputCustomEvent<void>) => void;
         /**
@@ -392,13 +404,17 @@ declare namespace LocalJSX {
          */
         "size"?: GlobalSizeTypes;
         /**
+          * Show the success message
+         */
+        "successText"?: string;
+        /**
           * The type of the input
          */
         "type"?: InputTypeTypes;
         /**
           * Current value of the form control. Submitted with the form as part of a name/value pair.
          */
-        "value"?: string;
+        "value"?: string | number;
     }
     interface MyComponent {
         /**

@@ -4,8 +4,8 @@
 
 :host {
   display: block;
-  /* block or inline? */
-  button {
+
+  button, button {
     background-color: var(--background-base-color);
     border-radius: var(--border-radius);
     border-width: var(--_border-00625);
@@ -32,7 +32,7 @@
       border-color: var(--background-base-color-active);
       color: var(--label-base-color-active);
     }
-    &.ds-button[disabled=''] {
+    &.ds-button[disabled=''], &.button--disabled {
       background-color: var(--background-base-disabled);
       border-color: var(--border-base-color-disabled);
       color: var(--label-base-color-disabled);
