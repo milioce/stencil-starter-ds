@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-04-27T07:34:40",
+  "timestamp": "2023-04-27T15:12:43",
   "compiler": {
     "name": "@stencil/core",
     "version": "3.2.1",
@@ -10,7 +10,7 @@
       "filePath": "./src/components/atoms/button/button.tsx",
       "encapsulation": "shadow",
       "tag": "ds-button",
-      "readme": "<!-- # ds-button -->\r\n\r\n\r",
+      "readme": "<!-- # ds-button -->\n\n",
       "docs": "<!-- # ds-button -->",
       "docsTags": [],
       "usage": {},
@@ -448,7 +448,7 @@
       "filePath": "./src/components/atoms/icon/icon.tsx",
       "encapsulation": "shadow",
       "tag": "ds-icon",
-      "readme": "# ds-icon\r\n\r\n\r\n\r",
+      "readme": "# ds-icon\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -543,74 +543,6 @@
           "ds-icon"
         ]
       }
-    },
-    {
-      "filePath": "./src/components/my-component/my-component.tsx",
-      "encapsulation": "shadow",
-      "tag": "my-component",
-      "readme": "# my-component\r\n\r\n\r\n\r",
-      "docs": "",
-      "docsTags": [],
-      "usage": {},
-      "props": [
-        {
-          "name": "first",
-          "type": "string",
-          "mutable": false,
-          "attr": "first",
-          "reflectToAttr": false,
-          "docs": "The first name",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "last",
-          "type": "string",
-          "mutable": false,
-          "attr": "last",
-          "reflectToAttr": false,
-          "docs": "The last name",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "middle",
-          "type": "string",
-          "mutable": false,
-          "attr": "middle",
-          "reflectToAttr": false,
-          "docs": "The middle name",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        }
-      ],
-      "methods": [],
-      "events": [],
-      "listeners": [],
-      "styles": [],
-      "slots": [],
-      "parts": [],
-      "dependents": [],
-      "dependencies": [],
-      "dependencyGraph": {}
     }
   ]
 }

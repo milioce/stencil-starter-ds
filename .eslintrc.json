@@ -3,7 +3,8 @@
     "project": "./tsconfig.json"
   },
   "extends": [
-    "plugin:@stencil-community/recommended"
+    "plugin:@stencil-community/recommended",
+    "plugin:@typescript-eslint/recommended"
   ],
   "rules": {
     "@typescript-eslint/no-empty-interface": "error",
