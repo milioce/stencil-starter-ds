@@ -83,7 +83,7 @@
 }
 
 // PRIMARY CLEAR
-:host(.ds-button--primary.ds-button--clear), .ds-button--primary.ds-button--clear a {
+:host(.ds-button--primary.ds-button--clear) {
     --background-base-color: transparent;
     --background-base-color-hover: var(--color-background-hover);
     --background-base-color-active: var(--color-background-active);
@@ -134,7 +134,7 @@
 }
 
 // SECONDARY CLEAR
-:host(.ds-button--secondary.ds-button--clear), .ds-button--secondary.ds-button--clear a{
+:host(.ds-button--secondary.ds-button--clear){
     --background-base-color: transparent;
     --background-base-color-hover: var(--color-background-hover);
     --background-base-color-active: var(--color-background-active);
