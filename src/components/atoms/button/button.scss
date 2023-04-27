@@ -4,8 +4,8 @@
 
 :host {
   display: block;
-  /* block or inline? */
-  button {
+
+  button, a {
     background-color: var(--background-base-color);
     border-radius: var(--border-radius);
     border-width: var(--_border-00625);
@@ -15,6 +15,7 @@
     font-size: var(--font-size);
     padding: var(--padding-inside);
     cursor: var(--_hover-cursor);
+
     &:hover {
       background-color: var(--background-base-color-hover);
       border-color: var(--background-base-color-hover);
@@ -32,7 +33,7 @@
       border-color: var(--background-base-color-active);
       color: var(--label-base-color-active);
     }
-    &.ds-button[disabled=''] {
+    &.button--disabled {
       background-color: var(--background-base-disabled);
       border-color: var(--border-base-color-disabled);
       color: var(--label-base-color-disabled);
