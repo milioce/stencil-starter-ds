@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-04-27T15:12:43",
+  "timestamp": "2023-04-26T08:17:18",
   "compiler": {
     "name": "@stencil/core",
     "version": "3.2.1",
@@ -10,11 +10,123 @@
       "filePath": "./src/components/atoms/button/button.tsx",
       "encapsulation": "shadow",
       "tag": "ds-button",
-      "readme": "<!-- # ds-button -->\n\n",
+      "readme": "<!-- # ds-button -->\r\n\r\n\r",
       "docs": "<!-- # ds-button -->",
       "docsTags": [],
       "usage": {},
       "props": [
+        {
+          "name": "ariaControls",
+          "type": "string",
+          "mutable": false,
+          "attr": "aria-controls",
+          "reflectToAttr": false,
+          "docs": "The aria-controls attribute for the button",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "ariaDescribedby",
+          "type": "string",
+          "mutable": false,
+          "attr": "aria-describedby",
+          "reflectToAttr": false,
+          "docs": "The aria-describedby attribute for the button",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "ariaExpanded",
+          "type": "string",
+          "mutable": false,
+          "attr": "aria-expanded",
+          "reflectToAttr": false,
+          "docs": "The aria-expanded attribute for the button",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "ariaHaspopup",
+          "type": "string",
+          "mutable": false,
+          "attr": "aria-haspopup",
+          "reflectToAttr": false,
+          "docs": "The aria-haspopup attribute for the button",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "ariaLabel",
+          "type": "string",
+          "mutable": false,
+          "attr": "aria-label",
+          "reflectToAttr": false,
+          "docs": "The aria-label attribute for the button",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "ariaLabelledby",
+          "type": "string",
+          "mutable": false,
+          "attr": "aria-labelledby",
+          "reflectToAttr": false,
+          "docs": "The aria-labelledby attribute for the button",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "ariaPressed",
+          "type": "string",
+          "mutable": false,
+          "attr": "aria-pressed",
+          "reflectToAttr": false,
+          "docs": "The aria-pressed attribute for the button",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
         {
           "name": "autofocus",
           "type": "boolean",
@@ -34,7 +146,7 @@
         },
         {
           "name": "color",
-          "type": "\"error\" | \"info\" | \"primary\" | \"secondary\" | \"success\" | \"warning\"",
+          "type": "\"primary\" | \"secondary\" | \"tertiary\"",
           "mutable": false,
           "attr": "color",
           "reflectToAttr": false,
@@ -42,14 +154,6 @@
           "docsTags": [],
           "default": "'primary'",
           "values": [
-            {
-              "value": "error",
-              "type": "string"
-            },
-            {
-              "value": "info",
-              "type": "string"
-            },
             {
               "value": "primary",
               "type": "string"
@@ -59,11 +163,7 @@
               "type": "string"
             },
             {
-              "value": "success",
-              "type": "string"
-            },
-            {
-              "value": "warning",
+              "value": "tertiary",
               "type": "string"
             }
           ],
@@ -79,118 +179,6 @@
           "docs": "The button is disabled",
           "docsTags": [],
           "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "dsAriaControls",
-          "type": "string",
-          "mutable": false,
-          "attr": "ds-aria-controls",
-          "reflectToAttr": false,
-          "docs": "The aria-controls attribute for the button",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "dsAriaDescribedby",
-          "type": "string",
-          "mutable": false,
-          "attr": "ds-aria-describedby",
-          "reflectToAttr": false,
-          "docs": "The aria-describedby attribute for the button",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "dsAriaExpanded",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "ds-aria-expanded",
-          "reflectToAttr": false,
-          "docs": "The aria-expanded attribute for the button",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "dsAriaHaspopup",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "ds-aria-haspopup",
-          "reflectToAttr": false,
-          "docs": "The aria-haspopup attribute for the button",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "dsAriaLabel",
-          "type": "string",
-          "mutable": false,
-          "attr": "ds-aria-label",
-          "reflectToAttr": false,
-          "docs": "The aria-label attribute for the button",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "dsAriaLabelledby",
-          "type": "string",
-          "mutable": false,
-          "attr": "ds-aria-labelledby",
-          "reflectToAttr": false,
-          "docs": "The aria-labelledby attribute for the button",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "dsAriaPressed",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "ds-aria-pressed",
-          "reflectToAttr": false,
-          "docs": "The aria-pressed attribute for the button",
-          "docsTags": [],
           "values": [
             {
               "type": "boolean"
@@ -304,23 +292,6 @@
           "attr": "loading",
           "reflectToAttr": false,
           "docs": "Whether the button shows a loading icon",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "onlyIcon",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "only-icon",
-          "reflectToAttr": false,
-          "docs": "Whether the button has an icon",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -448,7 +419,7 @@
       "filePath": "./src/components/atoms/icon/icon.tsx",
       "encapsulation": "shadow",
       "tag": "ds-icon",
-      "readme": "# ds-icon\n\n\n",
+      "readme": "# ds-icon\r\n\r\n\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -543,6 +514,74 @@
           "ds-icon"
         ]
       }
+    },
+    {
+      "filePath": "./src/components/my-component/my-component.tsx",
+      "encapsulation": "shadow",
+      "tag": "my-component",
+      "readme": "# my-component\r\n\r\n\r\n\r",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "first",
+          "type": "string",
+          "mutable": false,
+          "attr": "first",
+          "reflectToAttr": false,
+          "docs": "The first name",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "last",
+          "type": "string",
+          "mutable": false,
+          "attr": "last",
+          "reflectToAttr": false,
+          "docs": "The last name",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "middle",
+          "type": "string",
+          "mutable": false,
+          "attr": "middle",
+          "reflectToAttr": false,
+          "docs": "The middle name",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
     }
   ]
 }

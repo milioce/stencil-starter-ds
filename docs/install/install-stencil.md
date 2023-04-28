@@ -50,7 +50,7 @@ sass({
 
 Esto puede ser útil para inyectar variables Sass, mixins y funciones para anular los valores predeterminados de las colecciones externas.
 
-# Configuración se StencilJS
+# Configuración de StencilJS
 
 Durante la instalación inicial se ha creado un fichero `stencil.config.ts` con una configuración inicial.
 
