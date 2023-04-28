@@ -137,16 +137,15 @@ export class AttomsInput implements ComponentInterface {
           readOnly={this.readonly}
         />
         {this.helperMessage && <span class="ds-input__helper-text">{this.helperMessage}</span>}
-        {/* TODO: icons */}
         {this.hasError && this.errorText && (
           <div class="ds-input__feedback--error">
-            <ds-icon size={this.size} icon={`error.svg`}></ds-icon>
+            <ds-icon size={this.size} icon={`ds_icon_error-solid`}></ds-icon>
             <span>{this.errorText}</span>
           </div>
         )}
         {this.successText && (
           <div class="ds-input__feedback--success">
-            <ds-icon size={this.size} icon={`success.svg`}></ds-icon>
+            <ds-icon size={this.size} icon={`ds_icon_check-solid`}></ds-icon>
             <span>{this.successText}</span>
           </div>
         )}
