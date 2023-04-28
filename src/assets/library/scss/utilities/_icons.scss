@@ -9,11 +9,12 @@ $icomoon-font: "icomoon";
 
 @font-face {
     font-family: $icomoon-font;
-    src: url("#{$font-path}/iconmoon.eot?7c5be8e2b4f529c9d6b67ea460834dec#iefix") format("embedded-opentype"),
-url("#{$font-path}/iconmoon.ttf?7c5be8e2b4f529c9d6b67ea460834dec") format("truetype"),
-url("#{$font-path}/iconmoon.svg?7c5be8e2b4f529c9d6b67ea460834dec#icomoon") format("svg"),
-url("#{$font-path}/iconmoon.woff?7c5be8e2b4f529c9d6b67ea460834dec") format("woff"),
-url("#{$font-path}/iconmoon.woff2?7c5be8e2b4f529c9d6b67ea460834dec") format("woff2");
+    src: '';
+//     src: url("#{$font-path}/iconmoon.eot?7c5be8e2b4f529c9d6b67ea460834dec#iefix") format("embedded-opentype"),
+// url("#{$font-path}/iconmoon.ttf?7c5be8e2b4f529c9d6b67ea460834dec") format("truetype"),
+// url("#{$font-path}/iconmoon.svg?7c5be8e2b4f529c9d6b67ea460834dec#icomoon") format("svg"),
+// url("#{$font-path}/iconmoon.woff?7c5be8e2b4f529c9d6b67ea460834dec") format("woff"),
+// url("#{$font-path}/iconmoon.woff2?7c5be8e2b4f529c9d6b67ea460834dec") format("woff2");
 }
 
 %icomoon-font-style {

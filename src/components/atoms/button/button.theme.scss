@@ -134,9 +134,15 @@
 }
 
 // SECONDARY CLEAR
-:host(.ds-button--secondary.ds-button--clear) {
+:host(.ds-button--secondary.ds-button--clear){
     --background-base-color: transparent;
+    --background-base-color-hover: var(--color-background-hover);
+    --background-base-color-active: var(--color-background-active);
+    --background-base-focus: var(--color-background-hover);
     --label-base-color: var(--color-text-secondary);
+    --label-base-color-hover: var(--color-text-secondary);
+    --label-base-color-focus: var(--color-text-secondary);
+    --label-base-color-active: var(--color-text-secondary);
     --background-base-disabled: transparent;
     --border-base-color: transparent;
     --border-base-color-disabled: transparent;
