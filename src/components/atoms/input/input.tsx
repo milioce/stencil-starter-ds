@@ -33,7 +33,7 @@ export class AttomsInput implements ComponentInterface {
   /**
    * The size of the input
    */
-  @Prop() size: GlobalSizeTypes = 'md';
+  @Prop() size: GlobalSizeTypes = 'lg';
 
   /**
    * Instructional text that shows before the input has a value.

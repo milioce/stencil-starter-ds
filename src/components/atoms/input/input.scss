@@ -32,8 +32,25 @@
     span {
         display: block;
     }
-    .ds-input__feedback--success {
-        color: var();
+    .ds-input__helper-text {
+        color: var(--color-text-label);
     }
-    .ds-input__feedback--error {}
+    .ds-input__feedback--success {
+        color: var(--color-text-status-success);
+    }
+    .ds-input__feedback--error {
+        color: var(--color-text-status-error);
+    }
+}
+
+:host(.ds-input--sm) {
+    font-size: var(--font-size-02);
+}
+
+:host(.ds-input--md) {
+    font-size: var(--font-size-03);
+}
+
+:host(.ds-input--lg) {
+    font-size: var(--font-size-04);
 }
