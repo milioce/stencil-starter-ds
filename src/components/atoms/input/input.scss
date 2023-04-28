@@ -11,7 +11,17 @@
         border-radius: var(--border-radius-sm);
         border-width: var(--border-width-xs);
         border-style: var(--border-style-solid);
-        &:disabled {}
+        &.input--disabled {
+            background-color: var(--color-background-disabled);
+            border-color: var(--color-border-disabled);
+            color: var(--color-text-label-disabled-on-dark);
+            cursor: not-allowed;
+        }
+        &.input--readonly {
+            background-color: var(--color-background-readonly);
+            border-color: var(--color-border-readonly);
+            cursor: not-allowed;
+        }
         &:focus {
             border-color: var(--color-border-focus);
         }
@@ -22,4 +32,8 @@
     span {
         display: block;
     }
+    .ds-input__feedback--success {
+        color: var();
+    }
+    .ds-input__feedback--error {}
 }

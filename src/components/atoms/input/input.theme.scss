@@ -10,13 +10,13 @@
 
 // MD
 :host(.ds-input--md) {
-    --font-size: var(--font-size-0875);
+    --font-size: var(--font-size-03);
     --padding-inside: var(--spacing-inset-xs);
 }
 
 // LG
 :host(.ds-input--lg) {
-    --font-size: var(--font-size-1);
+    --font-size: var(--font-size-04);
     --padding-inside: var(--spacing-inset-xs);
 }
 
