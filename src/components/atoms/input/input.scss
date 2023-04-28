@@ -2,35 +2,36 @@
 @use 'tools';
 @import './input.theme.scss';
 :host {
-    display: block;
     font-family: 'roboto-regular', Arial, Helvetica, sans-serif;
     color: var(--color-text-main);
-    input {
-        background-color: var(--color-background-input-default);
-        border-color: var(--color-border-input-default);
-        border-radius: var(--border-radius-sm);
-        border-width: var(--border-width-xs);
-        border-style: var(--border-style-solid);
-        &.input--disabled {
-            background-color: var(--color-background-disabled);
-            border-color: var(--color-border-disabled);
-            color: var(--color-text-label-disabled-on-dark);
-            cursor: not-allowed;
+    .ds-input__container {
+        input {
+            background-color: var(--color-background-input-default);
+            border-color: var(--color-border-input-default);
+            border-radius: var(--border-radius-sm);
+            border-width: var(--border-width-xs);
+            border-style: var(--border-style-solid);
+            &.input--disabled {
+                background-color: var(--color-background-disabled);
+                border-color: var(--color-border-disabled);
+                color: var(--color-text-label-disabled-on-dark);
+                cursor: not-allowed;
+            }
+            &.input--readonly {
+                background-color: var(--color-background-readonly);
+                border-color: var(--color-border-readonly);
+                cursor: not-allowed;
+            }
+            &:focus {
+                border-color: var(--color-border-focus);
+            }
         }
-        &.input--readonly {
-            background-color: var(--color-background-readonly);
-            border-color: var(--color-border-readonly);
-            cursor: not-allowed;
+        label {
+            display: block;
         }
-        &:focus {
-            border-color: var(--color-border-focus);
+        span {
+            display: block;
         }
-    }
-    label {
-        display: block;
-    }
-    span {
-        display: block;
     }
     .ds-input__helper-text {
         color: var(--color-text-label);
@@ -43,14 +44,10 @@
     }
 }
 
-:host(.ds-input--sm) {
-    font-size: var(--font-size-02);
-}
+:host(.ds-input__helper-text) {}
 
-:host(.ds-input--md) {
-    font-size: var(--font-size-03);
-}
+:host(.ds-input__feedback) {}
 
-:host(.ds-input--lg) {
-    font-size: var(--font-size-04);
-}
+:host(.ds-input__left-icon) {}
+
+:host(.ds-input__right-icon) {}

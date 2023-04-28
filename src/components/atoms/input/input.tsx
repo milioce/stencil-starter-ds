@@ -23,7 +23,7 @@ export class AttomsInput implements ComponentInterface {
   /**
    * Represents the position caption of the input
    */
-  @Prop() labelPosition: InputLabelPositionTypes = 'stack';
+  @Prop() labelPosition: InputLabelPositionTypes = 'inline';
 
   /**
    * The type of the input
@@ -124,31 +124,33 @@ export class AttomsInput implements ComponentInterface {
     const inputClass = this.getInputClassNames();
     return (
       <Host class={hostClass}>
-        <label htmlFor={this.name}>{this.label}</label>
-        <input
-          class={inputClass}
-          type={this.type}
-          id={this.name}
-          name={this.name}
-          placeholder={this.placeholder}
-          value={this.value}
-          required={this.required}
-          disabled={this.disabled}
-          readOnly={this.readonly}
-        />
-        {this.helperMessage && <span class="ds-input__helper-text">{this.helperMessage}</span>}
-        {this.hasError && this.errorText && (
-          <div class="ds-input__feedback--error">
-            <ds-icon size={this.size} icon={`ds_icon_error-solid`}></ds-icon>
-            <span>{this.errorText}</span>
-          </div>
-        )}
-        {this.successText && (
-          <div class="ds-input__feedback--success">
-            <ds-icon size={this.size} icon={`ds_icon_check-solid`}></ds-icon>
-            <span>{this.successText}</span>
-          </div>
-        )}
+        <div class="ds-input__container">
+          <label htmlFor={this.name}>{this.label}</label>
+          <input
+            class={inputClass}
+            type={this.type}
+            id={this.name}
+            name={this.name}
+            placeholder={this.placeholder}
+            value={this.value}
+            required={this.required}
+            disabled={this.disabled}
+            readOnly={this.readonly}
+          />
+          {this.helperMessage && <span class="ds-input__helper-text">{this.helperMessage}</span>}
+          {this.hasError && this.errorText && (
+            <div class="ds-input__feedback--error">
+              <ds-icon size={this.size} icon={`ds_icon_error-solid`}></ds-icon>
+              <span>{this.errorText}</span>
+            </div>
+          )}
+          {this.successText && (
+            <div class="ds-input__feedback--success">
+              <ds-icon size={this.size} icon={`ds_icon_check-solid`}></ds-icon>
+              <span>{this.successText}</span>
+            </div>
+          )}
+        </div>
       </Host>
     );
   }
