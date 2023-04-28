@@ -1,5 +1,5 @@
-import { Component, h, JSX, Host, Event, EventEmitter, ComponentInterface, State } from '@stencil/core';
-import { AtomsButton } from '../button/button';
+import { Component, h, JSX, Host } from '@stencil/core';
+// import { AtomsButton } from '../button/button';
 
 @Component({
   tag: 'ds-button-split',
@@ -8,25 +8,23 @@ import { AtomsButton } from '../button/button';
 })
 
 
-export class AtomsButtonSplit implements ComponentInterface {
+export class AtomsButtonSplit {
   /**
   * This will track state changes (* dropdown component is open or closed)
   */
-  @State() toggle: boolean = false;
-
+  // @State() toggle: boolean = false;
+// 
   /**
   * Track component events (activation of dropdown component)
   */
-  @Event() onToggle: EventEmitter;
+  // @Event() onToggle: EventEmitter;
 
   render(): JSX.Element {
-
-
     return (
       <Host>
         <div>
-          <AtomsButton/>
-          <span aria-hidden="true" aria-haspopup aria-expanded class="">
+          {/* <AtomsButton/> */}
+          <span aria-hidden="true" class="">
             +
           </span>
         </div>

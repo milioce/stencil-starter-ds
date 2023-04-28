@@ -1,3 +1,22 @@
+@use 'utilities';
+@use 'tools';
+@import './button-split.theme.scss';
+
 :host {
   display: block;
+
+  div span{
+    background-color: var(--background-base-color);
+    padding: var(--padding-inside);
+    border-top-right-radius: var(--_border-radius_right);
+    border-bottom-right-radius: var(--_border-radius_right);
+    cursor: var(--_hover-cursor);
+
+    &:hover {
+      background-color: var(--background-base-color-hover);
+      border-color: var(--background-base-color-hover);
+      color: var(--label-base-color-hover);
+    }
+    
+  }
 }

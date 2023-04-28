@@ -1,0 +1,28 @@
+:host {
+    --_hover-cursor: pointer;
+    --_color-base: var(--color-background-surface-00);
+    --_border-radius_right: var(--border-radius-lg);
+    --_padding-button-sm: var(--spacing-inset-squish-2xs-double);
+    --_padding-button: var(--spacing-inset-2xs);
+}
+
+// SM
+:host(.ds-button-split_dropeable--sm) {
+    --_padding-button: var(--spacing-inset-2xs);
+}
+
+// MD
+:host(.ds-button-split_dropeable--md) {
+    --_padding-button: var(--spacing-inset-xs);
+}
+
+// LG
+:host(.ds-button-split_dropeable--lg) {
+    --_padding-button: var(--spacing-inset-xs);
+}
+
+// PRIMARY
+:host(.ds-button-split--primary) {
+    --background-base-color: var(--color-background-action-primary);
+    --padding-inside: var(--_padding-button-sm);
+}
