@@ -31,7 +31,7 @@ export const config: Config = {
     },
 +    {
 +      type: 'docs-json',
-+      file: 'path/to/docs.json'
++      file: 'docs.json'
 +    }
   ],
 };
@@ -58,7 +58,7 @@ y en el fichero `.storybook/preview.js`
 ``` diff
 import {defineCustomElements} from '../loader';
 +import { setStencilDocJson, extractArgTypesFactory, extractComponentDescription  } from '@pxtrn/storybook-addon-docs-stencil';
-+import docJson from '../path/to/docs.json';
++import docJson from '../docs.json';
 
 +if (docJson) {
 +  setStencilDocJson(docJson);

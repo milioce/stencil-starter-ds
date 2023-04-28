@@ -108,7 +108,7 @@ export class AttomsInput implements ComponentInterface {
 
   private getHostClassNames = () => {
     const classes =
-      `ds-input ds-input--${this.type} ds-input--${this.size}` + (this.labelPosition ? ` ds-input--label-${this.labelPosition}` : '') + (this.hasError ? ' ds-input--error' : '');
+      `ds-input ds-input--${this.type} ds-input--${this.size}` + (this.labelPosition ? ` ds-input__label-${this.labelPosition}` : '') + (this.hasError ? ' ds-input--error' : '');
 
     return classes;
   };
@@ -117,18 +117,6 @@ export class AttomsInput implements ComponentInterface {
     const classes = (this.disabled ? ' input--disabled' : '') + (this.readonly ? ' input--readonly' : '');
 
     return classes;
-  };
-
-  private setMessage = (type: string) => {
-    // TODO icono
-    return (
-      <div>
-        {type !== 'helper' && <ds-icon size={this.size} icon={`${type}.svg`}></ds-icon>}
-        <span>{type === 'helper' ? this.helperMessage : ''}</span>
-        <span>{type === 'error' ? this.errorText : ''}</span>
-        <span>{type === 'success' ? this.successText : ''}</span>
-      </div>
-    );
   };
 
   render() {
@@ -148,9 +136,19 @@ export class AttomsInput implements ComponentInterface {
           disabled={this.disabled}
           readOnly={this.readonly}
         />
-        {this.helperMessage && this.setMessage('helper')}
-        {this.hasError && this.errorText && this.setMessage('error')}
-        {this.successText && this.setMessage('success')}
+        {this.helperMessage && <span class="ds-input__helper-text">{this.helperMessage}</span>}
+        {this.hasError && this.errorText && (
+          <div class="ds-input__feedback--error">
+            <ds-icon size={this.size} icon={`ds_icon_error-solid`}></ds-icon>
+            <span>{this.errorText}</span>
+          </div>
+        )}
+        {this.successText && (
+          <div class="ds-input__feedback--success">
+            <ds-icon size={this.size} icon={`ds_icon_check-solid`}></ds-icon>
+            <span>{this.successText}</span>
+          </div>
+        )}
       </Host>
     );
   }
