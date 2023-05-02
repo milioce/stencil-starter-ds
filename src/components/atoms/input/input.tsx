@@ -1,6 +1,7 @@
-import { Component, Host, h, Element, Prop, Event, EventEmitter, ComponentInterface } from '@stencil/core';
-import { InputTypeTypes, InputLabelPositionTypes } from './input.models'; // local models
+import { Component, Host, h, Element, Prop, Event, EventEmitter, ComponentInterface, State } from '@stencil/core';
+import { InputTypeTypes, InputLabelPositionTypes, InputFeedbackTypes } from './input.models';
 import { GlobalSizeTypes } from '@shared/model';
+import { checkIfUndefined } from '@utils/utils';
 
 @Component({
   tag: 'ds-input',
@@ -9,6 +10,11 @@ import { GlobalSizeTypes } from '@shared/model';
 })
 export class AttomsInput implements ComponentInterface {
   @Element() el: HTMLElement | null;
+
+  /**
+   * The id of the element
+   */
+  @Prop() eID: string;
 
   /**
    * The name of the input. Submitted with the form as part of a name/value pair
@@ -38,12 +44,12 @@ export class AttomsInput implements ComponentInterface {
   /**
    * Instructional text that shows before the input has a value.
    */
-  @Prop({ reflect: true }) placeholder: string;
+  @Prop() placeholder: string;
 
   /**
    * Current value of the form control. Submitted with the form as part of a name/value pair.
    */
-  @Prop({ mutable: true, reflect: true }) value: string | number;
+  @Prop({ mutable: true, reflect: true }) value: string;
 
   /**
    * If true, the user must fill in a value before submitting a form.
@@ -68,17 +74,27 @@ export class AttomsInput implements ComponentInterface {
   /**
    * Determinate when show the error.
    */
-  @Prop({ reflect: true }) hasError = false;
+  @Prop() hasError = false;
 
   /**
-   * Show the error.
+   * Show the feedback message.
    */
-  @Prop() errorText: string;
+  @Prop() feedbackText: string;
 
   /**
-   * Show the success message
+   * The type of the feedback
    */
-  @Prop() successText: string;
+  @Prop() feedbackType: InputFeedbackTypes;
+
+  /**
+   * Whether the input has an icon
+   */
+  @Prop() hasIcon: boolean = false;
+
+  /**
+   * The code of the input's icon (used with hasIcon)
+   */
+  @Prop() icon: string;
 
   /**
    * Emitted when the input gains focus
@@ -106,6 +122,12 @@ export class AttomsInput implements ComponentInterface {
    */
   @Event() dsInputClick: EventEmitter<string>;
 
+  @State() showPassword = false;
+
+  connectedCallback() {
+    /* TODO si no nos pasan un eID generar uno automaticamente con https://www.npmjs.com/package/uuid */
+  }
+
   private getHostClassNames = () => {
     const classes =
       `ds-input ds-input--${this.type} ds-input--${this.size}` + (this.labelPosition ? ` ds-input__label-${this.labelPosition}` : '') + (this.hasError ? ' ds-input--error' : '');
@@ -119,36 +141,99 @@ export class AttomsInput implements ComponentInterface {
     return classes;
   };
 
+  private handleChange = event => {
+    this.value = event.target.value;
+    this.dsInputInput.emit(this.value);
+    if (this.value === '') {
+      this.dsInputClear.emit();
+    }
+  };
+
+  private handleClear = () => {
+    this.value = '';
+    this.dsInputClear.emit();
+  };
+
+  private handleShowPassword = () => {
+    this.showPassword === false ? (this.type = 'text') : (this.type = 'password');
+    this.showPassword = !this.showPassword;
+  };
+
+  private handleFocus = () => {
+    this.dsFocus.emit();
+  };
+
+  private getFeedbackClassNames = () => {
+    const classes = this.feedbackType ? `ds-input__feedback--${this.feedbackType}` : '';
+
+    return classes;
+  };
+
+  private getFeedbackIcon = () => {
+    return this.feedbackType === 'error' ? 'ds_icon_error-solid' : 'ds_icon_check-solid';
+  };
+
+  private getAttributes = () => {
+    // TODO crear un metodo para checkear si nos mandan Prop
+    const attributes = {};
+
+    if (!checkIfUndefined(this.name)) {
+      attributes['name'] = this.name;
+    }
+
+    if (!checkIfUndefined(this.placeholder)) {
+      attributes['placeholder'] = this.placeholder;
+    }
+
+    if (!checkIfUndefined(this.value)) {
+      attributes['value'] = this.value;
+    }
+
+    return attributes;
+  };
+
   render() {
     const hostClass = this.getHostClassNames();
     const inputClass = this.getInputClassNames();
+    const feedbackClass = this.getFeedbackClassNames();
     return (
       <Host class={hostClass}>
-        <label htmlFor={this.name}>{this.label}</label>
-        <input
-          class={inputClass}
-          type={this.type}
-          id={this.name}
-          name={this.name}
-          placeholder={this.placeholder}
-          value={this.value}
-          required={this.required}
-          disabled={this.disabled}
-          readOnly={this.readonly}
-        />
+        {this.label && <label htmlFor={this.eID}>{this.label}</label>}
+        <div>
+          {this.hasIcon && <ds-icon size={this.size} icon={this.icon}></ds-icon>}
+          <input
+            {...this.getAttributes()}
+            class={inputClass}
+            type={this.type}
+            id={this.eID}
+            required={this.required}
+            disabled={this.disabled}
+            readOnly={this.readonly}
+            onInput={e => this.handleChange(e)}
+            onFocus={this.handleFocus}
+          />
+          {/* TODO falta icon eye-hide */}
+          {this.value && this.type !== 'password' && (
+            <ds-button
+              color="primary"
+              size={this.size}
+              icon={this.showPassword ? 'ds_icon_eye-hide' : `ds_icon_error-solid`}
+              onDsClick={this.showPassword ? this.handleShowPassword : this.handleClear}
+            >
+              {this.showPassword ? 'ds_icon_eye-hide' : `ds_icon_error-solid`}
+            </ds-button>
+          )}
+          {this.value && this.type === 'password' && (
+            <ds-button color="primary" size={this.size} icon={`ds_icon_eye`} onDsClick={this.handleShowPassword}>
+              ds_icon_eye
+            </ds-button>
+          )}
+        </div>
         {this.helperMessage && <span class="ds-input__helper-text">{this.helperMessage}</span>}
-        {this.hasError && this.errorText && (
-          <div class="ds-input__feedback--error">
-            <ds-icon size={this.size} icon={`ds_icon_error-solid`}></ds-icon>
-            <span>{this.errorText}</span>
-          </div>
-        )}
-        {this.successText && (
-          <div class="ds-input__feedback--success">
-            <ds-icon size={this.size} icon={`ds_icon_check-solid`}></ds-icon>
-            <span>{this.successText}</span>
-          </div>
-        )}
+        <div class={feedbackClass}>
+          {this.feedbackText &&
+            this.feedbackType && [<ds-icon color={this.feedbackType} size={this.size} icon={this.getFeedbackIcon()}></ds-icon>, <span>{this.feedbackText}</span>]}
+        </div>
       </Host>
     );
   }

@@ -7,10 +7,10 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { ButtonColorTypes, ButtonFillTypes, ButtonIconPositionTypes, ButtonTypeTypes } from "./components/atoms/button/button.model";
 import { GlobalSizeTypes } from "@shared/model";
-import { InputLabelPositionTypes, InputTypeTypes } from "./components/atoms/input/input.models";
+import { InputFeedbackTypes, InputLabelPositionTypes, InputTypeTypes } from "./components/atoms/input/input.models";
 export { ButtonColorTypes, ButtonFillTypes, ButtonIconPositionTypes, ButtonTypeTypes } from "./components/atoms/button/button.model";
 export { GlobalSizeTypes } from "@shared/model";
-export { InputLabelPositionTypes, InputTypeTypes } from "./components/atoms/input/input.models";
+export { InputFeedbackTypes, InputLabelPositionTypes, InputTypeTypes } from "./components/atoms/input/input.models";
 export namespace Components {
     interface DsButton {
         /**
@@ -118,17 +118,33 @@ export namespace Components {
          */
         "disabled"?: boolean;
         /**
-          * Show the error.
+          * The id of the element
          */
-        "errorText": string;
+        "eID": string;
+        /**
+          * Show the feedback message.
+         */
+        "feedbackText": string;
+        /**
+          * The type of the feedback
+         */
+        "feedbackType": InputFeedbackTypes;
         /**
           * Determinate when show the error.
          */
         "hasError": boolean;
         /**
+          * Whether the input has an icon
+         */
+        "hasIcon": boolean;
+        /**
           * Message to help the user fills the input value
          */
         "helperMessage": string;
+        /**
+          * The code of the input's icon (used with hasIcon)
+         */
+        "icon": string;
         /**
           * Represents the caption of the input
          */
@@ -158,17 +174,13 @@ export namespace Components {
          */
         "size": GlobalSizeTypes;
         /**
-          * Show the success message
-         */
-        "successText": string;
-        /**
           * The type of the input
          */
         "type": InputTypeTypes;
         /**
           * Current value of the form control. Submitted with the form as part of a name/value pair.
          */
-        "value": string | number;
+        "value": string;
     }
 }
 export interface DsButtonCustomEvent<T> extends CustomEvent<T> {
@@ -323,17 +335,33 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
-          * Show the error.
+          * The id of the element
          */
-        "errorText"?: string;
+        "eID"?: string;
+        /**
+          * Show the feedback message.
+         */
+        "feedbackText"?: string;
+        /**
+          * The type of the feedback
+         */
+        "feedbackType"?: InputFeedbackTypes;
         /**
           * Determinate when show the error.
          */
         "hasError"?: boolean;
         /**
+          * Whether the input has an icon
+         */
+        "hasIcon"?: boolean;
+        /**
           * Message to help the user fills the input value
          */
         "helperMessage"?: string;
+        /**
+          * The code of the input's icon (used with hasIcon)
+         */
+        "icon"?: string;
         /**
           * Represents the caption of the input
          */
@@ -383,17 +411,13 @@ declare namespace LocalJSX {
          */
         "size"?: GlobalSizeTypes;
         /**
-          * Show the success message
-         */
-        "successText"?: string;
-        /**
           * The type of the input
          */
         "type"?: InputTypeTypes;
         /**
           * Current value of the form control. Submitted with the form as part of a name/value pair.
          */
-        "value"?: string | number;
+        "value"?: string;
     }
     interface IntrinsicElements {
         "ds-button": DsButton;
