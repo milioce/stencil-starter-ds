@@ -4,12 +4,19 @@
 
 :host {
   display: block;
-
-  div span{
+  div {
+    width: fit-content;
+  }
+  div .ds-button {
+    float: left;
+  }
+  div button{
+    float: right;
     background-color: var(--background-base-color);
     padding: var(--padding-inside);
     border-top-right-radius: var(--_border-radius_right);
     border-bottom-right-radius: var(--_border-radius_right);
+    color: var(--label-base-color);
     cursor: var(--_hover-cursor);
 
     &:hover {

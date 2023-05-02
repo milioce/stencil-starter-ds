@@ -8,3 +8,4 @@ export type ButtonColorTypes = 'primary' | 'secondary' | 'success' | 'error' | '
 export type ButtonFillTypes = 'solid' | 'outline' | 'clear';
 export type ButtonTypeTypes = 'submit' | 'button' | 'link';
 export type ButtonIconPositionTypes = 'left' | 'right';
+export type ButtonVariantTypes = 'split';

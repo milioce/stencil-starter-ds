@@ -71,8 +71,32 @@
     --border-base-color-disabled: var(--color-border-disabled);
     --border-shadow-color: var(--color-background-surface-00);
     --border-radius: var(--border-radius-xl);
+    --border-top-right-radius: var(--border-radius-xl);
+    --border-bottom-right-radius: var(--border-radius-xl);
 }
 
+// BUTTON-SPLIT PRIMARY
+:host(.ds-button-split), :host(.ds-button-split--primary) {
+    --background-base-color: var(--color-background-action-primary);
+    --background-base-color-hover: var(--color-background-action-primary-hover);
+    --background-base-disabled: var(--color-background-disabled);
+    --background-base-color-active: var(--color-background-action-primary-active);
+    --background-base-focus: var(--color-background-action-primary-hover);
+    --label-base-color: var(--color-text-action-on-dark);
+    --label-base-color-hover: var(--color-text-action-on-dark);
+    --label-base-color-focus: var(--color-text-action-on-dark);
+    --label-base-color-active: var(--color-text-action-on-dark);
+    --label-base-color-disabled: var(--color-text-disabled);
+    --border-base-color: var(--color-border-action-primary);
+    --border-base-color-hover: var(--color-border-action-primary-hover);
+    --border-base-color-active: var(--color-border-action-primary-active);
+    --border-base-color-focus: var(--color-border-focus);
+    --border-base-color-disabled: var(--color-border-disabled);
+    --border-shadow-color: var(--color-background-surface-00);
+    --border-radius: var(--border-radius-xl);
+    --border-top-right-radius: 0px;
+    --border-bottom-right-radius: 0px;
+}
 
 // PRIMARY OUTLINE
 :host(.ds-button--primary.ds-button--outline) {

@@ -1,5 +1,5 @@
 import { Component, Prop, Element, h, JSX, Host, Event, EventEmitter, ComponentInterface } from '@stencil/core';
-import { ButtonColorTypes, ButtonTypeTypes, ButtonIconPositionTypes, ButtonFillTypes } from './button.model';
+import { ButtonColorTypes, ButtonTypeTypes, ButtonIconPositionTypes, ButtonFillTypes, ButtonVariantTypes } from './button.model';
 import { GlobalSizeTypes } from '@shared/model';
 
 @Component({
@@ -11,9 +11,14 @@ export class AtomsButton implements ComponentInterface {
   @Element() el: HTMLElement | null;
 
   /**
-   * The variant of the button
+   * The color of the button
    */
   @Prop() color: ButtonColorTypes = 'primary';
+
+    /**
+   * The variant of the button
+   */
+  @Prop() variant: ButtonVariantTypes;
 
   /**
    * The size of the buton
@@ -139,7 +144,8 @@ export class AtomsButton implements ComponentInterface {
 
   private getHostClassNames = () => {
     const classes =
-      `ds-button ds-button--${this.color} ds-button--${this.size}` +
+      (this.variant ? ` ds-button-${this.variant}` : 'ds-button') +
+      ` ds-button--${this.color} ds-button--${this.size}` +
       (this.fill ? ` ds-button--${this.fill}` : '') +
       (this.full ? ' ds-button--full' : '') +
       (this.hasIcon ? ` ds-button--icon ds-button--icon-${this.iconPosition}` : '') +

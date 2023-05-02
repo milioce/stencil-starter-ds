@@ -1,5 +1,4 @@
 import { Component, h, JSX, Host } from '@stencil/core';
-// import { AtomsButton } from '../button/button';
 
 @Component({
   tag: 'ds-button-split',
@@ -23,10 +22,10 @@ export class AtomsButtonSplit {
     return (
       <Host>
         <div>
-          {/* <AtomsButton/> */}
-          <span aria-hidden="true" class="">
+          <ds-button>Continuar</ds-button>
+          <button aria-hidden="true" class="">
             +
-          </span>
+          </button>
         </div>
       </Host>
     );

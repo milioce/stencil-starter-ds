@@ -2,27 +2,67 @@
     --_hover-cursor: pointer;
     --_color-base: var(--color-background-surface-00);
     --_border-radius_right: var(--border-radius-lg);
-    --_padding-button-sm: var(--spacing-inset-squish-2xs-double);
-    --_padding-button: var(--spacing-inset-2xs);
+    --_padding-button-sm: var(--spacing-inset-2xs);
+    --_padding-button: var(--spacing-inset-xs);
+    --background-base-color: var(--color-background-action-primary);
 }
 
 // SM
 :host(.ds-button-split_dropeable--sm) {
-    --_padding-button: var(--spacing-inset-2xs);
+    --padding-inside: var(--_padding-button-sm);
+    --font-size: var(--font-action-sm)
 }
 
 // MD
 :host(.ds-button-split_dropeable--md) {
-    --_padding-button: var(--spacing-inset-xs);
+    --padding-inside: var(--_padding-button);
+    --font-size: var(--font-action-md)
 }
 
 // LG
 :host(.ds-button-split_dropeable--lg) {
-    --_padding-button: var(--spacing-inset-xs);
+    --padding-inside: var(--_padding-button);
 }
 
 // PRIMARY
-:host(.ds-button-split--primary) {
+:host(.ds-button-split--primary) button {
     --background-base-color: var(--color-background-action-primary);
-    --padding-inside: var(--_padding-button-sm);
+    --background-base-color-hover: var(--color-background-action-primary-hover);
+    --background-base-disabled: var(--color-background-disabled);
+    --background-base-color-active: var(--color-background-action-primary-active);
+    --background-base-focus: var(--color-background-action-primary-hover);
+    --label-base-color: var(--color-text-action-on-dark);
+    --label-base-color-hover: var(--color-text-action-on-dark);
+    --label-base-color-focus: var(--color-text-action-on-dark);
+    --label-base-color-active: var(--color-text-action-on-dark);
+    --label-base-color-disabled: var(--color-text-disabled);
+    --border-base-color: var(--color-border-action-primary);
+    --border-base-color-hover: var(--color-border-action-primary-hover);
+    --border-base-color-active: var(--color-border-action-primary-active);
+    --border-base-color-focus: var(--color-border-focus);
+    --border-base-color-disabled: var(--color-border-disabled);
+    --border-shadow-color: var(--color-background-surface-00);
+    --border-radius: var(--border-radius-xl);
+}
+
+// PRIMARY
+:host(.ds-button-split--secondary) button {
+    --background-base-color: var(--color-background-action-secondary);
+    --background-base-color-hover: var(--color-background-action-secondary-hover);
+    --background-base-disabled: var(--color-background-disabled);
+    --background-base-color-active: var(--color-background-action-secondary-active);
+    --background-base-focus: var(--color-background-action-secondary-hover);
+    --label-base-color: var(--color-text-action);
+    --label-base-color-hover: var(--color-text-action);
+    --label-base-color-focus: var(--color-text-action);
+    --label-base-color-active: var(--color-text-action);
+    --label-base-color-disabled: var(--color-text-disabled);
+    --border-base-color: var(--color-border-action-secondary);
+    --border-base-color-hover: var(--color-border-secondary-hover);
+    --border-base-color-active: var(--color-border-secondary-active);
+    --border-base-color-focus: var(--color-border-focus);
+    --border-base-color-disabled: var(--color-border-disabled);
+    --border-radius: var(--border-radius-xl);
+    --border-shadow-color: var(--color-background-surface-00);
+    --border-shadow-color-disabled: transparent;
 }

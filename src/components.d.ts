@@ -5,9 +5,9 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { ButtonColorTypes, ButtonFillTypes, ButtonIconPositionTypes, ButtonTypeTypes } from "./components/atoms/button/button.model";
+import { ButtonColorTypes, ButtonFillTypes, ButtonIconPositionTypes, ButtonTypeTypes, ButtonVariantTypes } from "./components/atoms/button/button.model";
 import { GlobalSizeTypes } from "@shared/model";
-export { ButtonColorTypes, ButtonFillTypes, ButtonIconPositionTypes, ButtonTypeTypes } from "./components/atoms/button/button.model";
+export { ButtonColorTypes, ButtonFillTypes, ButtonIconPositionTypes, ButtonTypeTypes, ButtonVariantTypes } from "./components/atoms/button/button.model";
 export { GlobalSizeTypes } from "@shared/model";
 export namespace Components {
     interface DsButton {
@@ -16,7 +16,7 @@ export namespace Components {
          */
         "autofocus": boolean;
         /**
-          * The variant of the button
+          * The color of the button
          */
         "color": ButtonColorTypes;
         /**
@@ -91,6 +91,10 @@ export namespace Components {
           * The URL of the button (used with type link)
          */
         "url": string;
+        /**
+          * The variant of the button
+         */
+        "variant": ButtonVariantTypes;
     }
     interface DsButtonSplit {
     }
@@ -149,7 +153,7 @@ declare namespace LocalJSX {
          */
         "autofocus"?: boolean;
         /**
-          * The variant of the button
+          * The color of the button
          */
         "color"?: ButtonColorTypes;
         /**
@@ -236,6 +240,10 @@ declare namespace LocalJSX {
           * The URL of the button (used with type link)
          */
         "url"?: string;
+        /**
+          * The variant of the button
+         */
+        "variant"?: ButtonVariantTypes;
     }
     interface DsButtonSplit {
     }

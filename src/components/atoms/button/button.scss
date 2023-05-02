@@ -8,6 +8,8 @@
   button, a {
     background-color: var(--background-base-color);
     border-radius: var(--border-radius);
+    border-top-right-radius: var(--border-top-right-radius);
+    border-bottom-right-radius: var(--border-bottom-right-radius);
     border-width: var(--_border-00625);
     border-style: solid;
     border-color: var(--border-base-color);
