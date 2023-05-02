@@ -217,6 +217,7 @@ export class AttomsInput implements ComponentInterface {
             <ds-button
               color="primary"
               size={this.size}
+              hasIcon={true}
               icon={this.showPassword ? 'ds_icon_eye-hide' : `ds_icon_error-solid`}
               onDsClick={this.showPassword ? this.handleShowPassword : this.handleClear}
             >
@@ -224,7 +225,7 @@ export class AttomsInput implements ComponentInterface {
             </ds-button>
           )}
           {this.value && this.type === 'password' && (
-            <ds-button color="primary" size={this.size} icon={`ds_icon_eye`} onDsClick={this.handleShowPassword}>
+            <ds-button color="primary" size={this.size} hasIcon={true} icon={`ds_icon_eye`} onDsClick={this.handleShowPassword}>
               ds_icon_eye
             </ds-button>
           )}
