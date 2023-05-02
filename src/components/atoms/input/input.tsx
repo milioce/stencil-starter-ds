@@ -29,7 +29,7 @@ export class AttomsInput implements ComponentInterface {
   /**
    * Represents the position caption of the input
    */
-  @Prop() labelPosition: InputLabelPositionTypes = 'stack';
+  @Prop() labelPosition: InputLabelPositionTypes = 'inline';
 
   /**
    * The type of the input
@@ -39,7 +39,7 @@ export class AttomsInput implements ComponentInterface {
   /**
    * The size of the input
    */
-  @Prop() size: GlobalSizeTypes = 'md';
+  @Prop() size: GlobalSizeTypes = 'lg';
 
   /**
    * Instructional text that shows before the input has a value.

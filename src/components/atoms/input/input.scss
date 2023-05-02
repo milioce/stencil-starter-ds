@@ -2,10 +2,52 @@
 @use 'tools';
 @import './input.theme.scss';
 :host {
-    display: block;
-    input {
+    font-family: 'roboto-regular', Arial, Helvetica, sans-serif;
+    color: var(--color-text-main);
+    .ds-input__container {
+        input {
+            background-color: var(--color-background-input-default);
+            border-color: var(--color-border-input-default);
+            border-radius: var(--border-radius-sm);
+            border-width: var(--border-width-xs);
+            border-style: var(--border-style-solid);
+            &.input--disabled {
+                background-color: var(--color-background-disabled);
+                border-color: var(--color-border-disabled);
+                color: var(--color-text-label-disabled-on-dark);
+                cursor: not-allowed;
+            }
+            &.input--readonly {
+                background-color: var(--color-background-readonly);
+                border-color: var(--color-border-readonly);
+                cursor: not-allowed;
+            }
+            &:focus {
+                border-color: var(--color-border-focus);
+            }
+        }
+        label {
+            display: block;
+        }
         span {
             display: block;
         }
     }
+    .ds-input__helper-text {
+        color: var(--color-text-label);
+    }
+    .ds-input__feedback--success {
+        color: var(--color-text-status-success);
+    }
+    .ds-input__feedback--error {
+        color: var(--color-text-status-error);
+    }
 }
+
+:host(.ds-input__helper-text) {}
+
+:host(.ds-input__feedback) {}
+
+:host(.ds-input__left-icon) {}
+
+:host(.ds-input__right-icon) {}
