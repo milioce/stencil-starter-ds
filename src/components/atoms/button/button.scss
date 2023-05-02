@@ -1,44 +1,42 @@
 @use 'utilities';
 @use 'tools';
 @import './button.theme.scss';
-
 :host {
-  display: block;
-
-  button, a {
-    background-color: var(--background-base-color);
-    border-radius: var(--border-radius);
-    border-width: var(--_border-00625);
-    border-style: solid;
-    border-color: var(--border-base-color);
-    color: var(--label-base-color);
-    font-size: var(--font-size);
-    padding: var(--padding-inside);
-    cursor: var(--_hover-cursor);
-
-    &:hover {
-      background-color: var(--background-base-color-hover);
-      border-color: var(--background-base-color-hover);
-      color: var(--label-base-color-hover);
+    display: block;
+    button,
+    a {
+        background-color: var(--background-color);
+        border-radius: var(--border-radius);
+        border-width: var(--border-width-xs);
+        border-style: solid;
+        border-color: var(--border-color);
+        color: var(--color);
+        font-size: var(--font-size);
+        padding: var(--padding-inside);
+        cursor: pointer;
+        &:hover {
+            background-color: var(--background-color-hover);
+            border-color: var(--background-color-hover);
+            color: var(--color-hover);
+        }
+        &:focus {
+            background-color: var(--background-color-hover);
+            border-width: var(--border-width-xs);
+            border-color: var(--border-color-focus);
+            box-shadow: inset 0px 0px 0px 1px var(--border-color-shadow);
+            color: var(--color-hover);
+        }
+        &:active {
+            background-color: var(--background-color-active);
+            border-color: var(--background-color-active);
+            color: var(--color-active);
+        }
+        &.button--disabled {
+            background-color: var(--background-color-disabled);
+            border-color: var(--border-color-disabled);
+            color: var(--color-disabled);
+            box-shadow: var(--border-color-shadow-disabled);
+            cursor: not-allowed;
+        }
     }
-    &:focus {
-      background-color: var(--background-base-color-hover);
-      border-width: var(--_border-00625);
-      border-color: var(--border-base-color-focus);
-      box-shadow: inset 0px 0px 0px 1px var(--border-shadow-color);
-      color: var(--label-base-color-hover);
-    }
-    &:active {
-      background-color: var(--background-base-color-active);
-      border-color: var(--background-base-color-active);
-      color: var(--label-base-color-active);
-    }
-    &.button--disabled {
-      background-color: var(--background-base-disabled);
-      border-color: var(--border-base-color-disabled);
-      color: var(--label-base-color-disabled);
-      box-shadow: var(--border-shadow-color-disabled);
-      cursor: not-allowed;
-    }
-  }
 }

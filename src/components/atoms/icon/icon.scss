@@ -1,23 +1,15 @@
 @use 'utilities';
 @use 'tools';
 @import './icon.theme.scss';
-
 :host {
     display: block;
-
     i {
-        background-color: var(--background-base-color);
-        color: var(--color-icon);
-        font-size: var(--font-size-icon);
-        &:hover {
-
-        }
-        &:focus {
-
-        }
-        &:active {
-
-        }
+        background-color: var(--background-color);
+        color: var(--color);
+        font-size: var(--_font-size-icon);
+        &:hover {}
+        &:focus {}
+        &:active {}
         &.ds-icon[disabled=''] {
             cursor: not-allowed;
         }

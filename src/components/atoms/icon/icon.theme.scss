@@ -1,57 +1,63 @@
-:host {
-    --font-size-icon: var(--font-size-icon-xs);
+// XS
+:host(.ds-icon.size-icon-xs) {
+    --_font-size-icon: var(--font-size-icon-xs);
 }
 
 // SM
 :host(.ds-icon.size-icon-sm) {
-    --font-size-icon: var(--font-size-icon-xs);
+    --_font-size-icon: var(--font-size-icon-sm);
 }
 
 // MD
 :host(.ds-icon.size-icon-md) {
-    --font-size-icon: var(--font-size-icon-xs);
+    --_font-size-icon: var(--font-size-icon-md);
 }
 
 // LG
 :host(.ds-icon.size-icon-lg) {
-    --font-size-icon: var(--font-size-icon-md);
+    --_font-size-icon: var(--font-size-icon-lg);
+}
+
+// XL
+:host(.ds-icon.size-icon-xl) {
+    --_font-size-icon: var(--font-size-icon-xl);
 }
 
 // PRIMARY
 :host(.ds-icon--primary) :host(.ds-icon--solid) {
-    --background-base-color: transparent;
+    --background-color: transparent;
     // el color de background lo recoge del botón
-    --color-icon: var(--color-fill-icon-on-dark);
-    --color-icon-hover: var(--color-fill-icon-on-dark);
-    --color-icon-focus: var(--color-fill-icon-on-dark);
-    --color-icon-active: var(--color-fill-icon-on-dark);
-    --color-icon-disabled: var(--color-fill-icon-disabled);
+    --color: var(--color-fill-icon-on-dark);
+    --color-hover: var(--color-fill-icon-on-dark);
+    --color-focus: var(--color-fill-icon-on-dark);
+    --color-active: var(--color-fill-icon-on-dark);
+    --color-disabled: var(--color-fill-icon-disabled);
 }
 
 // PRIMARY OUTLINE
 :host(.ds-icon--primary.ds-icon--outline) {
-    --color-icon: var(--color-text-primary);
+    --color: var(--color-text-primary);
 }
 
 // PRIMARY CLEAR
 :host(.ds-icon--primary.ds-icon--clear) {
-    --color-icon: var(--color-text-primary);
-    --color-icon-hover: var(--color-text-primary);
-    --color-icon-focus: var(--color-text-primary);
-    --color-icon-active: var(--color-text-primary);
+    --color: var(--color-text-primary);
+    --color-hover: var(--color-text-primary);
+    --color-focus: var(--color-text-primary);
+    --color-active: var(--color-text-primary);
 }
 
 // SECONDARY
 :host(.ds-icon--secondary) {
-    --color-icon: var(--color-text-action);
-    --color-icon-hover: var(--color-text-action);
-    --color-icon-focus: var(--color-text-action);
-    --color-icon-active: var(--color-text-action);
-    --color-icon-disabled: var(--color-text-disabled);
+    --color: var(--color-text-action);
+    --color-hover: var(--color-text-action);
+    --color-focus: var(--color-text-action);
+    --color-active: var(--color-text-action);
+    --color-disabled: var(--color-text-disabled);
 }
 
 // SECONDARY OUTLINE and SECONDARY CLEAR
-:host(.ds-icon--secondary.ds-icon--outline), :host(.ds-icon--secondary.ds-icon--clear) {
-    --color-icon: var(--color-text-secondary);
+:host(.ds-icon--secondary.ds-icon--outline),
+:host(.ds-icon--secondary.ds-icon--clear) {
+    --color: var(--color-text-secondary);
 }
-
