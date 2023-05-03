@@ -20,11 +20,13 @@
 ### Used by
 
  - [ds-button](../button)
+ - [ds-input](../input)
 
 ### Graph
 ```mermaid
 graph TD;
   ds-button --> ds-icon
+  ds-input --> ds-icon
   style ds-icon fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

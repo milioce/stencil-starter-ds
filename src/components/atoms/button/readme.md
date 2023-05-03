@@ -41,6 +41,10 @@
 
 ## Dependencies
 
+### Used by
+
+ - [ds-input](../input)
+
 ### Depends on
 
 - [ds-icon](../icon)
@@ -49,6 +53,7 @@
 ```mermaid
 graph TD;
   ds-button --> ds-icon
+  ds-input --> ds-button
   style ds-button fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

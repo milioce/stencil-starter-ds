@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-04-27T15:12:43",
+  "timestamp": "2023-05-03T10:38:47",
   "compiler": {
     "name": "@stencil/core",
     "version": "3.2.1",
@@ -10,7 +10,7 @@
       "filePath": "./src/components/atoms/button/button.tsx",
       "encapsulation": "shadow",
       "tag": "ds-button",
-      "readme": "<!-- # ds-button -->\n\n",
+      "readme": "<!-- # ds-button -->\r\n\r\n\r",
       "docs": "<!-- # ds-button -->",
       "docsTags": [],
       "usage": {},
@@ -434,13 +434,18 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [],
+      "dependents": [
+        "ds-input"
+      ],
       "dependencies": [
         "ds-icon"
       ],
       "dependencyGraph": {
         "ds-button": [
           "ds-icon"
+        ],
+        "ds-input": [
+          "ds-button"
         ]
       }
     },
@@ -448,7 +453,7 @@
       "filePath": "./src/components/atoms/icon/icon.tsx",
       "encapsulation": "shadow",
       "tag": "ds-icon",
-      "readme": "# ds-icon\n\n\n",
+      "readme": "# ds-icon\r\n\r\n\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -535,10 +540,425 @@
       "slots": [],
       "parts": [],
       "dependents": [
-        "ds-button"
+        "ds-button",
+        "ds-input"
       ],
       "dependencies": [],
       "dependencyGraph": {
+        "ds-button": [
+          "ds-icon"
+        ],
+        "ds-input": [
+          "ds-icon"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/atoms/input/input.tsx",
+      "encapsulation": "shadow",
+      "tag": "ds-input",
+      "readme": "# ds-input\r\n\r\n\r\n\r",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": true,
+          "docs": "If true, the user cannot interact with the input.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "dsAriaLabel",
+          "type": "string",
+          "mutable": false,
+          "attr": "ds-aria-label",
+          "reflectToAttr": false,
+          "docs": "The aria-label attribute of the input",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "eid",
+          "type": "string",
+          "mutable": true,
+          "attr": "eid",
+          "reflectToAttr": false,
+          "docs": "The id of the element",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "feedbackText",
+          "type": "string",
+          "mutable": false,
+          "attr": "feedback-text",
+          "reflectToAttr": false,
+          "docs": "Show the feedback message.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "feedbackType",
+          "type": "\"error\" | \"success\"",
+          "mutable": false,
+          "attr": "feedback-type",
+          "reflectToAttr": false,
+          "docs": "The type of the feedback",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "error",
+              "type": "string"
+            },
+            {
+              "value": "success",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "hasError",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "has-error",
+          "reflectToAttr": false,
+          "docs": "Determinate when show the error.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "hasIcon",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "has-icon",
+          "reflectToAttr": false,
+          "docs": "Whether the input has an icon",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "helperMessage",
+          "type": "string",
+          "mutable": false,
+          "attr": "helper-message",
+          "reflectToAttr": false,
+          "docs": "Message to help the user fills the input value",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "icon",
+          "type": "string",
+          "mutable": false,
+          "attr": "icon",
+          "reflectToAttr": false,
+          "docs": "The code of the input's icon (used with hasIcon)",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "Represents the caption of the input",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "labelPosition",
+          "type": "\"inline\" | \"stack\"",
+          "mutable": false,
+          "attr": "label-position",
+          "reflectToAttr": false,
+          "docs": "Represents the position caption of the input",
+          "docsTags": [],
+          "default": "'inline'",
+          "values": [
+            {
+              "value": "inline",
+              "type": "string"
+            },
+            {
+              "value": "stack",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "The name of the input. Submitted with the form as part of a name/value pair",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "mutable": false,
+          "attr": "placeholder",
+          "reflectToAttr": false,
+          "docs": "Instructional text that shows before the input has a value.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "readonly",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "readonly",
+          "reflectToAttr": true,
+          "docs": "If true, the user cannot modify the value.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "required",
+          "reflectToAttr": true,
+          "docs": "If true, the user must fill in a value before submitting a form.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "size",
+          "type": "\"lg\" | \"md\" | \"sm\"",
+          "mutable": false,
+          "attr": "size",
+          "reflectToAttr": false,
+          "docs": "The size of the input",
+          "docsTags": [],
+          "default": "'md'",
+          "values": [
+            {
+              "value": "lg",
+              "type": "string"
+            },
+            {
+              "value": "md",
+              "type": "string"
+            },
+            {
+              "value": "sm",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "type",
+          "type": "\"email\" | \"password\" | \"search\" | \"tel\" | \"text\" | \"url\"",
+          "mutable": false,
+          "attr": "type",
+          "reflectToAttr": false,
+          "docs": "The type of the input",
+          "docsTags": [],
+          "default": "'text'",
+          "values": [
+            {
+              "value": "email",
+              "type": "string"
+            },
+            {
+              "value": "password",
+              "type": "string"
+            },
+            {
+              "value": "search",
+              "type": "string"
+            },
+            {
+              "value": "tel",
+              "type": "string"
+            },
+            {
+              "value": "text",
+              "type": "string"
+            },
+            {
+              "value": "url",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": true,
+          "docs": "Current value of the form control. Submitted with the form as part of a name/value pair.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "dsBlur",
+          "detail": "void",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emitted when the input loses focus",
+          "docsTags": []
+        },
+        {
+          "event": "dsChange",
+          "detail": "string",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emitted when the value has changed.\r\nThis event doesn't fire until the control loses focus.",
+          "docsTags": []
+        },
+        {
+          "event": "dsClear",
+          "detail": "string",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emitted when the component is cleared",
+          "docsTags": []
+        },
+        {
+          "event": "dsFocus",
+          "detail": "void",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emitted when the input gains focus",
+          "docsTags": []
+        },
+        {
+          "event": "dsInput",
+          "detail": "string",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emitted every time the value is updated by introducing a change",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "ds-icon",
+        "ds-button"
+      ],
+      "dependencyGraph": {
+        "ds-input": [
+          "ds-icon",
+          "ds-button"
+        ],
         "ds-button": [
           "ds-icon"
         ]

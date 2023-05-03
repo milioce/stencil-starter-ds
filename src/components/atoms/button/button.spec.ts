@@ -2,6 +2,9 @@ import { SpecPage, newSpecPage } from '@stencil/core/testing';
 import { AtomsButton } from './button';
 
 describe('ds-button', () => {
+  it('shloud build', () => {
+    expect(new AtomsButton()).toBeTruthy();
+  });
   describe('render', () => {
     it('should display the passed text', async () => {
       const text = 'Button';

@@ -1,7 +1,7 @@
 import { Component, Host, h, Element, Prop, Event, EventEmitter, ComponentInterface, State } from '@stencil/core';
 import { InputTypeTypes, InputLabelPositionTypes, InputFeedbackTypes } from './input.models';
 import { GlobalSizeTypes } from '@shared/model';
-import { isDefined } from '@utils/utils';
+import { isDefined } from '../../../utils/utils';
 import { v4 as uuidv4 } from 'uuid';
 
 @Component({
@@ -10,6 +10,9 @@ import { v4 as uuidv4 } from 'uuid';
   shadow: true,
 })
 export class AtomsInput implements ComponentInterface {
+  eidHint: string;
+  eidFeedback: string;
+
   @Element() el: HTMLElement | null;
 
   /**
@@ -131,15 +134,23 @@ export class AtomsInput implements ComponentInterface {
   @State() originalType: InputTypeTypes;
 
   componentWillLoad() {
+    this.setIds();
+    this.originalType = this.type;
+  }
+
+  private setIds() {
     if (!this.eid) {
       this.eid = uuidv4();
     }
-    this.originalType = this.type;
+    this.eidHint = `${this.eid}-hint`;
+    this.eidFeedback = `${this.eid}-feedback`;
   }
 
   private getHostClassNames = () => {
     const classes =
-      `ds-input ds-input--${this.type} ds-input--${this.size}` + (this.labelPosition ? ` ds-input__label-${this.labelPosition}` : '') + (this.hasError ? ' ds-input--error' : '');
+      `ds-input ds-input--${this.type} ds-input--${this.size}` +
+      (this.label && this.labelPosition ? ` ds-input__label-${this.labelPosition}` : '') +
+      (this.hasError ? ' ds-input--error' : '');
 
     return classes;
   };
@@ -218,9 +229,9 @@ export class AtomsInput implements ComponentInterface {
     }
 
     if (this.helperMessage) {
-      attributes['aria-describedby'] = `${this.eid}-hint ${this.eid}-feedback`;
+      attributes['aria-describedby'] = `${this.eidHint} ${this.eidFeedback}`;
     } else {
-      attributes['aria-describedby'] = `${this.eid}-feedback`;
+      attributes['aria-describedby'] = this.eidFeedback;
     }
 
     if (this.required) {
@@ -253,9 +264,9 @@ export class AtomsInput implements ComponentInterface {
         <div>
           {this.hasIcon && <ds-icon size={this.size} icon={this.icon}></ds-icon>}
           <input
+            type={this.type}
             {...this.getAttributes()}
             class={inputClass}
-            type={this.type}
             id={this.eid}
             required={this.required}
             disabled={this.disabled}
@@ -272,11 +283,11 @@ export class AtomsInput implements ComponentInterface {
           )}
         </div>
         {this.helperMessage && (
-          <span class="ds-input__helper-text" id={`${this.eid}-hint`}>
+          <span class="ds-input__helper-text" id={this.eidHint}>
             {this.helperMessage}
           </span>
         )}
-        <div class={feedbackClass} aria-live="polite" id={`${this.eid}-feedback`}>
+        <div class={feedbackClass} aria-live="polite" id={this.eidFeedback}>
           {this.feedbackText &&
             this.feedbackType && [<ds-icon color={this.feedbackType} size={this.size} icon={this.getFeedbackIcon()}></ds-icon>, <span>{this.feedbackText}</span>]}
         </div>
