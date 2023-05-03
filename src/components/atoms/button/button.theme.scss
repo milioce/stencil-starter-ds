@@ -28,7 +28,8 @@
 }
 
 // PRIMARY
-:host(.ds-button--primary), :host(.ds-button--solid) {
+:host(.ds-button--primary), :host(.ds-button--solid),
+:host(.ds-button-split.ds-button-split--primary.ds-button-split--solid) {
     --background-base-color: var(--color-background-action-primary);
     --background-base-color-hover: var(--color-background-action-primary-hover);
     --background-base-disabled: var(--color-background-disabled);
@@ -50,9 +51,10 @@
     --border-bottom-right-radius: var(--border-radius-xl);
 }
 
-// BUTTON-SPLIT PRIMARY
-:host(.ds-button-split.ds-button-split--primary.ds-button-split--solid) {
-    --background-base-color: var(--color-background-action-primary);
+// PRIMARY OUTLINE
+:host(.ds-button--primary.ds-button--outline),
+:host(.ds-button-split.ds-button-split--primary.ds-button-split--outline) {
+    --background-base-color: transparent;
     --background-base-color-hover: var(--color-background-action-primary-hover);
     --background-base-disabled: var(--color-background-disabled);
     --background-base-color-active: var(--color-background-action-primary-active);
@@ -68,32 +70,14 @@
     --border-base-color-focus: var(--color-border-focus);
     --border-base-color-disabled: var(--color-border-disabled);
     --border-shadow-color: var(--color-background-surface-00);
-    --border-radius: var(--border-radius-xl);
-    --border-top-right-radius: 0px;
-    --border-bottom-right-radius: 0px;
-}
-
-// PRIMARY OUTLINE
-:host(.ds-button--primary.ds-button--outline) {
-    --background-base-color: transparent;
     --label-base-color: var(--color-text-primary);
     --background-base-disabled: transparent;
     --border-base-color: var(--color-border-action-primary);
-}
-
-// BUTTON-SPLIT OUTLINE
-:host(.ds-button-split.ds-button-split--primary.ds-button-split--outline) {
-    --background-base-color: transparent;
-    --label-base-color: var(--color-text-primary);
-    --background-base-disabled: transparent;
-    --border-base-color: var(--color-border-action-primary);
-    --border-radius: var(--border-radius-xl);
-    --border-top-right-radius: 0px;
-    --border-bottom-right-radius: 0px;
 }
 
 // PRIMARY CLEAR
-:host(.ds-button--primary.ds-button--clear) {
+:host(.ds-button--primary.ds-button--clear),
+:host(.ds-button-split.ds-button-split--primary.ds-button-split--clear) {
     --background-base-color: transparent;
     --background-base-color-hover: var(--color-background-hover);
     --background-base-color-active: var(--color-background-active);
@@ -111,45 +95,19 @@
     --border-radius: none;
 }
 
-// BUTTON-SPLIT PRIMARY CLEAR
+
+// BUTTON-SPLIT PRIMARY
+:host(.ds-button-split.ds-button-split--primary.ds-button-split--solid),
+:host(.ds-button-split.ds-button-split--primary.ds-button-split--outline), 
 :host(.ds-button-split.ds-button-split--primary.ds-button-split--clear) {
-    --background-base-color: transparent;
-    --background-base-color-hover: var(--color-background-hover);
-    --background-base-color-active: var(--color-background-active);
-    --background-base-focus: var(--color-background-hover);
-    --background-base-disabled: transparent;
-    --label-base-color: var(--color-text-primary);
-    --label-base-color-hover: var(--color-text-primary);
-    --label-base-color-focus: var(--color-text-primary);
-    --label-base-color-active: var(--color-text-primary);
-    --border-base-color: transparent;
+    --border-radius: var(--border-radius-xl);
     --border-top-right-radius: 0px;
     --border-bottom-right-radius: 0px;
 }
 
-// SECONDARY
-:host(.ds-button--secondary) {
-    --background-base-color: var(--color-background-action-secondary);
-    --background-base-color-hover: var(--color-background-action-secondary-hover);
-    --background-base-disabled: var(--color-background-disabled);
-    --background-base-color-active: var(--color-background-action-secondary-active);
-    --background-base-focus: var(--color-background-action-secondary-hover);
-    --label-base-color: var(--color-text-action);
-    --label-base-color-hover: var(--color-text-action);
-    --label-base-color-focus: var(--color-text-action);
-    --label-base-color-active: var(--color-text-action);
-    --label-base-color-disabled: var(--color-text-disabled);
-    --border-base-color: var(--color-border-action-secondary);
-    --border-base-color-hover: var(--color-border-secondary-hover);
-    --border-base-color-active: var(--color-border-secondary-active);
-    --border-base-color-focus: var(--color-border-focus);
-    --border-base-color-disabled: var(--color-border-disabled);
-    --border-radius: var(--border-radius-xl);
-    --border-shadow-color: var(--color-background-surface-00);
-    --border-shadow-color-disabled: transparent;
-}
 
-// BUTTON-SPLIT SECONDARY
+// SECONDARY
+:host(.ds-button--secondary),
 :host(.ds-button-split.ds-button-split--solid.ds-button-split--secondary) {
     --background-base-color: var(--color-background-action-secondary);
     --background-base-color-hover: var(--color-background-action-secondary-hover);
@@ -166,11 +124,9 @@
     --border-base-color-active: var(--color-border-secondary-active);
     --border-base-color-focus: var(--color-border-focus);
     --border-base-color-disabled: var(--color-border-disabled);
+    --border-radius: var(--border-radius-xl);
     --border-shadow-color: var(--color-background-surface-00);
     --border-shadow-color-disabled: transparent;
-    --border-radius: var(--border-radius-xl);
-    --border-top-right-radius: 0px;
-    --border-bottom-right-radius: 0px;
 }
 
 // SECONDARY OUTLINE AND 
@@ -178,23 +134,25 @@
 :host(.ds-button--secondary.ds-button--outline), 
 :host(.ds-button-split.ds-button-split--secondary.ds-button-split--outline) {
     --background-base-color: transparent;
+    --background-base-color-hover: var(--color-background-action-secondary-hover);
+    --background-base-disabled: var(--color-background-disabled);
+    --background-base-color-active: var(--color-background-action-secondary-active);
+    --background-base-focus: var(--color-background-action-secondary-hover);
+    --border-base-color: var(--color-border-action-secondary);
+    --border-base-color-hover: var(--color-border-secondary-hover);
+    --border-base-color-active: var(--color-border-secondary-active);
+    --border-base-color-focus: var(--color-border-focus);
+    --border-base-color-disabled: var(--color-border-disabled);
     --label-base-color: var(--color-text-secondary);
     --background-base-disabled: transparent;
     --border-base-color: var(--color-border-action-secondary);
+    --border-shadow-color: var(--color-background-surface-00);
     --border-shadow-color-disabled: transparent;
 }
 
-// BUTTON-SPLIT SECONDARY OUTLINE
-// :host(.ds-button-split.ds-button-split--secondary.ds-button-split--secondary) {
-//     --background-base-color: transparent;
-//     --label-base-color: var(--color-text-secondary);
-//     --background-base-disabled: transparent;
-//     --border-base-color: var(--color-border-action-secondary);
-//     --border-shadow-color-disabled: transparent;
-// }
-
-// SECONDARY CLEAR
-:host(.ds-button--secondary.ds-button--clear){
+// SECONDARY CLEAR AND BUTTON-SPLIT SECONDARY CLEAR
+:host(.ds-button--secondary.ds-button--clear),
+:host(.ds-button-split.ds-button-split--secondary.ds-button-split--clear){
     --background-base-color: transparent;
     --background-base-color-hover: var(--color-background-hover);
     --background-base-color-active: var(--color-background-active);
@@ -209,27 +167,18 @@
     --border-radius: none;
 }
 
-// BUTTON-SPLIT SECONDARY CLEAR
+// BUTTON-SPLIT SECONDARY
+:host(.ds-button-split.ds-button-split--secondary.ds-button-split--solid),
+:host(.ds-button-split.ds-button-split--secondary.ds-button-split--outline), 
 :host(.ds-button-split.ds-button-split--secondary.ds-button-split--clear) {
-    --background-base-color: transparent;
-    --background-base-color-hover: var(--color-background-hover);
-    --background-base-color-active: var(--color-background-active);
-    --background-base-focus: var(--color-background-hover);
-    --label-base-color: var(--color-text-secondary);
-    --label-base-color-hover: var(--color-text-secondary);
-    --label-base-color-focus: var(--color-text-secondary);
-    --label-base-color-active: var(--color-text-secondary);
-    --background-base-disabled: transparent;
-    --border-base-color: transparent;
-    --border-base-color-disabled: transparent;
-    --border-radius: none;
     --border-radius: var(--border-radius-xl);
     --border-top-right-radius: 0px;
     --border-bottom-right-radius: 0px;
 }
 
 // INFO
-:host(.ds-button--info) {
+:host(.ds-button--info),
+:host(.ds-button-split.ds-button-split--info)  {
     --background-base-color: var(--color-background-status-info);
     --background-base-color-hover: var(--color-background-status-info-hover);
     --background-base-disabled: var(--color-background-disabled);
@@ -249,43 +198,13 @@
     --border-radius: var(--border-radius-xl);
 }
 
-// BUTTON-SPLIT INFO
-:host(.ds-button-split.ds-button-split--info) {
-    --background-base-color: var(--color-background-status-info);
-    --background-base-color-hover: var(--color-background-status-info-hover);
-    --background-base-disabled: var(--color-background-disabled);
-    --background-base-color-active: var(--color-background-status-info-active);
-    --background-base-focus: var(--color-background-status-info-hover);
-    --label-base-color: var(--color-text-action);
-    --label-base-color-hover: var(--color-text-action);
-    --label-base-color-focus: var(--color-text-action);
-    --label-base-color-active: var(--color-text-action-on-dark);
-    --label-base-color-disabled: var(--color-text-disabled);
-    --border-base-color: var(--color-border-status-info);
-    --border-base-color-hover: var(--color-border-status-info-hover);
-    --border-base-color-active: var(--color-border-status-info-active);
-    --border-base-color-focus: var(--color-border-focus);
-    --border-base-color-disabled: var(--color-border-disabled);
-    --border-shadow-color: var(--color-background-surface-00);
-    --border-radius: var(--border-radius-xl);
-    --border-top-right-radius: 0px;
-    --border-bottom-right-radius: 0px;
-}
-
-// INFO OUTLINE
+// INFO OUTLINE and BUTTON-SPLIT INFO
 :host(.ds-button--info.ds-button--outline), 
 :host(.ds-button-split.ds-button-split--outline.ds-button-split--info) {
     --background-base-color: transparent;
     --label-base-color: var(--color-text-status-info);
     --background-base-disabled: transparent;
     --border-shadow-color-disabled: transparent;
-}
-
-// BUTTON-SPLIT INFO OUTLINE
-:host(.ds-button-split.ds-button-split--outline.ds-button-split--info) {
-    --border-radius: var(--border-radius-xl);
-    --border-top-right-radius: 0px;
-    --border-bottom-right-radius: 0px;
 }
 
 // INFO CLEAR
@@ -305,7 +224,9 @@
     --border-radius: none;
 }
 
-// BUTTON-SPLIT INFO CLEAR
+// BUTTON-SPLIT INFO 
+:host(.ds-button-split.ds-button-split--info),
+:host(.ds-button-split.ds-button-split--outline.ds-button-split--info),
 :host(.ds-button-split.ds-button-split--clear.ds-button-split--info) {
     --border-radius: var(--border-radius-xl);
     --border-top-right-radius: 0px;
@@ -334,12 +255,6 @@
     --border-radius: var(--border-radius-xl);
 }
 
-// BUTTON-SPLIT WARNING
-:host(.ds-button-split.ds-button-split--warning) {
-    --border-radius: var(--border-radius-xl);
-    --border-top-right-radius: 0px;
-    --border-bottom-right-radius: 0px;
-}
 
 // WARNING OUTLINE and BUTTON-SPLIT WARNING OUTLINE
 :host(.ds-button--warning.ds-button--outline),
@@ -367,7 +282,9 @@
     --border-base-color-disabled: transparent;
 }
 
-// BUTTON-SPLIT WARNING CLEAR
+// BUTTON-SPLIT WARNING
+:host(.ds-button-split.ds-button-split--warning),
+:host(.ds-button-split.ds-button-split--outline.ds-button-split--warning),
 :host(.ds-button-split.ds-button-split--clear.ds-button-split--warning)  {
     --border-radius: var(--border-radius-xl);
     --border-top-right-radius: 0px;
@@ -397,15 +314,9 @@
     --border-shadow-color-disabled:transparent;
 }
 
-// BUTTON-SPLIT SUCCESS
-:host(.ds-button-split.ds-button-split--success) {
-    --border-radius: var(--border-radius-xl);
-    --border-top-right-radius: 0px;
-    --border-bottom-right-radius: 0px;
-}
-
 // SUCCESS OUTLINE
-:host(.ds-button--success.ds-button--outline) {
+:host(.ds-button--success.ds-button--outline),
+:host(.ds-button-split.ds-button-split--outline.ds-button-split--success) {
     --background-base-color: transparent;
     --background-base-color-hover: var(--color-background-status-success-hover);
     --background-base-disabled: transparent;
@@ -424,8 +335,9 @@
     --border-radius: var(--border-radius-xl);
 }
 
-// SUCCESS CLEAR
-:host(.ds-button--success.ds-button--clear) {
+// SUCCESS CLEAR and BUTTON-SPLIT SUCCESS CLEAR
+:host(.ds-button--success.ds-button--clear),
+:host(.ds-button-split.ds-button-split--clear.ds-button-split--success) {
     --background-base-color: transparent;
     --background-base-color-hover: var(--color-background-hover);
     --background-base-disabled: transparent;
@@ -444,28 +356,18 @@
     --border-radius: none;
 }
 
-// ERROR
-:host(.ds-button--error) {
-    --background-base-color: var(--color-background-status-error);
-    --background-base-color-hover: var(--color-background-status-error-hover);
-    --background-base-disabled: var(--color-background-disabled);
-    --background-base-color-active: var(--color-background-status-error-active);
-    --background-base-focus: var(--color-background-status-error-hover);
-    --label-base-color: var(--color-text-action-on-dark);
-    --label-base-color-hover: var(--color-text-action-on-dark);
-    --label-base-color-focus: var(--color-text-action-on-dark);
-    --label-base-color-active: var(--color-text-action-on-dark);
-    --label-base-color-disabled: var(--color-text-disabled);
-    --border-base-color: var(--color-border-status-error);
-    --border-base-color-hover: var(--color-border-status-error-hover);
-    --border-base-color-active: var(--color-border-status-error-active);
-    --border-base-color-focus: var(--color-border-focus);
-    --border-base-color-disabled: var(--color-border-disabled);
-    --border-shadow-color: var(--color-background-surface-00);
+
+// BUTTON-SPLIT SUCCESS
+:host(.ds-button-split.ds-button-split--success),
+:host(.ds-button-split.ds-button-split--outline.ds-button-split--success),
+:host(.ds-button-split.ds-button-split--clear.ds-button-split--success)  {
     --border-radius: var(--border-radius-xl);
+    --border-top-right-radius: 0px;
+    --border-bottom-right-radius: 0px;
 }
 
-// BUTTON-SPLIT ERROR
+// ERROR and BUTTON-SPLIT ERROR
+:host(.ds-button--error),
 :host(.ds-button-split.ds-button-split--error) {
     --background-base-color: var(--color-background-status-error);
     --background-base-color-hover: var(--color-background-status-error-hover);
@@ -484,12 +386,11 @@
     --border-base-color-disabled: var(--color-border-disabled);
     --border-shadow-color: var(--color-background-surface-00);
     --border-radius: var(--border-radius-xl);
-    --border-top-right-radius: 0px;
-    --border-bottom-right-radius: 0px;
 }
 
-// ERROR OUTLINE
-:host(.ds-button--error.ds-button--outline) {
+// ERROR OUTLINE and BUTTON-SPLIT ERROR OUTLINE
+:host(.ds-button--error.ds-button--outline),
+:host(.ds-button-split.ds-button-split--outline.ds-button-split--error) {
     --background-base-color: transparent;
     --background-base-color-hover: var(--color-background-status-error-hover);
     --background-base-disabled: transparent;
@@ -508,8 +409,9 @@
     --border-radius: var(--border-radius-xl);
 }
 
-// ERROR CLEAR
-:host(.ds-button--error.ds-button--clear) {
+// ERROR CLEAR AND BUTTON-SPLIT ERROR CLEAR
+:host(.ds-button--error.ds-button--clear),
+:host(.ds-button-split.ds-button-split--clear.ds-button-split--error) {
     --background-base-color: transparent;
     --background-base-color-hover: var(--color-background-hover);
     --background-base-disabled: transparent;
@@ -526,6 +428,16 @@
     --border-base-color-focus: var(--color-border-focus);
     --border-base-color-disabled: transparent;
     --border-radius: none;
+}
+
+
+// BUTTON-SPLIT ERROR
+:host(.ds-button-split.ds-button-split--error) 
+:host(.ds-button-split.ds-button-split--outline.ds-button-split--error)
+:host(.ds-button-split.ds-button-split--clear.ds-button-split--error) {
+    --border-top-right-radius: 0px;
+    --border-bottom-right-radius: 0px;
+    --border-radius: var(--border-radius-xl);
 }
 
 
@@ -932,11 +844,3 @@
     --border-radius: none;
 }
 
-
-// button split
-
-:host(.ds-button-split) {
-    --border-radius: var(--border-radius-xl);
-    --border-top-right-radius: 0px;
-    --border-bottom-right-radius: 0px;
-}
