@@ -21,9 +21,9 @@ export class AtomsButtonSplit {
   render(): JSX.Element {
     return (
       <Host>
-        <div>
+        <div class="ds-button-split__button-action">
           <ds-button variant="split">Continuar</ds-button>
-          <button aria-hidden="true" class="">
+          <button class="ds-button-split__button-dropdeable ds-button-split--secondary" aria-hidden="true">
             +
           </button>
         </div>

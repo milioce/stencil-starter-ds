@@ -1,68 +1,378 @@
 :host {
     --_hover-cursor: pointer;
-    --_color-base: var(--color-background-surface-00);
+    --_color: var(--color-background-surface-00);
+    --_border-00625: var(--border-width-xs);
     --_border-radius_right: var(--border-radius-lg);
-    --_padding-button-sm: var(--spacing-inset-2xs);
-    --_padding-button: var(--spacing-inset-xs);
-    --background-base-color: var(--color-background-action-primary);
+    --padding-inside: var(--spacing-inset-2xs);
 }
 
 // SM
-:host(.ds-button-split_dropeable--sm) {
-    --padding-inside: var(--_padding-button-sm);
+:host .ds-button-split_button-dropdeable--sm {
+    --padding-inside: var(--spacing-inset-2xs);
     --font-size: var(--font-action-sm)
 }
 
 // MD
-:host(.ds-button-split_dropeable--md) {
-    --padding-inside: var(--_padding-button);
-    --font-size: var(--font-action-md)
+:host .ds-button-split_button-dropdeable--md {
+    --padding-inside: var(--spacing-inset-xs);
+    // --font-size: var(--font-action-md)
 }
 
 // LG
-:host(.ds-button-split_dropeable--lg) {
-    --padding-inside: var(--_padding-button);
+:host .ds-button-split_button-dropdeable-lg {
+    --padding-inside: var(--spacing-inset-xs);
 }
 
 // PRIMARY
-:host(.ds-button-split--primary) button {
-    --background-base-color: var(--color-background-action-primary);
-    --background-base-color-hover: var(--color-background-action-primary-hover);
-    --background-base-disabled: var(--color-background-disabled);
-    --background-base-color-active: var(--color-background-action-primary-active);
-    --background-base-focus: var(--color-background-action-primary-hover);
-    --label-base-color: var(--color-text-action-on-dark);
-    --label-base-color-hover: var(--color-text-action-on-dark);
-    --label-base-color-focus: var(--color-text-action-on-dark);
-    --label-base-color-active: var(--color-text-action-on-dark);
-    --label-base-color-disabled: var(--color-text-disabled);
-    --border-base-color: var(--color-border-action-primary);
-    --border-base-color-hover: var(--color-border-action-primary-hover);
-    --border-base-color-active: var(--color-border-action-primary-active);
-    --border-base-color-focus: var(--color-border-focus);
-    --border-base-color-disabled: var(--color-border-disabled);
+:host button.ds-button-split__button-dropdeable.ds-button-split--primary {
+    --background-color: var(--color-background-action-primary);
+    --background-color-hover: var(--color-background-action-primary-hover);
+    --background-disabled: var(--color-background-disabled);
+    --background-color-active: var(--color-background-action-primary-active);
+    --background-focus: var(--color-background-action-primary-hover);
+    --label-color: var(--color-text-action-on-dark);
+    --label-color-hover: var(--color-text-action-on-dark);
+    --label-color-focus: var(--color-text-action-on-dark);
+    --label-color-active: var(--color-text-action-on-dark);
+    --label-color-disabled: var(--color-text-disabled);
+    --border-color: var(--color-border-action-primary);
+    --border-color-hover: var(--color-border-action-primary-hover);
+    --border-color-active: var(--color-border-action-primary-active);
+    --border-color-focus: var(--color-border-focus);
+    --border-color-disabled: var(--color-border-disabled);
     --border-shadow-color: var(--color-background-surface-00);
-    --border-radius: var(--border-radius-xl);
 }
 
-// PRIMARY
-:host(.ds-button-split--secondary) button {
-    --background-base-color: var(--color-background-action-secondary);
-    --background-base-color-hover: var(--color-background-action-secondary-hover);
-    --background-base-disabled: var(--color-background-disabled);
-    --background-base-color-active: var(--color-background-action-secondary-active);
-    --background-base-focus: var(--color-background-action-secondary-hover);
-    --label-base-color: var(--color-text-action);
-    --label-base-color-hover: var(--color-text-action);
-    --label-base-color-focus: var(--color-text-action);
-    --label-base-color-active: var(--color-text-action);
-    --label-base-color-disabled: var(--color-text-disabled);
-    --border-base-color: var(--color-border-action-secondary);
-    --border-base-color-hover: var(--color-border-secondary-hover);
-    --border-base-color-active: var(--color-border-secondary-active);
-    --border-base-color-focus: var(--color-border-focus);
-    --border-base-color-disabled: var(--color-border-disabled);
+// PRIMARY OUTLINE
+:host button.ds-button-split__button-dropdeable.ds-button-split--primary.ds-button-split--outline {
+    --background-color: transparent;
+    --background-color-hover: var(--color-background-action-primary-hover);
+    --background-disabled: var(--color-background-disabled);
+    --background-color-active: var(--color-background-action-primary-active);
+    --background-focus: var(--color-background-action-primary-hover);
+    --label-color: var(--color-text-action-on-dark);
+    --label-color-hover: var(--color-text-action-on-dark);
+    --label-color-focus: var(--color-text-action-on-dark);
+    --label-color-active: var(--color-text-action-on-dark);
+    --label-color-disabled: var(--color-text-disabled);
+    --border-color: var(--color-border-action-primary);
+    --border-color-hover: var(--color-border-action-primary-hover);
+    --border-color-active: var(--color-border-action-primary-active);
+    --border-color-focus: var(--color-border-focus);
+    --border-color-disabled: var(--color-border-disabled);
+    --border-shadow-color: var(--color-background-surface-00);
+    --label-color: var(--color-text-primary);
+    --background-disabled: transparent;
+    --border-color: var(--color-border-action-primary);
+}
+
+// PRIMARY CLEAR
+:host button.ds-button-split__button-dropdeable.ds-button-split--primary.ds-button-split--clear {
+    --background-color: transparent;
+    --background-color-hover: var(--color-background-hover);
+    --background-color-active: var(--color-background-active);
+    --background-focus: var(--color-background-hover);
+    --background-disabled: transparent;
+    --label-color: var(--color-text-primary);
+    --label-color-hover: var(--color-text-primary);
+    --label-color-focus: var(--color-text-primary);
+    --label-color-active: var(--color-text-primary);
+    --border-color: transparent;
+    --border-color-hover: var(--color-border-hover);
+    --border-color-active: var(--color-border-active);
+    --border-color-focus: var(--color-border-focus);
+    --border-color-disabled: transparent;
+    --border-radius: none;
+}
+
+// SECONDARY
+:host button.ds-button-split__button-dropdeable.ds-button-split--secondary.ds-button-split--solid {
+    --background-color: var(--color-background-action-secondary);
+    --background-color-hover: var(--color-background-action-secondary-hover);
+    --background-disabled: var(--color-background-disabled);
+    --background-color-active: var(--color-background-action-secondary-active);
+    --background-focus: var(--color-background-action-secondary-hover);
+    --label-color: var(--color-text-action);
+    --label-color-hover: var(--color-text-action);
+    --label-color-focus: var(--color-text-action);
+    --label-color-active: var(--color-text-action);
+    --label-color-disabled: var(--color-text-disabled);
+    --border-color: var(--color-border-action-secondary);
+    --border-color-hover: var(--color-border-secondary-hover);
+    --border-color-active: var(--color-border-secondary-active);
+    --border-color-focus: var(--color-border-focus);
+    --border-color-disabled: var(--color-border-disabled);
     --border-radius: var(--border-radius-xl);
     --border-shadow-color: var(--color-background-surface-00);
     --border-shadow-color-disabled: transparent;
+}
+
+// SECONDARY OUTLINE
+:host button.ds-button-split__button-dropdeable.ds-button-split--secondary.ds-button-split--outline {
+    --background-color: transparent;
+    --background-color-hover: var(--color-background-action-secondary-hover);
+    --background-disabled: var(--color-background-disabled);
+    --background-color-active: var(--color-background-action-secondary-active);
+    --background-focus: var(--color-background-action-secondary-hover);
+    --border-color: var(--color-border-action-secondary);
+    --border-color-hover: var(--color-border-secondary-hover);
+    --border-color-active: var(--color-border-secondary-active);
+    --border-color-focus: var(--color-border-focus);
+    --border-color-disabled: var(--color-border-disabled);
+    --label-color: var(--color-text-secondary);
+    --background-disabled: transparent;
+    --border-color: var(--color-border-action-secondary);
+    --border-shadow-color: var(--color-background-surface-00);
+    --border-shadow-color-disabled: transparent;
+}
+
+// SECONDARY CLEAR
+:host button.ds-button-split__button-dropdeable.ds-button-split--secondary.ds-button-split--clear {
+    --background-color: transparent;
+    --background-color-hover: var(--color-background-hover);
+    --background-color-active: var(--color-background-active);
+    --background-focus: var(--color-background-hover);
+    --label-color: var(--color-text-secondary);
+    --label-color-hover: var(--color-text-secondary);
+    --label-color-focus: var(--color-text-secondary);
+    --label-color-active: var(--color-text-secondary);
+    --background-disabled: transparent;
+    --border-color: transparent;
+    --border-color-disabled: transparent;
+    --border-radius: none;
+}
+
+// INFO 
+:host button.ds-button-split__button-dropdeable.ds-button-split--info.ds-button-split--solid {
+    --background-color: var(--color-background-status-info);
+    --background-color-hover: var(--color-background-status-info-hover);
+    --background-disabled: var(--color-background-disabled);
+    --background-color-active: var(--color-background-status-info-active);
+    --background-focus: var(--color-background-status-info-hover);
+    --label-color: var(--color-text-action);
+    --label-color-hover: var(--color-text-action);
+    --label-color-focus: var(--color-text-action);
+    --label-color-active: var(--color-text-action-on-dark);
+    --label-color-disabled: var(--color-text-disabled);
+    --border-color: var(--color-border-status-info);
+    --border-color-hover: var(--color-border-status-info-hover);
+    --border-color-active: var(--color-border-status-info-active);
+    --border-color-focus: var(--color-border-focus);
+    --border-color-disabled: var(--color-border-disabled);
+    --border-shadow-color: var(--color-background-surface-00);
+    --border-radius: var(--border-radius-xl);
+}
+
+// INFO OUTLINE
+:host button.ds-button-split__button-dropdeable.ds-button-split--info.ds-button-split--outline {
+    --background-color-hover: var(--color-background-status-info-hover);
+    --background-disabled: var(--color-background-disabled);
+    --background-color-active: var(--color-background-status-info-active);
+    --background-focus: var(--color-background-status-info-hover);
+    --background-color: transparent;
+    --label-color: var(--color-text-status-info);
+    --background-disabled: transparent;
+    --border-color: var(--color-border-status-info);
+    --border-color-hover: var(--color-border-status-info-hover);
+    --border-color-active: var(--color-border-status-info-active);
+    --border-color-focus: var(--color-border-focus);
+    --border-color-disabled: var(--color-border-disabled);
+    --border-shadow-color-disabled: transparent;
+}
+
+// INFO CLEAR
+:host button.ds-button-split__button-dropdeable.ds-button-split--info.ds-button-split--clear {
+    --background-color: transparent;
+    --background-disabled: transparent;
+    --background-color-hover: var(--color-background-hover);
+    --background-color-active: var(--color-background-active);
+    --background-color-hover: var(--color-background-hover);
+    --label-color: var(--color-text-status-info);
+    --label-color-hover: var(--color-text-status-info);
+    --label-color-active: var(--color-text-status-info);
+    --label-color-focus: var(--color-text-status-info);
+    --border-color: transparent;
+    --border-color-disabled: transparent;
+    --border-radius: none;
+}
+
+// WARNING 
+:host button.ds-button-split__button-dropdeable.ds-button-split--warning.ds-button-split--solid {
+    --background-color: var(--color-background-status-warning);
+    --background-color-hover: var(--color-background-status-warning-hover);
+    --background-disabled: var(--color-background-disabled);
+    --background-color-active: var(--color-background-status-warning-active);
+    --background-focus: var(--color-background-status-warning-hover);
+    --label-color: var(--color-text-action);
+    --label-color-hover: var(--color-text-action);
+    --label-color-active: var(--color-text-action-on-dark);
+    --label-color-focus: var(--color-text-action);
+    --label-color-disabled: var(--color-text-disabled);
+    --border-color: var(--color-border-status-warning);
+    --border-color-hover: var(--color-border-status-warning-hover);
+    --border-color-active: var(--color-background-status-warning-active);
+    --border-color-focus: var(--color-border-focus);
+    --border-color-disabled: var(--color-border-disabled);
+    --border-shadow-color: var(--color-background-surface-00);
+    --border-radius: var(--border-radius-xl);
+}
+
+// WARNING OUTLINE 
+:host button.ds-button-split__button-dropdeable.ds-button-split--warning.ds-button-split--outline {
+    --background-color: transparent;
+    --background-color-hover: var(--color-background-status-warning-hover);
+    --background-disabled: var(--color-background-disabled);
+    --background-color-active: var(--color-background-status-warning-active);
+    --background-focus: var(--color-background-status-warning-hover);
+    --background-disabled: transparent;
+    --label-color: var(--color-text-status-warning);
+    --label-color-hover: var(--color-text-action);
+    --label-color-active: var(--color-text-action-on-dark);
+    --label-color-focus: var(--color-text-action);
+    --label-color-disabled: var(--color-text-disabled);
+    --border-color: var(--color-border-status-warning);
+    --border-color-hover: var(--color-border-status-warning-hover);
+    --border-color-active: var(--color-background-status-warning-active);
+    --border-color-focus: var(--color-border-focus);
+    --border-color-disabled: var(--color-border-disabled);
+    --border-shadow-color: var(--color-background-surface-00);
+}
+
+// WARNING CLEAR 
+:host button.ds-button-split__button-dropdeable.ds-button-split--warning.ds-button-split--clear {
+    --background-color: transparent;
+    --background-disabled: transparent;
+    --background-color-hover: var(--color-background-hover);
+    --background-color-active: var(--color-background-active);
+    --background--color-focus: var(--color-background-hover);
+    --label-color: var(--color-text-status-warning);
+    --label-color-hover: var(--color-text-status-warning);
+    --label-color-active: var(--color-text-status-warning);
+    --label-color-focus: var(--color-text-status-warning);
+    --border-color: transparent;
+    --border-radius: none;
+    --border-color-disabled: transparent;
+}
+
+// SUCCESS 
+:host button.ds-button-split__button-dropdeable.ds-button-split--success.ds-button-split--solid {
+    --background-color: var(--color-background-status-success);
+    --background-color-hover: var(--color-background-status-success-hover);
+    --background-disabled: var(--color-background-disabled);
+    --background-color-active: var(--color-background-status-success-active);
+    --background-focus: var(--color-background-status-success-hover);
+    --label-color: var(--color-text-action);
+    --label-color-hover: var(--color-text-action);
+    --label-color-focus: var(--color-text-action);
+    --label-color-active: var(--color-text-action-on-dark);
+    --label-color-disabled: var(--color-text-disabled);
+    --border-color: var(--color-border-status-success);
+    --border-color-hover: var(--color-border-status-success-hover);
+    --border-color-active: var(--color-border-status-success-active);
+    --border-color-focus: var(--color-border-focus);
+    --border-color-disabled: var(--color-border-disabled);
+    --border-shadow-color: var(--color-background-surface-00);
+    --border-radius: var(--border-radius-xl);
+    --border-shadow-color-disabled:transparent;
+}
+
+// SUCCESS OUTLINE 
+:host button.ds-button-split__button-dropdeable.ds-button-split--success.ds-button-split--outline {
+    --background-color: transparent;
+    --background-color-hover: var(--color-background-status-success-hover);
+    --background-disabled: transparent;
+    --background-color-active: var(--color-background-status-success-active);
+    --background-focus: var(--color-background-status-success-hover);
+    --label-color: var(--color-text-status-success);
+    --label-color-hover: var(--color-text-action);
+    --label-color-focus: var(--color-text-action);
+    --label-color-active: var(--color-text-action-on-dark);
+    --label-color-disabled: var(--color-text-disabled);
+    --border-color: var(--color-border-status-success);
+    --border-color-hover: var(--color-border-status-success-hover);
+    --border-color-active: var(--color-border-status-success-active);
+    --border-color-focus: var(--color-border-focus);
+    --border-color-disabled: var(--color-border-disabled);
+    --border-radius: var(--border-radius-xl);
+}
+
+// SUCCESS CLEAR 
+:host button.ds-button-split__button-dropdeable.ds-button-split--success.ds-button-split--clear {
+    --background-color: transparent;
+    --background-color-hover: var(--color-background-hover);
+    --background-disabled: transparent;
+    --background-color-active: var(--color-background-active);
+    --background-focus: var(--color-background-hover);
+    --label-color: var(--color-text-status-success);
+    --label-color-hover: var(--color-text-action);
+    --label-color-focus: var(--color-text-action);
+    --label-color-active: var(--color-text-status-success);
+    --label-color-disabled: var(--color-text-disabled);
+    --border-color: transparent;
+    --border-color-hover: var(--color-border-hover);
+    --border-color-active: var(--color-border-active);
+    --border-color-focus: var(--color-border-focus);
+    --border-color-disabled: transparent;
+    --border-radius: none;
+}
+
+// ERROR 
+:host button.ds-button-split__button-dropdeable.ds-button-split--error.ds-button-split--solid {
+    --background-color: var(--color-background-status-error);
+    --background-color-hover: var(--color-background-status-error-hover);
+    --background-disabled: var(--color-background-disabled);
+    --background-color-active: var(--color-background-status-error-active);
+    --background-focus: var(--color-background-status-error-hover);
+    --label-color: var(--color-text-action-on-dark);
+    --label-color-hover: var(--color-text-action-on-dark);
+    --label-color-focus: var(--color-text-action-on-dark);
+    --label-color-active: var(--color-text-action-on-dark);
+    --label-color-disabled: var(--color-text-disabled);
+    --border-color: var(--color-border-status-error);
+    --border-color-hover: var(--color-border-status-error-hover);
+    --border-color-active: var(--color-border-status-error-active);
+    --border-color-focus: var(--color-border-focus);
+    --border-color-disabled: var(--color-border-disabled);
+    --border-shadow-color: var(--color-background-surface-00);
+    --border-radius: var(--border-radius-xl);
+}
+
+// ERROR OUTLINE 
+:host button.ds-button-split__button-dropdeable.ds-button-split--error.ds-button-split--outline {
+    --background-color: transparent;
+    --background-color-hover: var(--color-background-status-error-hover);
+    --background-disabled: transparent;
+    --background-color-active: var(--color-background-status-error-active);
+    --background-focus: var(--color-background-status-error-hover);
+    --label-color: var(--color-text-status-error);
+    --label-color-hover: var(--color-text-action-on-dark);
+    --label-color-focus: var(--color-text-action-on-dark);
+    --label-color-active: var(--color-text-action-on-dark);
+    --label-color-disabled: var(--color-text-disabled-on-dark);
+    --border-color: var(--color-border-status-error-hover);
+    --border-color-hover: var(--color-border-status-error-hover);
+    --border-color-active: var(--color-border-status-error-active);
+    --border-color-focus: var(--color-border-focus);
+    --border-color-disabled: var(--color-background-disabled);
+    --border-radius: var(--border-radius-xl);
+}
+
+// ERROR CLEAR 
+:host button.ds-button-split__button-dropdeable.ds-button-split--error.ds-button-split--clear {
+    --background-color: transparent;
+    --background-color-hover: var(--color-background-hover);
+    --background-disabled: transparent;
+    --background-color-active: var(--color-background-active);
+    --background-focus: var(--color-background-hover);
+    --label-color: var(--color-text-status-error);
+    --label-color-hover: var(--color-text-status-error);
+    --label-color-focus: var(--color-text-status-error);
+    --label-color-active: var(--color-text-status-error);
+    --label-color-disabled: var(--color-text-disabled);
+    --border-color: transparent;
+    --border-color-hover: var(--color-border-hover);
+    --border-color-active: var(--color-border-active);
+    --border-color-focus: var(--color-border-focus);
+    --border-color-disabled: transparent;
+    --border-radius: none;
 }
