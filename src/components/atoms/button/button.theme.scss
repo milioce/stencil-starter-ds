@@ -7,31 +7,6 @@
     --_font-size-075: var(--font-size-02);
     --_padding-button-left: var(--spacing-07);
 
-    /*
-    --_hover-cursor: pointer;
-    --_pointer-vents: auto;
-    --_border-radius-2: var(--border-radius-xl);
-
-    --_border-025: (--border-width-md);
-    --_border-disabled: var(--color-border-disabled);
-    --_color-border-focus: var(--color-border-focus);
-    --_background-hover: var(--color-background-hover);
-    --_background-focus: var(--color-background-surface-00);
-    --_font-size-0688: var(--font-size-01);
-
-    --_font-size-1: var(--font-size-04);
-    --_font-size-125: var(--font-size-05);
-    --_font-size-15: var(--font-size-06);
-    --_font-size-175: var(--font-size-07);
-    --_font-size-2: var(--font-size-08);
-    --_font-size-225: var(--font-size-09);
-    --_text-disabled: var(--color-text-disabled);
-    --_text-main-on-dark: var(--color-text-main-on-dark);
-
-
-    --_opacity-lighter: var(--opacity-lighter);
-    --_opacity-light: var(--opacity-light);
-    */
 }
 
 // SM
@@ -76,7 +51,7 @@
 }
 
 // BUTTON-SPLIT PRIMARY
-:host(.ds-button-split.ds-button-split--primary) {
+:host(.ds-button-split.ds-button-split--primary.ds-button-split--solid) {
     --background-base-color: var(--color-background-action-primary);
     --background-base-color-hover: var(--color-background-action-primary-hover);
     --background-base-disabled: var(--color-background-disabled);
@@ -106,6 +81,17 @@
     --border-base-color: var(--color-border-action-primary);
 }
 
+// BUTTON-SPLIT OUTLINE
+:host(.ds-button-split.ds-button-split--primary.ds-button-split--outline) {
+    --background-base-color: transparent;
+    --label-base-color: var(--color-text-primary);
+    --background-base-disabled: transparent;
+    --border-base-color: var(--color-border-action-primary);
+    --border-radius: var(--border-radius-xl);
+    --border-top-right-radius: 0px;
+    --border-bottom-right-radius: 0px;
+}
+
 // PRIMARY CLEAR
 :host(.ds-button--primary.ds-button--clear) {
     --background-base-color: transparent;
@@ -125,6 +111,21 @@
     --border-radius: none;
 }
 
+// BUTTON-SPLIT PRIMARY CLEAR
+:host(.ds-button-split.ds-button-split--primary.ds-button-split--clear) {
+    --background-base-color: transparent;
+    --background-base-color-hover: var(--color-background-hover);
+    --background-base-color-active: var(--color-background-active);
+    --background-base-focus: var(--color-background-hover);
+    --background-base-disabled: transparent;
+    --label-base-color: var(--color-text-primary);
+    --label-base-color-hover: var(--color-text-primary);
+    --label-base-color-focus: var(--color-text-primary);
+    --label-base-color-active: var(--color-text-primary);
+    --border-base-color: transparent;
+    --border-top-right-radius: 0px;
+    --border-bottom-right-radius: 0px;
+}
 
 // SECONDARY
 :host(.ds-button--secondary) {
@@ -149,7 +150,7 @@
 }
 
 // BUTTON-SPLIT SECONDARY
-:host(.ds-button-split.ds-button-split--secondary) {
+:host(.ds-button-split.ds-button-split--solid.ds-button-split--secondary) {
     --background-base-color: var(--color-background-action-secondary);
     --background-base-color-hover: var(--color-background-action-secondary-hover);
     --background-base-disabled: var(--color-background-disabled);
@@ -172,14 +173,25 @@
     --border-bottom-right-radius: 0px;
 }
 
-// SECONDARY OUTLINE
-:host(.ds-button--secondary.ds-button--outline) {
+// SECONDARY OUTLINE AND 
+// BUTTON-SPLIT SECONDARY OUTLINE
+:host(.ds-button--secondary.ds-button--outline), 
+:host(.ds-button-split.ds-button-split--secondary.ds-button-split--outline) {
     --background-base-color: transparent;
     --label-base-color: var(--color-text-secondary);
     --background-base-disabled: transparent;
     --border-base-color: var(--color-border-action-secondary);
     --border-shadow-color-disabled: transparent;
 }
+
+// BUTTON-SPLIT SECONDARY OUTLINE
+// :host(.ds-button-split.ds-button-split--secondary.ds-button-split--secondary) {
+//     --background-base-color: transparent;
+//     --label-base-color: var(--color-text-secondary);
+//     --background-base-disabled: transparent;
+//     --border-base-color: var(--color-border-action-secondary);
+//     --border-shadow-color-disabled: transparent;
+// }
 
 // SECONDARY CLEAR
 :host(.ds-button--secondary.ds-button--clear){
@@ -195,6 +207,25 @@
     --border-base-color: transparent;
     --border-base-color-disabled: transparent;
     --border-radius: none;
+}
+
+// BUTTON-SPLIT SECONDARY CLEAR
+:host(.ds-button-split.ds-button-split--secondary.ds-button-split--clear) {
+    --background-base-color: transparent;
+    --background-base-color-hover: var(--color-background-hover);
+    --background-base-color-active: var(--color-background-active);
+    --background-base-focus: var(--color-background-hover);
+    --label-base-color: var(--color-text-secondary);
+    --label-base-color-hover: var(--color-text-secondary);
+    --label-base-color-focus: var(--color-text-secondary);
+    --label-base-color-active: var(--color-text-secondary);
+    --background-base-disabled: transparent;
+    --border-base-color: transparent;
+    --border-base-color-disabled: transparent;
+    --border-radius: none;
+    --border-radius: var(--border-radius-xl);
+    --border-top-right-radius: 0px;
+    --border-bottom-right-radius: 0px;
 }
 
 // INFO
@@ -242,15 +273,24 @@
 }
 
 // INFO OUTLINE
-:host(.ds-button--info.ds-button--outline) {
+:host(.ds-button--info.ds-button--outline), 
+:host(.ds-button-split.ds-button-split--outline.ds-button-split--info) {
     --background-base-color: transparent;
     --label-base-color: var(--color-text-status-info);
     --background-base-disabled: transparent;
     --border-shadow-color-disabled: transparent;
 }
 
+// BUTTON-SPLIT INFO OUTLINE
+:host(.ds-button-split.ds-button-split--outline.ds-button-split--info) {
+    --border-radius: var(--border-radius-xl);
+    --border-top-right-radius: 0px;
+    --border-bottom-right-radius: 0px;
+}
+
 // INFO CLEAR
-:host(.ds-button--info.ds-button--clear) {
+:host(.ds-button--info.ds-button--clear), 
+:host(.ds-button-split.ds-button-split--clear.ds-button-split--info) {
     --background-base-color: transparent;
     --background-base-disabled: transparent;
     --background-base-color-hover: var(--color-background-hover);
@@ -265,8 +305,16 @@
     --border-radius: none;
 }
 
-// WARNING
-:host(.ds-button--warning) {
+// BUTTON-SPLIT INFO CLEAR
+:host(.ds-button-split.ds-button-split--clear.ds-button-split--info) {
+    --border-radius: var(--border-radius-xl);
+    --border-top-right-radius: 0px;
+    --border-bottom-right-radius: 0px;
+}
+
+// WARNING and BUTTON-SPLIT WARNING
+:host(.ds-button--warning), 
+:host(.ds-button-split.ds-button-split--warning) {
     --background-base-color: var(--color-background-status-warning);
     --background-base-color-hover: var(--color-background-status-warning-hover);
     --background-base-disabled: var(--color-background-disabled);
@@ -288,37 +336,23 @@
 
 // BUTTON-SPLIT WARNING
 :host(.ds-button-split.ds-button-split--warning) {
-    --background-base-color: var(--color-background-status-warning);
-    --background-base-color-hover: var(--color-background-status-warning-hover);
-    --background-base-disabled: var(--color-background-disabled);
-    --background-base-color-active: var(--color-background-status-warning-active);
-    --background-base-focus: var(--color-background-status-warning-hover);
-    --label-base-color: var(--color-text-action);
-    --label-base-color-hover: var(--color-text-action);
-    --label-base-color-active: var(--color-text-action-on-dark);
-    --label-base-color-focus: var(--color-text-action);
-    --label-base-color-disabled: var(--color-text-disabled);
-    --border-base-color: var(--color-border-status-warning);
-    --border-base-color-hover: var(--color-border-status-warning-hover);
-    --border-base-color-active: var(--color-background-status-warning-active);
-    --border-base-color-focus: var(--color-border-focus);
-    --border-base-color-disabled: var(--color-border-disabled);
-    --border-shadow-color: var(--color-background-surface-00);
     --border-radius: var(--border-radius-xl);
     --border-top-right-radius: 0px;
     --border-bottom-right-radius: 0px;
 }
 
-// WARNING OUTLINE
-:host(.ds-button--warning.ds-button--outline) {
+// WARNING OUTLINE and BUTTON-SPLIT WARNING OUTLINE
+:host(.ds-button--warning.ds-button--outline),
+:host(.ds-button-split.ds-button-split--outline.ds-button-split--warning) {
     --background-base-color: transparent;
     --background-base-disabled: transparent;
     --label-base-color: var(--color-text-status-warning);
     --border-base-color: var(--color-border-status-warning);
 }
 
-// WARNING CLEAR
-:host(.ds-button--warning.ds-button--clear) {
+// WARNING CLEAR and BUTTON-SPLIT WARNING CLEAR
+:host(.ds-button--warning.ds-button--clear),
+:host(.ds-button-split.ds-button-split--clear.ds-button-split--warning) {
     --background-base-color: transparent;
     --background-base-disabled: transparent;
     --background-base-color-hover: var(--color-background-hover);
@@ -333,8 +367,16 @@
     --border-base-color-disabled: transparent;
 }
 
-// SUCCESS
-:host(.ds-button--success) {
+// BUTTON-SPLIT WARNING CLEAR
+:host(.ds-button-split.ds-button-split--clear.ds-button-split--warning)  {
+    --border-radius: var(--border-radius-xl);
+    --border-top-right-radius: 0px;
+    --border-bottom-right-radius: 0px;
+}
+
+// SUCCESS and BUTTON-SPLIT SUCCESS
+:host(.ds-button--success), 
+:host(.ds-button-split.ds-button-split--success) {
     --background-base-color: var(--color-background-status-success);
     --background-base-color-hover: var(--color-background-status-success-hover);
     --background-base-disabled: var(--color-background-disabled);
@@ -357,23 +399,6 @@
 
 // BUTTON-SPLIT SUCCESS
 :host(.ds-button-split.ds-button-split--success) {
-    --background-base-color: var(--color-background-status-success);
-    --background-base-color-hover: var(--color-background-status-success-hover);
-    --background-base-disabled: var(--color-background-disabled);
-    --background-base-color-active: var(--color-background-status-success-active);
-    --background-base-focus: var(--color-background-status-success-hover);
-    --label-base-color: var(--color-text-action);
-    --label-base-color-hover: var(--color-text-action);
-    --label-base-color-focus: var(--color-text-action);
-    --label-base-color-active: var(--color-text-action-on-dark);
-    --label-base-color-disabled: var(--color-text-disabled);
-    --border-base-color: var(--color-border-status-success);
-    --border-base-color-hover: var(--color-border-status-success-hover);
-    --border-base-color-active: var(--color-border-status-success-active);
-    --border-base-color-focus: var(--color-border-focus);
-    --border-base-color-disabled: var(--color-border-disabled);
-    --border-shadow-color: var(--color-background-surface-00);
-    --border-shadow-color-disabled:transparent;
     --border-radius: var(--border-radius-xl);
     --border-top-right-radius: 0px;
     --border-bottom-right-radius: 0px;
@@ -905,4 +930,13 @@
     --border-base-color-focus: var(--color-border-focus);
     --border-base-color-disabled: transparent;
     --border-radius: none;
+}
+
+
+// button split
+
+:host(.ds-button-split) {
+    --border-radius: var(--border-radius-xl);
+    --border-top-right-radius: 0px;
+    --border-bottom-right-radius: 0px;
 }
