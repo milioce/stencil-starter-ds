@@ -107,7 +107,7 @@
 
 
 // SECONDARY
-:host(.ds-button--secondary), :host(.ds-button--secondary),
+:host(.ds-button--secondary), :host(.ds-button--secondary.ds-button--solid),
 :host(.ds-button-split.ds-button-split--solid.ds-button-split--secondary) {
     --background-base-color: var(--color-background-action-secondary);
     --background-base-color-hover: var(--color-background-action-secondary-hover);
@@ -179,7 +179,7 @@
 }
 
 // INFO
-:host(.ds-button--info),
+:host(.ds-button--info), :host(.ds-button--info.ds-button--solid),
 :host(.ds-button-split.ds-button-split--info)  {
     --background-base-color: var(--color-background-status-info);
     --background-base-color-hover: var(--color-background-status-info-hover);
@@ -238,7 +238,7 @@
 }
 
 // WARNING and BUTTON-SPLIT WARNING
-:host(.ds-button--warning), 
+:host(.ds-button--warning), :host(.ds-button--warning.ds-button--solid),
 :host(.ds-button-split.ds-button-split--warning) {
     --background-base-color: var(--color-background-status-warning);
     --background-base-color-hover: var(--color-background-status-warning-hover);
@@ -298,7 +298,7 @@
 }
 
 // SUCCESS and BUTTON-SPLIT SUCCESS
-:host(.ds-button--success), 
+:host(.ds-button--success), :host(.ds-button--success.ds-button--solid),
 :host(.ds-button-split.ds-button-split--success) {
     --background-base-color: var(--color-background-status-success);
     --background-base-color-hover: var(--color-background-status-success-hover);
@@ -375,7 +375,7 @@
 }
 
 // ERROR and BUTTON-SPLIT ERROR
-:host(.ds-button--error),
+:host(.ds-button--error), :host(.ds-button--error.ds-button--solid),
 :host(.ds-button-split.ds-button-split--error) {
     --background-base-color: var(--color-background-status-error);
     --background-base-color-hover: var(--color-background-status-error-hover);
