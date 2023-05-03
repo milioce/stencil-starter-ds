@@ -28,7 +28,7 @@
 }
 
 // PRIMARY
-:host(.ds-button--primary), :host(.ds-button--solid),
+:host(.ds-button--primary), :host(.ds-button--primary.ds-button--solid),
 :host(.ds-button-split.ds-button-split--primary) {
     --background-base-color: var(--color-background-action-primary);
     --background-base-color-hover: var(--color-background-action-primary-hover);
@@ -107,7 +107,7 @@
 
 
 // SECONDARY
-:host(.ds-button--secondary),
+:host(.ds-button--secondary), :host(.ds-button--secondary),
 :host(.ds-button-split.ds-button-split--solid.ds-button-split--secondary) {
     --background-base-color: var(--color-background-action-secondary);
     --background-base-color-hover: var(--color-background-action-secondary-hover);
@@ -127,6 +127,8 @@
     --border-radius: var(--border-radius-xl);
     --border-shadow-color: var(--color-background-surface-00);
     --border-shadow-color-disabled: transparent;
+    --border-top-right-radius: var(--border-radius-xl);
+    --border-bottom-right-radius: var(--border-radius-xl);
 }
 
 // SECONDARY OUTLINE AND 
@@ -196,6 +198,8 @@
     --border-base-color-disabled: var(--color-border-disabled);
     --border-shadow-color: var(--color-background-surface-00);
     --border-radius: var(--border-radius-xl);
+    --border-top-right-radius: var(--border-radius-xl);
+    --border-bottom-right-radius: var(--border-radius-xl);    
 }
 
 // INFO OUTLINE and BUTTON-SPLIT INFO
@@ -253,6 +257,8 @@
     --border-base-color-disabled: var(--color-border-disabled);
     --border-shadow-color: var(--color-background-surface-00);
     --border-radius: var(--border-radius-xl);
+    --border-top-right-radius: var(--border-radius-xl);
+    --border-bottom-right-radius: var(--border-radius-xl);
 }
 
 
@@ -311,6 +317,8 @@
     --border-base-color-disabled: var(--color-border-disabled);
     --border-shadow-color: var(--color-background-surface-00);
     --border-radius: var(--border-radius-xl);
+    --border-top-right-radius: var(--border-radius-xl);
+    --border-bottom-right-radius: var(--border-radius-xl);
     --border-shadow-color-disabled:transparent;
 }
 
@@ -386,6 +394,8 @@
     --border-base-color-disabled: var(--color-border-disabled);
     --border-shadow-color: var(--color-background-surface-00);
     --border-radius: var(--border-radius-xl);
+    --border-top-right-radius: var(--border-radius-xl);
+    --border-bottom-right-radius: var(--border-radius-xl);
 }
 
 // ERROR OUTLINE and BUTTON-SPLIT ERROR OUTLINE
@@ -432,8 +442,8 @@
 
 
 // BUTTON-SPLIT ERROR
-:host(.ds-button-split.ds-button-split--error) 
-:host(.ds-button-split.ds-button-split--outline.ds-button-split--error)
+:host(.ds-button-split.ds-button-split--error),
+:host(.ds-button-split.ds-button-split--outline.ds-button-split--error),
 :host(.ds-button-split.ds-button-split--clear.ds-button-split--error) {
     --border-top-right-radius: 0px;
     --border-bottom-right-radius: 0px;

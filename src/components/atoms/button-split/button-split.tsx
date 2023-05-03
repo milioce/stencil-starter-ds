@@ -23,7 +23,7 @@ export class AtomsButtonSplit {
       <Host>
         <div class="ds-button-split__button-action">
           <ds-button variant="split">Continuar</ds-button>
-          <button class="ds-button-split__button-dropdeable ds-button-split--secondary" aria-hidden="true">
+          <button class="ds-button-split__button-dropdeable ds-button-split--primary" aria-hidden="true">
             +
           </button>
         </div>
