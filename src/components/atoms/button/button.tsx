@@ -144,8 +144,7 @@ export class AtomsButton implements ComponentInterface {
 
   private getHostClassNames = () => {
     const classes =
-      (this.variant ? ` ds-button-${this.variant}` : 'ds-button') +
-      (this.variant ? ` ds-button-${this.variant}--${this.color}` : ` ds-button--${this.color}`) +
+      (this.variant ? ` ds-button-${this.variant} ds-button-${this.variant}--${this.color} ` : ` ds-button--${this.color} ` + 'ds-button') +
       ` ds-button--${this.size}` +
       (this.fill ? ` ds-button--${this.fill}` : '') +
       (this.full ? ' ds-button--full' : '') +
