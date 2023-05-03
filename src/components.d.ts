@@ -116,11 +116,15 @@ export namespace Components {
         /**
           * If true, the user cannot interact with the input.
          */
-        "disabled"?: boolean;
+        "disabled": boolean;
+        /**
+          * The aria-label attribute of the input
+         */
+        "dsAriaLabel": string;
         /**
           * The id of the element
          */
-        "eID": string;
+        "eid": string;
         /**
           * Show the feedback message.
          */
@@ -335,9 +339,13 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
+          * The aria-label attribute of the input
+         */
+        "dsAriaLabel"?: string;
+        /**
           * The id of the element
          */
-        "eID"?: string;
+        "eid"?: string;
         /**
           * Show the feedback message.
          */
@@ -375,25 +383,25 @@ declare namespace LocalJSX {
          */
         "name"?: string;
         /**
+          * Emitted when the input loses focus
+         */
+        "onDsBlur"?: (event: DsInputCustomEvent<void>) => void;
+        /**
+          * Emitted when the value has changed. This event doesn't fire until the control loses focus.
+         */
+        "onDsChange"?: (event: DsInputCustomEvent<string>) => void;
+        /**
+          * Emitted when the component is cleared
+         */
+        "onDsClear"?: (event: DsInputCustomEvent<string>) => void;
+        /**
           * Emitted when the input gains focus
          */
         "onDsFocus"?: (event: DsInputCustomEvent<void>) => void;
         /**
-          * Emitted when the value has changed. This event doesn't fire until the control loses focus.
-         */
-        "onDsInputChange"?: (event: DsInputCustomEvent<string>) => void;
-        /**
-          * Emitted when the component is cleared
-         */
-        "onDsInputClear"?: (event: DsInputCustomEvent<string>) => void;
-        /**
-          * Emitted when the component is clicked
-         */
-        "onDsInputClick"?: (event: DsInputCustomEvent<string>) => void;
-        /**
           * Emitted every time the value is updated by introducing a change
          */
-        "onDsInputInput"?: (event: DsInputCustomEvent<string>) => void;
+        "onDsInput"?: (event: DsInputCustomEvent<string>) => void;
         /**
           * Instructional text that shows before the input has a value.
          */

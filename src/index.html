@@ -18,6 +18,23 @@
      -->
     <ds-button>Continuar</ds-button>
 
-    <ds-input e-id="hola" type="password" label="Soy el label" placeholder="soy el placeholder"></ds-input>
+    <!-- <ds-input name="name" label="Soy el label" placeholder="soy el placeholder" has-error="true" feedback-type="error" helper-message="soy el hint"></ds-input> -->
+    <ds-input type="password"></ds-input>
+    <button onclick="onRequired()">Required</button>
+    <button onclick="onNoRequired()">No Required</button>
+
+    <!-- <script>
+      document.querySelector('ds-input').feedbackText = ['text1', 'text2'];
+    </script> -->
+    <script>
+      function onRequired() {
+        document.querySelector('ds-input').required = true;
+      }
+    </script>
+    <script>
+      function onNoRequired() {
+        document.querySelector('ds-input').required = false;
+      }
+    </script>
   </body>
 </html>

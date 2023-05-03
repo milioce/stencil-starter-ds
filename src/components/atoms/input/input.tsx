@@ -1,20 +1,21 @@
 import { Component, Host, h, Element, Prop, Event, EventEmitter, ComponentInterface, State } from '@stencil/core';
 import { InputTypeTypes, InputLabelPositionTypes, InputFeedbackTypes } from './input.models';
 import { GlobalSizeTypes } from '@shared/model';
-import { checkIfUndefined } from '@utils/utils';
+import { isDefined } from '@utils/utils';
+import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   tag: 'ds-input',
   styleUrls: ['input.scss'],
   shadow: true,
 })
-export class AttomsInput implements ComponentInterface {
+export class AtomsInput implements ComponentInterface {
   @Element() el: HTMLElement | null;
 
   /**
    * The id of the element
    */
-  @Prop() eID: string;
+  @Prop({ mutable: true }) eid: string;
 
   /**
    * The name of the input. Submitted with the form as part of a name/value pair
@@ -39,7 +40,7 @@ export class AttomsInput implements ComponentInterface {
   /**
    * The size of the input
    */
-  @Prop() size: GlobalSizeTypes = 'lg';
+  @Prop() size: GlobalSizeTypes = 'md';
 
   /**
    * Instructional text that shows before the input has a value.
@@ -59,7 +60,7 @@ export class AttomsInput implements ComponentInterface {
   /**
    * If true, the user cannot interact with the input.
    */
-  @Prop({ reflect: true }) disabled?: boolean;
+  @Prop({ reflect: true }) disabled: boolean;
 
   /**
    * Message to help the user fills the input value
@@ -97,35 +98,43 @@ export class AttomsInput implements ComponentInterface {
   @Prop() icon: string;
 
   /**
+   * The aria-label attribute of the input
+   */
+  @Prop() dsAriaLabel: string;
+
+  /**
    * Emitted when the input gains focus
    */
   @Event() dsFocus: EventEmitter<void>;
 
   /**
+   * Emitted when the input loses focus
+   */
+  @Event() dsBlur: EventEmitter<void>;
+
+  /**
    * Emitted when the value has changed.
    * This event doesn't fire until the control loses focus.
    */
-  @Event() dsInputChange: EventEmitter<string>;
+  @Event() dsChange: EventEmitter<string>;
 
   /**
    * Emitted when the component is cleared
    */
-  @Event() dsInputClear: EventEmitter<string>;
+  @Event() dsClear: EventEmitter<string>;
 
   /**
    * Emitted every time the value is updated by introducing a change
    */
-  @Event() dsInputInput: EventEmitter<string>;
+  @Event() dsInput: EventEmitter<string>;
 
-  /**
-   * Emitted when the component is clicked
-   */
-  @Event() dsInputClick: EventEmitter<string>;
+  @State() originalType: InputTypeTypes;
 
-  @State() showPassword = false;
-
-  connectedCallback() {
-    /* TODO si no nos pasan un eID generar uno automaticamente con https://www.npmjs.com/package/uuid */
+  componentWillLoad() {
+    if (!this.eid) {
+      this.eid = uuidv4();
+    }
+    this.originalType = this.type;
   }
 
   private getHostClassNames = () => {
@@ -143,24 +152,44 @@ export class AttomsInput implements ComponentInterface {
 
   private handleChange = event => {
     this.value = event.target.value;
-    this.dsInputInput.emit(this.value);
+    this.dsInput.emit(this.value);
     if (this.value === '') {
-      this.dsInputClear.emit();
+      this.dsClear.emit();
     }
-  };
-
-  private handleClear = () => {
-    this.value = '';
-    this.dsInputClear.emit();
-  };
-
-  private handleShowPassword = () => {
-    this.showPassword === false ? (this.type = 'text') : (this.type = 'password');
-    this.showPassword = !this.showPassword;
   };
 
   private handleFocus = () => {
     this.dsFocus.emit();
+  };
+
+  private handleBlur = () => {
+    this.dsBlur.emit();
+  };
+
+  private handleIconClick = () => {
+    if (this.originalType === 'password') {
+      this.type === 'password' ? (this.type = 'text') : (this.type = 'password');
+    } else {
+      this.clear();
+    }
+  };
+
+  private clear = () => {
+    this.value = '';
+    this.dsClear.emit();
+  };
+
+  private getIcon = () => {
+    // TODO falta icon eye-hide
+    if (this.originalType === 'password') {
+      return this.type === 'password' ? 'ds_icon_eye' : 'ds_icon_eye-hide';
+    } else {
+      return 'ds_icon_error-solid';
+    }
+  };
+
+  private getFeedbackIcon = () => {
+    return this.feedbackType === 'error' ? 'ds_icon_error-solid' : 'ds_icon_check-solid';
   };
 
   private getFeedbackClassNames = () => {
@@ -169,27 +198,49 @@ export class AttomsInput implements ComponentInterface {
     return classes;
   };
 
-  private getFeedbackIcon = () => {
-    return this.feedbackType === 'error' ? 'ds_icon_error-solid' : 'ds_icon_check-solid';
-  };
-
   private getAttributes = () => {
-    // TODO crear un metodo para checkear si nos mandan Prop
     const attributes = {};
 
-    if (!checkIfUndefined(this.name)) {
+    if (isDefined(this.name)) {
       attributes['name'] = this.name;
     }
 
-    if (!checkIfUndefined(this.placeholder)) {
+    if (isDefined(this.placeholder)) {
       attributes['placeholder'] = this.placeholder;
     }
 
-    if (!checkIfUndefined(this.value)) {
+    if (isDefined(this.value)) {
       attributes['value'] = this.value;
     }
 
+    if (isDefined(this.dsAriaLabel)) {
+      attributes['aria-label'] = this.dsAriaLabel;
+    }
+
+    if (this.helperMessage) {
+      attributes['aria-describedby'] = `${this.eid}-hint ${this.eid}-feedback`;
+    } else {
+      attributes['aria-describedby'] = `${this.eid}-feedback`;
+    }
+
+    if (this.required) {
+      attributes['aria-required'] = true;
+    }
+
+    if (this.hasError) {
+      attributes['aria-invalid'] = true;
+    }
+
     return attributes;
+  };
+
+  // TODO quitar una vez el ds-icon funcione
+  private getNameProvisional = () => {
+    if (this.originalType === 'password') {
+      return this.type === 'password' ? 'ds_icon_eye' : 'ds_icon_eye-hide';
+    } else {
+      return 'ds_icon_error-solid';
+    }
   };
 
   render() {
@@ -198,41 +249,34 @@ export class AttomsInput implements ComponentInterface {
     const feedbackClass = this.getFeedbackClassNames();
     return (
       <Host class={hostClass}>
-        {this.label && <label htmlFor={this.eID}>{this.label}</label>}
+        {this.label && <label htmlFor={this.eid}>{this.label}</label>}
         <div>
           {this.hasIcon && <ds-icon size={this.size} icon={this.icon}></ds-icon>}
           <input
             {...this.getAttributes()}
             class={inputClass}
             type={this.type}
-            id={this.eID}
+            id={this.eid}
             required={this.required}
             disabled={this.disabled}
             readOnly={this.readonly}
             onInput={e => this.handleChange(e)}
             onFocus={this.handleFocus}
+            onBlur={this.handleBlur}
           />
-          {/* TODO falta icon eye-hide */}
-          {this.value && this.type !== 'password' && (
-            <ds-button
-              color="primary"
-              size={this.size}
-              hasIcon={true}
-              onlyIcon={true}
-              icon={this.showPassword ? 'ds_icon_eye-hide' : `ds_icon_error-solid`}
-              onDsClick={this.showPassword ? this.handleShowPassword : this.handleClear}
-            >
-              {this.showPassword ? 'ds_icon_eye-hide' : `ds_icon_error-solid`}
-            </ds-button>
-          )}
-          {this.value && this.type === 'password' && (
-            <ds-button color="primary" size={this.size} hasIcon={true} onlyIcon={true} icon={`ds_icon_eye`} onDsClick={this.handleShowPassword}>
-              ds_icon_eye
+          {/* TODO falta color "gris" para los ds-button => light */}
+          {this.value && (
+            <ds-button color="primary" size={this.size} hasIcon={true} onlyIcon={true} icon={this.getIcon()} onDsClick={this.handleIconClick}>
+              {this.getNameProvisional()}
             </ds-button>
           )}
         </div>
-        {this.helperMessage && <span class="ds-input__helper-text">{this.helperMessage}</span>}
-        <div class={feedbackClass}>
+        {this.helperMessage && (
+          <span class="ds-input__helper-text" id={`${this.eid}-hint`}>
+            {this.helperMessage}
+          </span>
+        )}
+        <div class={feedbackClass} aria-live="polite" id={`${this.eid}-feedback`}>
           {this.feedbackText &&
             this.feedbackType && [<ds-icon color={this.feedbackType} size={this.size} icon={this.getFeedbackIcon()}></ds-icon>, <span>{this.feedbackText}</span>]}
         </div>

@@ -1,19 +1,11 @@
-import { format } from './utils';
+import { isDefined } from './utils';
 
-describe('format', () => {
-  it('returns empty string for no names defined', () => {
-    expect(format(undefined, undefined, undefined)).toEqual('');
+describe('check if value is defined', () => {
+  it('returns false when value is undefined', () => {
+    expect(isDefined(undefined)).toBeFalsy();
   });
 
-  it('formats just first names', () => {
-    expect(format('Joseph', undefined, undefined)).toEqual('Joseph');
-  });
-
-  it('formats first and last names', () => {
-    expect(format('Joseph', undefined, 'Publique')).toEqual('Joseph Publique');
-  });
-
-  it('formats first, middle and last names', () => {
-    expect(format('Joseph', 'Quincy', 'Publique')).toEqual('Joseph Quincy Publique');
+  it('returns true when value is defined', () => {
+    expect(isDefined('Aletheia')).toBeTruthy();
   });
 });
