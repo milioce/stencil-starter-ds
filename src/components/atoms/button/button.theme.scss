@@ -29,7 +29,7 @@
 
 // PRIMARY
 :host(.ds-button--primary), :host(.ds-button--solid),
-:host(.ds-button-split.ds-button-split--primary.ds-button-split--solid) {
+:host(.ds-button-split.ds-button-split--primary) {
     --background-base-color: var(--color-background-action-primary);
     --background-base-color-hover: var(--color-background-action-primary-hover);
     --background-base-disabled: var(--color-background-disabled);
@@ -97,7 +97,7 @@
 
 
 // BUTTON-SPLIT PRIMARY
-:host(.ds-button-split.ds-button-split--primary.ds-button-split--solid),
+:host(.ds-button-split.ds-button-split--primary),
 :host(.ds-button-split.ds-button-split--primary.ds-button-split--outline), 
 :host(.ds-button-split.ds-button-split--primary.ds-button-split--clear) {
     --border-radius: var(--border-radius-xl);
