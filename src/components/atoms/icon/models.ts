@@ -3,3 +3,5 @@ export enum IconSizes {
   medium = 'md',
   small = 'sm',
 }
+
+export type StateColorTypes = 'solid';

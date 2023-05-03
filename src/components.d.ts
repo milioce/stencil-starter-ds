@@ -7,8 +7,10 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { ButtonColorTypes, ButtonFillTypes, ButtonIconPositionTypes, ButtonTypeTypes } from "./components/atoms/button/button.model";
 import { GlobalSizeTypes } from "@shared/model";
+import { StateColorTypes } from "./components/atoms/icon/models";
 export { ButtonColorTypes, ButtonFillTypes, ButtonIconPositionTypes, ButtonTypeTypes } from "./components/atoms/button/button.model";
 export { GlobalSizeTypes } from "@shared/model";
+export { StateColorTypes } from "./components/atoms/icon/models";
 export namespace Components {
     interface DsButton {
         /**
@@ -101,6 +103,10 @@ export namespace Components {
           * The icon color
          */
         "color": string;
+        /**
+          * The fill of the icon (background and border color)
+         */
+        "fill": StateColorTypes;
         /**
           * The icon name
          */
@@ -237,6 +243,10 @@ declare namespace LocalJSX {
           * The icon color
          */
         "color"?: string;
+        /**
+          * The fill of the icon (background and border color)
+         */
+        "fill"?: StateColorTypes;
         /**
           * The icon name
          */

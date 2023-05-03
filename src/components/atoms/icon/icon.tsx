@@ -1,4 +1,5 @@
 import { Component, Prop, Element, h, JSX, ComponentInterface } from '@stencil/core';
+import { StateColorTypes} from './models';
 import { GlobalSizeTypes } from '@shared/model';
 
 @Component({
@@ -20,6 +21,11 @@ export class AtomsIcon implements ComponentInterface {
   @Prop() icon: string;
 
   /**
+   * The fill of the icon (background and border color)
+   */
+  @Prop() fill: StateColorTypes= 'solid';
+
+  /**
    * The size of the icon
    */
   @Prop() size: GlobalSizeTypes = 'sm';
@@ -30,12 +36,12 @@ export class AtomsIcon implements ComponentInterface {
   @Prop() ariaLabel: string;
 
   private classNames = () => {
-    const classes = `ds-icon ds-icon--${this.color} ds-icon--${this.size} ds-icon--${this.icon}`;
+    const classes = `ds-icon ds-icon--${this.size} ${this.icon} ds-icon--${this.fill}`;
 
     return classes;
   };
 
   render(): JSX.Element {
-    return <i class={this.classNames()} color={this.color} aria-label={this.ariaLabel}></i>;
+    return <svg class={this.classNames()} ><use xlinkHref={`assets/images/sprites/sprites.svg#${this.icon}`}></use></svg>;
   }
 }
