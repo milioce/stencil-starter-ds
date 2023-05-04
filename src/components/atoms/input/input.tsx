@@ -133,6 +133,8 @@ export class AtomsInput implements ComponentInterface {
 
   @State() originalType: InputTypeTypes;
 
+  // TODO añadir método setFocus
+
   componentWillLoad() {
     this.setIds();
     this.originalType = this.type;

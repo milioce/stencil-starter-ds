@@ -195,7 +195,7 @@ describe('ds-input', () => {
       expect(input).toHaveAttribute('aria-required');
       expect(page.root).toHaveAttribute('required');
     });
-    it('should set disabled class and disabled attribute when disabled is true', async () => {
+    it('should set input--disabled class and disabled on input element attribute when disabled is true', async () => {
       const page = await newSpecPage({
         components: [AtomsInput],
         html: `<ds-input disabled="true"></ds-input>`,
@@ -205,7 +205,7 @@ describe('ds-input', () => {
       expect(input).toHaveAttribute('disabled');
       expect(input).toHaveClass('input--disabled');
     });
-    it('should display a message and when helperMessage is defined', async () => {
+    it('should display a message and set an id when helperMessage is defined', async () => {
       const page = await newSpecPage({
         components: [AtomsInput],
         html: `<ds-input helper-message="helper-message-text"></ds-input>`,
@@ -216,6 +216,27 @@ describe('ds-input', () => {
       expect(helperMessage).toBeTruthy();
       expect(helperMessage.getAttribute('id')).toBe(input.getAttribute('id') + '-hint');
       expect(helperMessage).toEqualText('helper-message-text');
+    });
+    it('should set input--readonly class and readOnly attribute on input element when readonly is true', async () => {
+      const page = await newSpecPage({
+        components: [AtomsInput],
+        html: `<ds-input readonly="true"></ds-input>`,
+        supportsShadowDom: false,
+      });
+      const input = page.root.querySelector('input');
+      expect(input).toHaveAttribute('readonly');
+      expect(input).toHaveClass('input--readonly');
+      expect(page.root).toHaveAttribute('readonly');
+    });
+    it('should set ds-input-error class and aria-invalid attribute when hasError is true', async () => {
+      const page = await newSpecPage({
+        components: [AtomsInput],
+        html: `<ds-input has-error="true"></ds-input>`,
+        supportsShadowDom: false,
+      });
+      const input = page.root.querySelector('input');
+      expect(page.root).toHaveClass('ds-input--error');
+      expect(input).toHaveAttribute('aria-invalid');
     });
   });
   // describe('action', () => {});
