@@ -1,6 +1,8 @@
 dist/
 www/
 loader/
+angular-output/*
+docs.json
 
 *~
 *.sw[mnpcod]

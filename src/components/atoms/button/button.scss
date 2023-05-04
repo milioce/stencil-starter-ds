@@ -1,16 +1,44 @@
 @use 'utilities';
 @use 'tools';
+@import './button.theme.scss';
 
 :host {
   display: block;
-}
 
-.ds-button {
-  padding: 10px 15px;
-  background-color: rgb(54, 5, 54)  /* var(--primary--solid-bg) */;
-  color: white   /* var(--primary--solid-text) */;
-}
+  button, a {
+    background-color: var(--background-base-color);
+    border-radius: var(--border-radius);
+    border-width: var(--_border-00625);
+    border-style: solid;
+    border-color: var(--border-base-color);
+    color: var(--label-base-color);
+    font-size: var(--font-size);
+    padding: var(--padding-inside);
+    cursor: var(--_hover-cursor);
 
-.ds-button:hover {
-  cursor: pointer;
+    &:hover {
+      background-color: var(--background-base-color-hover);
+      border-color: var(--background-base-color-hover);
+      color: var(--label-base-color-hover);
+    }
+    &:focus {
+      background-color: var(--background-base-color-hover);
+      border-width: var(--_border-00625);
+      border-color: var(--border-base-color-focus);
+      box-shadow: inset 0px 0px 0px 1px var(--border-shadow-color);
+      color: var(--label-base-color-hover);
+    }
+    &:active {
+      background-color: var(--background-base-color-active);
+      border-color: var(--background-base-color-active);
+      color: var(--label-base-color-active);
+    }
+    &.button--disabled {
+      background-color: var(--background-base-disabled);
+      border-color: var(--border-base-color-disabled);
+      color: var(--label-base-color-disabled);
+      box-shadow: var(--border-shadow-color-disabled);
+      cursor: not-allowed;
+    }
+  }
 }

@@ -7,27 +7,28 @@
 
 ## Properties
 
-| Property          | Attribute          | Description                                                 | Type                                     | Default     |
-| ----------------- | ------------------ | ----------------------------------------------------------- | ---------------------------------------- | ----------- |
-| `ariaControls`    | `aria-controls`    | The aria-controls attribute for the button                  | `string`                                 | `undefined` |
-| `ariaDescribedby` | `aria-describedby` | The aria-describedby attribute for the button               | `string`                                 | `undefined` |
-| `ariaExpanded`    | `aria-expanded`    | The aria-expanded attribute for the button                  | `string`                                 | `undefined` |
-| `ariaHaspopup`    | `aria-haspopup`    | The aria-haspopup attribute for the button                  | `string`                                 | `undefined` |
-| `ariaLabel`       | `aria-label`       | The aria-label attribute for the button                     | `string`                                 | `undefined` |
-| `ariaLabelledby`  | `aria-labelledby`  | The aria-labelledby attribute for the button                | `string`                                 | `undefined` |
-| `ariaPressed`     | `aria-pressed`     | The aria-pressed attribute for the button                   | `string`                                 | `undefined` |
-| `autofocus`       | `autofocus`        | Whether the button is focused on page load                  | `boolean`                                | `false`     |
-| `color`           | `color`            | The variant of the button                                   | `"primary" \| "secondary" \| "tertiary"` | `'primary'` |
-| `disabled`        | `disabled`         | Whether the button is disabled                              | `boolean`                                | `false`     |
-| `full`            | `full`             | Whether the button takes up the full width of the container | `boolean`                                | `false`     |
-| `hasIcon`         | `has-icon`         | Whether the button has an icon                              | `boolean`                                | `false`     |
-| `icon`            | `icon`             | The code of the button's icon (used with hasIcon)           | `string`                                 | `undefined` |
-| `iconPosition`    | `icon-position`    | The position of the button's icon                           | `"left" \| "right"`                      | `'left'`    |
-| `loading`         | `loading`          | Whether the button shows a loading icon                     | `boolean`                                | `false`     |
-| `outlined`        | `outlined`         | Whether the button is outlined (only border, no background) | `boolean`                                | `false`     |
-| `size`            | `size`             | The size of the buton                                       | `"lg" \| "md" \| "sm"`                   | `'md'`      |
-| `type`            | `type`             | The type of the button                                      | `"button" \| "link" \| "submit"`         | `'button'`  |
-| `url`             | `url`              | The URL of the button (used with type link)                 | `string`                                 | `undefined` |
+| Property            | Attribute             | Description                                          | Type                                                                      | Default     |
+| ------------------- | --------------------- | ---------------------------------------------------- | ------------------------------------------------------------------------- | ----------- |
+| `autofocus`         | `autofocus`           | Whether the button is focused on page load           | `boolean`                                                                 | `false`     |
+| `color`             | `color`               | The variant of the button                            | `"error" \| "info" \| "primary" \| "secondary" \| "success" \| "warning"` | `'primary'` |
+| `disabled`          | `disabled`            | The button is disabled                               | `boolean`                                                                 | `false`     |
+| `dsAriaControls`    | `ds-aria-controls`    | The aria-controls attribute for the button           | `string`                                                                  | `undefined` |
+| `dsAriaDescribedby` | `ds-aria-describedby` | The aria-describedby attribute for the button        | `string`                                                                  | `undefined` |
+| `dsAriaExpanded`    | `ds-aria-expanded`    | The aria-expanded attribute for the button           | `boolean`                                                                 | `undefined` |
+| `dsAriaHaspopup`    | `ds-aria-haspopup`    | The aria-haspopup attribute for the button           | `boolean`                                                                 | `undefined` |
+| `dsAriaLabel`       | `ds-aria-label`       | The aria-label attribute for the button              | `string`                                                                  | `undefined` |
+| `dsAriaLabelledby`  | `ds-aria-labelledby`  | The aria-labelledby attribute for the button         | `string`                                                                  | `undefined` |
+| `dsAriaPressed`     | `ds-aria-pressed`     | The aria-pressed attribute for the button            | `boolean`                                                                 | `undefined` |
+| `fill`              | `fill`                | The fill of the button (background and border color) | `"clear" \| "outline" \| "solid"`                                         | `'solid'`   |
+| `full`              | `full`                | The button takes up the full width of the container  | `boolean`                                                                 | `false`     |
+| `hasIcon`           | `has-icon`            | Whether the button has an icon                       | `boolean`                                                                 | `false`     |
+| `icon`              | `icon`                | The code of the button's icon (used with hasIcon)    | `string`                                                                  | `undefined` |
+| `iconPosition`      | `icon-position`       | The position of the button's icon                    | `"left" \| "right"`                                                       | `'left'`    |
+| `loading`           | `loading`             | Whether the button shows a loading icon              | `boolean`                                                                 | `false`     |
+| `onlyIcon`          | `only-icon`           | Whether the button has an icon                       | `boolean`                                                                 | `false`     |
+| `size`              | `size`                | The size of the buton                                | `"lg" \| "md" \| "sm"`                                                    | `'md'`      |
+| `type`              | `type`                | The type of the button                               | `"button" \| "link" \| "submit"`                                          | `'button'`  |
+| `url`               | `url`                 | The URL of the button (used with type link)          | `string`                                                                  | `undefined` |
 
 
 ## Events

@@ -7,12 +7,12 @@
 
 ## Properties
 
-| Property    | Attribute    | Description | Type                   | Default     |
-| ----------- | ------------ | ----------- | ---------------------- | ----------- |
-| `ariaLabel` | `aria-label` |             | `string`               | `undefined` |
-| `color`     | `color`      |             | `string`               | `undefined` |
-| `icon`      | `icon`       |             | `string`               | `undefined` |
-| `size`      | `size`       |             | `"lg" \| "md" \| "sm"` | `'sm'`      |
+| Property    | Attribute    | Description                          | Type                   | Default     |
+| ----------- | ------------ | ------------------------------------ | ---------------------- | ----------- |
+| `ariaLabel` | `aria-label` | The aria-label attribute of the icon | `string`               | `undefined` |
+| `color`     | `color`      | The icon color                       | `string`               | `undefined` |
+| `icon`      | `icon`       | The icon name                        | `string`               | `undefined` |
+| `size`      | `size`       | The size of the icon                 | `"lg" \| "md" \| "sm"` | `'sm'`      |
 
 
 ## Dependencies
