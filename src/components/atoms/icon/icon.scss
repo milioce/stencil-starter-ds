@@ -3,8 +3,9 @@
 @import './icon.theme.scss';
 :host {
     display: block;
-    span {
+    svg {
         background-color: var(--background-color);
+        fill: var(--background-color);
         color: var(--color);
         font-size: var(--_font-size-icon);
         &:hover {}

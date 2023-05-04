@@ -51,7 +51,7 @@
     "@storybook/testing-library": "^0.1.0",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.18.11",
-    "design-tokens-utils": "^0.0.9",
+    "design-tokens-utils": "^0.0.15",
     "eslint-config-prettier": "^8.8.0",
     "jest": "^27.5.1",
     "jest-cli": "^27.5.1",

@@ -42,7 +42,6 @@ export class AtomsIcon implements ComponentInterface {
   };
 
   render(): JSX.Element {
-    return <span class={this.classNames()}></span>
-  /* <svg class={this.classNames()} ><use xlinkHref={`assets/images/sprites/sprites.svg#${this.icon}`}></use></svg>;*/
+    return <svg class={this.classNames()} ><use xlinkHref={`assets/images/sprites/sprites.svg#${this.icon}`} fill="red"></use></svg>;
   }
 }
