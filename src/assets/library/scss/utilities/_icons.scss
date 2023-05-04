@@ -1,4 +1,600 @@
-// Do not edit directly
-// Generated on 4/5/2023 11:35:18
+@use '../settings/general' as *;
 
-// NO ICONS FILE CONFIGURATION
+@font-face {
+    font-family: 'icomoon';
+    src:  url('#{$font-path}/icomoon/icomoon.eot?9hq6yu');
+    src:  url('#{$font-path}/icomoon/icomoon.eot?9hq6yu#iefix') format('embedded-opentype'),
+      url('#{$font-path}/icomoon/icomoon.ttf?9hq6yu') format('truetype'),
+      url('#{$font-path}/icomoon/icomoon.woff?9hq6yu') format('woff'),
+      url('#{$font-path}/icomoon/icomoon.svg?9hq6yu#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-model-business-logic-model:before {
+    content: "\e900";
+  }
+  .icon-model-keyboard-event:before {
+    content: "\e901";
+  }
+  .icon-moon:before {
+    content: "\e902";
+  }
+  .icon-print:before {
+    content: "\e903";
+  }
+  .icon-chevron-left:before {
+    content: "\e904";
+  }
+  .icon-model-action-group:before {
+    content: "\e905";
+  }
+  .icon-model-action-body:before {
+    content: "\e906";
+  }
+  .icon-chevron2-right:before {
+    content: "\e907";
+  }
+  .icon-model-assign-statement:before {
+    content: "\e908";
+  }
+  .icon-indeterminate-solid:before {
+    content: "\e909";
+  }
+  .icon-model-principal-parameter:before {
+    content: "\e90a";
+  }
+  .icon-chevron2-left:before {
+    content: "\e90b";
+  }
+  .icon-info-solid:before {
+    content: "\e90c";
+  }
+  .icon-model-checkbox:before {
+    content: "\e90d";
+  }
+  .icon-branch:before {
+    content: "\e90e";
+  }
+  .icon-model-video:before {
+    content: "\e90f";
+  }
+  .icon-maximize-arrow:before {
+    content: "\e910";
+  }
+  .icon-model-parameter:before {
+    content: "\e911";
+  }
+  .icon-model-ouput-parameter:before {
+    content: "\e912";
+  }
+  .icon-model-global:before {
+    content: "\e913";
+  }
+  .icon-help:before {
+    content: "\e914";
+  }
+  .icon-document-dash-search:before {
+    content: "\e915";
+  }
+  .icon-model-datetimepicker:before {
+    content: "\e916";
+  }
+  .icon-upload:before {
+    content: "\e917";
+  }
+  .icon-error:before {
+    content: "\e918";
+  }
+  .icon-ellipsis:before {
+    content: "\e919";
+  }
+  .icon-route:before {
+    content: "\e91a";
+  }
+  .icon-arrow-left:before {
+    content: "\e91b";
+  }
+  .icon-model-block-start:before {
+    content: "\e91c";
+  }
+  .icon-filter:before {
+    content: "\e91d";
+  }
+  .icon-vertical-settings:before {
+    content: "\e91e";
+  }
+  .icon-video:before {
+    content: "\e91f";
+  }
+  .icon-model-action:before {
+    content: "\e920";
+  }
+  .icon-model-media-event:before {
+    content: "\e921";
+  }
+  .icon-arrow-up:before {
+    content: "\e922";
+  }
+  .icon-bell-solid:before {
+    content: "\e923";
+  }
+  .icon-resources:before {
+    content: "\e924";
+  }
+  .icon-model-custom-css:before {
+    content: "\e925";
+  }
+  .icon-arrow-45-right-down:before {
+    content: "\e926";
+  }
+  .icon-eye:before {
+    content: "\e927";
+  }
+  .icon-model-decimal:before {
+    content: "\e928";
+  }
+  .icon-delete:before {
+    content: "\e929";
+  }
+  .icon-uncollapse:before {
+    content: "\e92a";
+  }
+  .icon-model-pipe:before {
+    content: "\e92b";
+  }
+  .icon-model-core-exception:before {
+    content: "\e92c";
+  }
+  .icon-model-input-parameter:before {
+    content: "\e92d";
+  }
+  .icon-model-enumeration-element:before {
+    content: "\e92e";
+  }
+  .icon-model-page:before {
+    content: "\e92f";
+  }
+  .icon-model-mobile-action:before {
+    content: "\e930";
+  }
+  .icon-model-image:before {
+    content: "\e931";
+  }
+  .icon-unlink:before {
+    content: "\e932";
+  }
+  .icon-edit:before {
+    content: "\e933";
+  }
+  .icon-model-char:before {
+    content: "\e934";
+  }
+  .icon-model-password:before {
+    content: "\e935";
+  }
+  .icon-model-exception-flow:before {
+    content: "\e936";
+  }
+  .icon-sun:before {
+    content: "\e937";
+  }
+  .icon-star:before {
+    content: "\e938";
+  }
+  .icon-play-solid:before {
+    content: "\e939";
+  }
+  .icon-model-if-statement:before {
+    content: "\e93a";
+  }
+  .icon-model-exception-value:before {
+    content: "\e93b";
+  }
+  .icon-model-psminfo:before {
+    content: "\e93c";
+  }
+  .icon-model-form:before {
+    content: "\e93d";
+  }
+  .icon-model-class-model:before {
+    content: "\e93e";
+  }
+  .icon-star-solid:before {
+    content: "\e93f";
+  }
+  .icon-model-domain-class-field:before {
+    content: "\e940";
+  }
+  .icon-model-table:before {
+    content: "\e941";
+  }
+  .icon-model-end-error:before {
+    content: "\e942";
+  }
+  .icon-warning-solid:before {
+    content: "\e943";
+  }
+  .icon-arrow-45-right-up:before {
+    content: "\e944";
+  }
+  .icon-model-composition:before {
+    content: "\e945";
+  }
+  .icon-model-radio-group:before {
+    content: "\e946";
+  }
+  .icon-model-loop-list-statement:before {
+    content: "\e947";
+  }
+  .icon-arrow-link-right:before {
+    content: "\e948";
+  }
+  .icon-model-deployment:before {
+    content: "\e949";
+  }
+  .icon-model-custom-function-group:before {
+    content: "\e94a";
+  }
+  .icon-model-user-interface-model:before {
+    content: "\e94b";
+  }
+  .icon-add-link:before {
+    content: "\e94c";
+  }
+  .icon-play:before {
+    content: "\e94d";
+  }
+  .icon-filter-solid:before {
+    content: "\e94e";
+  }
+  .icon-model-custom-event:before {
+    content: "\e94f";
+  }
+  .icon-model-long:before {
+    content: "\e950";
+  }
+  .icon-model-text-block:before {
+    content: "\e951";
+  }
+  .icon-model-component:before {
+    content: "\e952";
+  }
+  .icon-model-radiobutton:before {
+    content: "\e953";
+  }
+  .icon-arrange-items:before {
+    content: "\e954";
+  }
+  .icon-model-text-box:before {
+    content: "\e955";
+  }
+  .icon-model-aggregation:before {
+    content: "\e956";
+  }
+  .icon-organization:before {
+    content: "\e957";
+  }
+  .icon-refresh:before {
+    content: "\e958";
+  }
+  .icon-model-input:before {
+    content: "\e959";
+  }
+  .icon-copy:before {
+    content: "\e95a";
+  }
+  .icon-line-width:before {
+    content: "\e95b";
+  }
+  .icon-list-view:before {
+    content: "\e95c";
+  }
+  .icon-model-hidden-field:before {
+    content: "\e95d";
+  }
+  .icon-close:before {
+    content: "\e95e";
+  }
+  .icon-add:before {
+    content: "\e95f";
+  }
+  .icon-palette:before {
+    content: "\e960";
+  }
+  .icon-model-function:before {
+    content: "\e961";
+  }
+  .icon-model-mouse-event:before {
+    content: "\e962";
+  }
+  .icon-info:before {
+    content: "\e963";
+  }
+  .icon-model-datepicker:before {
+    content: "\e964";
+  }
+  .icon-model-pipe-parameter:before {
+    content: "\e965";
+  }
+  .icon-change-arrows:before {
+    content: "\e966";
+  }
+  .icon-delete-solid:before {
+    content: "\e967";
+  }
+  .icon-warning:before {
+    content: "\e968";
+  }
+  .icon-check:before {
+    content: "\e969";
+  }
+  .icon-document:before {
+    content: "\e96a";
+  }
+  .icon-model-call-statement:before {
+    content: "\e96b";
+  }
+  .icon-model-expression:before {
+    content: "\e96c";
+  }
+  .icon-indeterminate:before {
+    content: "\e96d";
+  }
+  .icon-filter-close:before {
+    content: "\e96e";
+  }
+  .icon-model-custom-code:before {
+    content: "\e96f";
+  }
+  .icon-stop:before {
+    content: "\e970";
+  }
+  .icon-model-mobile-context:before {
+    content: "\e971";
+  }
+  .icon-dashboard:before {
+    content: "\e972";
+  }
+  .icon-bell:before {
+    content: "\e973";
+  }
+  .icon-arrow-45-left-up:before {
+    content: "\e974";
+  }
+  .icon-model-folder:before {
+    content: "\e975";
+  }
+  .icon-model-submit:before {
+    content: "\e976";
+  }
+  .icon-model-function-custom:before {
+    content: "\e977";
+  }
+  .icon-chevron2-up:before {
+    content: "\e978";
+  }
+  .icon-collapse:before {
+    content: "\e979";
+  }
+  .icon-document-dash:before {
+    content: "\e97a";
+  }
+  .icon-model-visible-field-instance:before {
+    content: "\e97b";
+  }
+  .icon-model-string:before {
+    content: "\e97c";
+  }
+  .icon-model-visible-field:before {
+    content: "\e97d";
+  }
+  .icon-download:before {
+    content: "\e97e";
+  }
+  .icon-desktop:before {
+    content: "\e97f";
+  }
+  .icon-error-solid:before {
+    content: "\e980";
+  }
+  .icon-projects:before {
+    content: "\e981";
+  }
+  .icon-settings:before {
+    content: "\e982";
+  }
+  .icon-minimize:before {
+    content: "\e983";
+  }
+  .icon-lifeguard:before {
+    content: "\e984";
+  }
+  .icon-model-note:before {
+    content: "\e985";
+  }
+  .icon-arrow-right:before {
+    content: "\e986";
+  }
+  .icon-model-domain-class:before {
+    content: "\e987";
+  }
+  .icon-model-hidden-field-instance:before {
+    content: "\e988";
+  }
+  .icon-model-mobile-assertion:before {
+    content: "\e989";
+  }
+  .icon-link:before {
+    content: "\e98a";
+  }
+  .icon-chevron-right:before {
+    content: "\e98b";
+  }
+  .icon-model-microservices-mini:before {
+    content: "\e98c";
+  }
+  .icon-minimize-arrow:before {
+    content: "\e98d";
+  }
+  .icon-model-2facode:before {
+    content: "\e98e";
+  }
+  .icon-card-view:before {
+    content: "\e98f";
+  }
+  .icon-model-link:before {
+    content: "\e990";
+  }
+  .icon-model-numberbox:before {
+    content: "\e991";
+  }
+  .icon-model-preload-function:before {
+    content: "\e992";
+  }
+  .icon-link-out:before {
+    content: "\e993";
+  }
+  .icon-add-folder:before {
+    content: "\e994";
+  }
+  .icon-model-loop-statement:before {
+    content: "\e995";
+  }
+  .icon-check-solid:before {
+    content: "\e996";
+  }
+  .icon-model-variable:before {
+    content: "\e997";
+  }
+  .icon-panels:before {
+    content: "\e998";
+  }
+  .icon-chevron-up:before {
+    content: "\e999";
+  }
+  .icon-model-domain-association-class:before {
+    content: "\e99a";
+  }
+  .icon-model-boolean:before {
+    content: "\e99b";
+  }
+  .icon-academy:before {
+    content: "\e99c";
+  }
+  .icon-model-function-group:before {
+    content: "\e99d";
+  }
+  .icon-document-search:before {
+    content: "\e99e";
+  }
+  .icon-model-select:before {
+    content: "\e99f";
+  }
+  .icon-model-timepicker:before {
+    content: "\e9a0";
+  }
+  .icon-model-psm-exception:before {
+    content: "\e9a1";
+  }
+  .icon-model-requirements-model:before {
+    content: "\e9a2";
+  }
+  .icon-chevron2-down:before {
+    content: "\e9a3";
+  }
+  .icon-model-testing-model:before {
+    content: "\e9a4";
+  }
+  .icon-chevron-down:before {
+    content: "\e9a5";
+  }
+  .icon-model-integer:before {
+    content: "\e9a6";
+  }
+  .icon-model-text-area:before {
+    content: "\e9a7";
+  }
+  .icon-model-domain-enumeration:before {
+    content: "\e9a8";
+  }
+  .icon-home:before {
+    content: "\e9a9";
+  }
+  .icon-model-theme:before {
+    content: "\e9aa";
+  }
+  .icon-model-association:before {
+    content: "\e9ab";
+  }
+  .icon-model-timestamp:before {
+    content: "\e9ac";
+  }
+  .icon-model-interaction-flows-model:before {
+    content: "\e9ad";
+  }
+  .icon-model-entity-model:before {
+    content: "\e9ae";
+  }
+  .icon-model-button:before {
+    content: "\e9af";
+  }
+  .icon-model-mobile-veredict-steps-action:before {
+    content: "\e9b0";
+  }
+  .icon-model-array:before {
+    content: "\e9b1";
+  }
+  .icon-model-generalization:before {
+    content: "\e9b2";
+  }
+  .icon-help-solid:before {
+    content: "\e9b3";
+  }
+  .icon-tablet-mobile:before {
+    content: "\e9b4";
+  }
+  .icon-model-entity:before {
+    content: "\e9b5";
+  }
+  .icon-arrow-45-left-down:before {
+    content: "\e9b6";
+  }
+  .icon-model-label:before {
+    content: "\e9b7";
+  }
+  .icon-model-grid:before {
+    content: "\e9b8";
+  }
+  .icon-line-type:before {
+    content: "\e9b9";
+  }
+  .icon-arrow-down:before {
+    content: "\e9ba";
+  }
+  .icon-model-block-end:before {
+    content: "\e9bb";
+  }
+  .icon-search:before {
+    content: "\e9bc";
+  }
+  .icon-grid:before {
+    content: "\e9bd";
+  }
+  

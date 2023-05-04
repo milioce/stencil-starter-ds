@@ -1,9 +1,9 @@
 // Do not edit directly
-// Generated on 4/5/2023 11:35:18
+// Generated on 4/5/2023 12:17:42
 
 :root{
 --color-text-main: #373737;
---color-text-main-on-dark: #e8e8e8;
+--color-text-main-on-dark: #f6f6f6;
 --color-text-main-hover: #1C1C1C;
 --color-text-main-hover-on-dark: #ffffff;
 --color-text-primary: #545ffd;
@@ -43,11 +43,11 @@
 --color-background-surface-900: #1C1C1C;
 --color-background-header: #00086B;
 --color-background-header-subtle: #e9ebfe;
---color-background-scrim: #0A0A0A;
---color-background-hover: #0A0A0A;
---color-background-hover-on-dark: #0A0A0A;
---color-background-active: #0A0A0A;
---color-background-active-on-dark: #0A0A0A;
+--color-background-scrim: rgba(10,10,10,80%);
+--color-background-hover: rgba(10,10,10,10%);
+--color-background-hover-on-dark: rgba(10,10,10,60%);
+--color-background-active: rgba(10,10,10,15%);
+--color-background-active-on-dark: rgba(10,10,10,80%);
 --color-background-selected: #545ffd;
 --color-background-selected-opacity: #545ffd;
 --color-background-disabled: #d9d9d9;
@@ -92,10 +92,10 @@
 --color-border-primary: #545ffd;
 --color-border-header: #00086B;
 --color-border-header-subtle: #e9ebfe;
---color-border-hover: #0A0A0A;
---color-border-hover-on-dark: #0A0A0A;
---color-border-active: #0A0A0A;
---color-border-active-on-dark: #0A0A0A;
+--color-border-hover: rgba(10,10,10,10%);
+--color-border-hover-on-dark: rgba(10,10,10,60%);
+--color-border-active: rgba(10,10,10,15%);
+--color-border-active-on-dark: rgba(10,10,10,80%);
 --color-border-selected: #545ffd;
 --color-border-selected-opacity: #545ffd;
 --color-border-disabled: #d9d9d9;
