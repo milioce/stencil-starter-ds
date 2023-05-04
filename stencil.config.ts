@@ -4,6 +4,7 @@ import { angularOutputTarget } from '@stencil/angular-output-target';
 
 export const config: Config = {
   namespace: 'stencil-ds',
+  srcDir: 'src',
   globalStyle: 'src/assets/library/scss/abstracts.scss',
   plugins: [
     sass({

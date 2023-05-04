@@ -1,10 +1,8 @@
 // Do not edit directly
-// Generated on 3/5/2023, 17:47:31
-
+// Generated on 4/5/2023 12:17:42
 @use "sass:map";
 @use "sass:math";
 @use "../settings/settings.scss";
-
 /// Mixin that, starting from the breakpoints established in the configuration file, generates the classes of the grid system.
 ///
 /// @argument {map}  $breakpoints [$breakpoints] Map set in initial setup
@@ -44,9 +42,9 @@
 ///
 ///
 /// @group grid
-
 @mixin get-grid($breakpoints: $grid) {
-    @each $break, $breakpoint in $breakpoints {
+    @each $break,
+    $breakpoint in $breakpoints {
         $columns: map.get($breakpoint, "columns");
         $container: map.get($breakpoint, "container");
         @media only screen and (min-width: $container) {
