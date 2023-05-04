@@ -7,8 +7,10 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { ButtonColorTypes, ButtonFillTypes, ButtonIconPositionTypes, ButtonTypeTypes, ButtonVariantTypes } from "./components/atoms/button/button.model";
 import { GlobalSizeTypes } from "@shared/model";
+import { ButtonColorTypes as ButtonColorTypes1, ButtonFillTypes as ButtonFillTypes1 } from "./components/atoms/button-split/button-split.model";
 export { ButtonColorTypes, ButtonFillTypes, ButtonIconPositionTypes, ButtonTypeTypes, ButtonVariantTypes } from "./components/atoms/button/button.model";
 export { GlobalSizeTypes } from "@shared/model";
+export { ButtonColorTypes as ButtonColorTypes1, ButtonFillTypes as ButtonFillTypes1 } from "./components/atoms/button-split/button-split.model";
 export namespace Components {
     interface DsButton {
         /**
@@ -97,6 +99,54 @@ export namespace Components {
         "variant": ButtonVariantTypes;
     }
     interface DsButtonSplit {
+        /**
+          * Whether the button is focused on page load
+         */
+        "autofocus": boolean;
+        /**
+          * The color of the button
+         */
+        "color": ButtonColorTypes1;
+        /**
+          * The button is disabled
+         */
+        "disabled": boolean;
+        /**
+          * The aria-controls attribute for the button
+         */
+        "dsAriaControls": string;
+        /**
+          * The aria-describedby attribute for the button
+         */
+        "dsAriaDescribedby": string;
+        /**
+          * The aria-expanded attribute for the button
+         */
+        "dsAriaExpanded": boolean;
+        /**
+          * The aria-haspopup attribute for the button
+         */
+        "dsAriaHaspopup": boolean;
+        /**
+          * The aria-label attribute for the button
+         */
+        "dsAriaLabel": string;
+        /**
+          * The aria-labelledby attribute for the button
+         */
+        "dsAriaLabelledby": string;
+        /**
+          * The aria-pressed attribute for the button
+         */
+        "dsAriaPressed": boolean;
+        /**
+          * The fill of the button (background and border color)
+         */
+        "fill": ButtonFillTypes1;
+        /**
+          * Whether the button shows a loading icon
+         */
+        "loading": boolean;
     }
     interface DsIcon {
         /**
@@ -246,6 +296,54 @@ declare namespace LocalJSX {
         "variant"?: ButtonVariantTypes;
     }
     interface DsButtonSplit {
+        /**
+          * Whether the button is focused on page load
+         */
+        "autofocus"?: boolean;
+        /**
+          * The color of the button
+         */
+        "color"?: ButtonColorTypes1;
+        /**
+          * The button is disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * The aria-controls attribute for the button
+         */
+        "dsAriaControls"?: string;
+        /**
+          * The aria-describedby attribute for the button
+         */
+        "dsAriaDescribedby"?: string;
+        /**
+          * The aria-expanded attribute for the button
+         */
+        "dsAriaExpanded"?: boolean;
+        /**
+          * The aria-haspopup attribute for the button
+         */
+        "dsAriaHaspopup"?: boolean;
+        /**
+          * The aria-label attribute for the button
+         */
+        "dsAriaLabel"?: string;
+        /**
+          * The aria-labelledby attribute for the button
+         */
+        "dsAriaLabelledby"?: string;
+        /**
+          * The aria-pressed attribute for the button
+         */
+        "dsAriaPressed"?: boolean;
+        /**
+          * The fill of the button (background and border color)
+         */
+        "fill"?: ButtonFillTypes1;
+        /**
+          * Whether the button shows a loading icon
+         */
+        "loading"?: boolean;
     }
     interface DsIcon {
         /**
