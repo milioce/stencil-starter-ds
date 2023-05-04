@@ -25,7 +25,7 @@
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
     "storybook": "storybook dev -p 6006",
-    "design-tokens-utils": "design-tokens-utils --tokens=./tokens/tokens.json --path=src/assets",
+    "design-tokens-utils": "design-tokens-utils --tokens=./tokens/tokens.json --path=src/assets --disableIconFont",
     "build-storybook": "storybook build"
   },
   "dependencies": {
@@ -45,7 +45,7 @@
     "@storybook/testing-library": "^0.0.14-next.2",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.18.11",
-    "design-tokens-utils": "^0.0.9",
+    "design-tokens-utils": "0.0.16",
     "jest": "^27.5.1",
     "jest-cli": "^27.5.1",
     "puppeteer": "^19.5.2",

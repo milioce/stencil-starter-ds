@@ -3,6 +3,7 @@ import { sass } from '@stencil/sass';
 
 export const config: Config = {
   namespace: 'stencil-ds',
+  srcDir: 'src',
   globalStyle: 'src/assets/library/scss/abstracts.scss',
   plugins: [
     sass({
@@ -18,6 +19,7 @@ export const config: Config = {
     {
       type: 'dist',
       esmLoaderPath: '../loader',
+
     },
     {
       type: 'dist-custom-elements',
