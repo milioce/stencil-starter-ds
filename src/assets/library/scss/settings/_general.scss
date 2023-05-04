@@ -1,10 +1,10 @@
 // Do not edit directly
-// Generated on 21/4/2023, 12:45:23
+// Generated on 3/5/2023, 17:47:31
 
 /// Variable path by default of the sources defined in the .frontech.json file.
 /// To modify the path, simply set the variable in the import as follows: @use '~@front-tech/design-systems-utils/library/web/abstracts' with ($font-path:'public/assets/fonts/');
 /// @group fonts
-$font-path: "./assets/fonts/icomoon" !default;
+$font-path: "/src/assets/fonts/" !default;
 /// Variable that defines the reference unit in order to transform px into rem. By default 16px. To modify the size, simply set the variable in the import as follows: @use '~@front-tech/design-systems-utils/library/web/abstracts' with ($rem-baseline: 10px);
 /// @group rem
 $rem-baseline: 16px !default;

@@ -36,12 +36,13 @@ export class AtomsIcon implements ComponentInterface {
   @Prop() ariaLabel: string;
 
   private classNames = () => {
-    const classes = `ds-icon ds-icon--${this.size} ${this.icon} ds-icon--${this.fill}`;
+    const classes = `ds-icon ds-icon--${this.size} ${this.icon} ds-icon--${this.fill} icon-ds__icon_academy`;
 
     return classes;
   };
 
   render(): JSX.Element {
-    return <svg class={this.classNames()} ><use xlinkHref={`assets/images/sprites/sprites.svg#${this.icon}`}></use></svg>;
+    return <span class={this.classNames()}></span>
+  /* <svg class={this.classNames()} ><use xlinkHref={`assets/images/sprites/sprites.svg#${this.icon}`}></use></svg>;*/
   }
 }

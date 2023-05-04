@@ -3,7 +3,7 @@
 @import './icon.theme.scss';
 :host {
     display: block;
-    svg {
+    span {
         background-color: var(--background-color);
         color: var(--color);
         font-size: var(--_font-size-icon);

@@ -1,21 +1,23 @@
-:host {}
+:host {
+    --padding-inside: var(--spacing-inset-2xs);
+}
 
 // SM
 :host(.ds-button--sm) {
     --font-size: var(--font-size-02);
-    --padding-inside: var(--spacing-inset-squish-2xs-double);
+    --padding-inside: var(--spacing-inset-2xs);
 }
 
 // MD
 :host(.ds-button--md) {
     --font-size: var(--font-size-03);
-    --padding-inside: var(--spacing-inset-squish-xs-double);
+    --padding-inside: var(--spacing-inset-xs);
 }
 
 // LG
 :host(.ds-button--lg) {
     --font-size: var(--font-size-04);
-    --padding-inside: var(--spacing-inset-squish-xs-double);
+    --padding-inside: var(--spacing-inset-xs);
 }
 
 // PRIMARY
@@ -80,8 +82,8 @@
     --color-active: var(--color-text-action);
     --color-disabled: var(--color-text-disabled);
     --border-color: var(--color-border-action-secondary);
-    --border-color-hover: var(--color-border-secondary-hover);
-    --border-color-active: var(--color-border-secondary-active);
+    --border-color-hover: var(--color-border-action-secondary-hover);
+    --border-color-active: var(--color-border-action-secondary-active);
     --border-color-focus: var(--color-border-focus);
     --border-color-disabled: var(--color-border-disabled);
     --border-radius: var(--border-radius-xl);
@@ -406,8 +408,8 @@
     --color-focus: var(--color-fill-icon);
     --color-active: var(--color-fill-icon);
     --color-disabled: var(--color-fill-icon-disabled) --border-color: var(--color-border-action-secondary);
-    --border-color-hover: var(--color-border-secondary-hover);
-    --border-color-active: var(--color-border-secondary-active);
+    --border-color-hover: var(--color-border-action-secondary-hover);
+    --border-color-active: var(--color-border-action-secondary-active);
     --border-color-focus: var(--color-border-focus);
     --border-color-disabled: var(--color-border-disabled);
     --border-color-shadow: var(--color-background-surface-00);
