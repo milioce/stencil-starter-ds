@@ -1,16 +1,11 @@
 // Do not edit directly
-// Generated on 21/4/2023, 12:45:23
+// Generated on 31/5/2023 18:11:21
 
 /// Variable path by default of the sources defined in the .frontech.json file.
-/// To modify the path, simply set the variable in the import as follows: @use '~@front-tech/design-systems-utils/library/web/abstracts' with ($font-path:'public/assets/fonts/');
+/// To modify the path, simply set the variable in the import as follows: @use '/library/web/abstracts' with ($font-path:'public/assets/fonts/');
 /// @group fonts
-$font-path: "./assets/fonts/icomoon" !default;
-/// Variable that defines the reference unit in order to transform px into rem. By default 16px. To modify the size, simply set the variable in the import as follows: @use '~@front-tech/design-systems-utils/library/web/abstracts' with ($rem-baseline: 10px);
+$font-path: "assets/fonts" !default;
+
+/// Variable that defines the reference unit in order to transform px into rem. By default 16px. To modify the size, simply set the variable in the import as follows: @use '/library/web/abstracts' with ($rem-baseline: 10px);
 /// @group rem
 $rem-baseline: 16px !default;
-/// Variable that transforms pixels into rem for browsers that support rem as well as if they do not. By default false.
-/// @group rem
-$rem-fallback: false !default;
-/// Variable that provides compatibility with Internet Explorer 9 and does not convert pixels into rem, as it is not compatible. By default, it is false.
-/// @group rem
-$rem-px-only: false !default;

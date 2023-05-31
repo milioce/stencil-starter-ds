@@ -1,481 +1,548 @@
 /**
 * Do not edit directly
-* Generated on Thu, 20 Apr 2023 13:01:56 GMT
+* Generated on Wed, 31 May 2023 16:11:20 GMT
 */
-
-@use '../settings/general' as *;
-
-$icomoon-font: "icomoon";
+@use '../settings/general';
 
 @font-face {
-    font-family: $icomoon-font;
-    src: '';
-//     src: url("#{$font-path}/iconmoon.eot?7c5be8e2b4f529c9d6b67ea460834dec#iefix") format("embedded-opentype"),
-// url("#{$font-path}/iconmoon.ttf?7c5be8e2b4f529c9d6b67ea460834dec") format("truetype"),
-// url("#{$font-path}/iconmoon.svg?7c5be8e2b4f529c9d6b67ea460834dec#icomoon") format("svg"),
-// url("#{$font-path}/iconmoon.woff?7c5be8e2b4f529c9d6b67ea460834dec") format("woff"),
-// url("#{$font-path}/iconmoon.woff2?7c5be8e2b4f529c9d6b67ea460834dec") format("woff2");
+  font-display: auto;
+  font-family: "icomoon";
+  font-style: normal;
+  font-weight: 400;
+  src: url("#{general.$font-path}/icomoon/icomoon.eot?1685549480421");
+  src: url("#{general.$font-path}/icomoon/icomoon.eot?#iefix") format("embedded-opentype"), url("#{general.$font-path}/icomoon/icomoon.woff2?1685549480421") format("woff2"), url("#{general.$font-path}/icomoon/icomoon.woff?1685549480421") format("woff"), url("#{general.$font-path}/icomoon/icomoon.ttf?1685549480421") format("truetype"), url("#{general.$font-path}/icomoon/icomoon.svg?1685549480421#icomoon") format("svg");
 }
 
-%icomoon-font-style {
-    font-family: icomoon !important;
-    font-style: 800;
-    font-weight: normal !important;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+.icon {
+  display: inline-block;
+  font-family: "icomoon";
+  font-weight: 400;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
-i[class^="icon-"]:before, i[class*=" icon-"]:before {
-    @extend %icomoon-font-style;
+.icon-lg {
+  font-size: 1.33333em;
+  line-height: 0.75em;
+  vertical-align: -0.0667em;
 }
 
-$icomoon-map: (
-    "ds_icon_academy": "\f101",
-    "ds_icon_add-folder": "\f102",
-    "ds_icon_add-link": "\f103",
-    "ds_icon_add": "\f104",
-    "ds_icon_arrange-items": "\f105",
-    "ds_icon_arrow-45-left-down": "\f106",
-    "ds_icon_arrow-45-left-up": "\f107",
-    "ds_icon_arrow-45-right-down": "\f108",
-    "ds_icon_arrow-45-right-up": "\f109",
-    "ds_icon_arrow-down": "\f10a",
-    "ds_icon_arrow-left": "\f10b",
-    "ds_icon_arrow-link-right": "\f10c",
-    "ds_icon_arrow-right": "\f10d",
-    "ds_icon_arrow-up": "\f10e",
-    "ds_icon_bell-solid": "\f10f",
-    "ds_icon_bell": "\f110",
-    "ds_icon_block-user": "\f111",
-    "ds_icon_branch": "\f112",
-    "ds_icon_card-view": "\f113",
-    "ds_icon_change-arrows": "\f114",
-    "ds_icon_check-solid": "\f115",
-    "ds_icon_check": "\f116",
-    "ds_icon_checklist": "\f117",
-    "ds_icon_chevron-down": "\f118",
-    "ds_icon_chevron-left": "\f119",
-    "ds_icon_chevron-right": "\f11a",
-    "ds_icon_chevron-up": "\f11b",
-    "ds_icon_chevron2-down": "\f11c",
-    "ds_icon_chevron2-left": "\f11d",
-    "ds_icon_chevron2-right": "\f11e",
-    "ds_icon_chevron2-up": "\f11f",
-    "ds_icon_close": "\f120",
-    "ds_icon_code": "\f121",
-    "ds_icon_collapse": "\f122",
-    "ds_icon_comment": "\f123",
-    "ds_icon_copy": "\f124",
-    "ds_icon_crono": "\f125",
-    "ds_icon_dashboard": "\f126",
-    "ds_icon_datepicker": "\f127",
-    "ds_icon_datetimepicker": "\f128",
-    "ds_icon_delete-solid": "\f129",
-    "ds_icon_delete": "\f12a",
-    "ds_icon_desktop": "\f12b",
-    "ds_icon_document-dash-search": "\f12c",
-    "ds_icon_document-dash": "\f12d",
-    "ds_icon_document-search": "\f12e",
-    "ds_icon_document": "\f12f",
-    "ds_icon_download": "\f130",
-    "ds_icon_draganddrop": "\f131",
-    "ds_icon_drop": "\f132",
-    "ds_icon_edit": "\f133",
-    "ds_icon_ellipsis": "\f134",
-    "ds_icon_error-solid": "\f135",
-    "ds_icon_error": "\f136",
-    "ds_icon_eye": "\f137",
-    "ds_icon_filter-close": "\f138",
-    "ds_icon_filter-solid": "\f139",
-    "ds_icon_filter": "\f13a",
-    "ds_icon_flash": "\f13b",
-    "ds_icon_folder": "\f13c",
-    "ds_icon_grid": "\f13d",
-    "ds_icon_help-solid": "\f13e",
-    "ds_icon_help": "\f13f",
-    "ds_icon_home": "\f140",
-    "ds_icon_image": "\f141",
-    "ds_icon_indeterminate-solid": "\f142",
-    "ds_icon_indeterminate": "\f143",
-    "ds_icon_info-solid": "\f144",
-    "ds_icon_info": "\f145",
-    "ds_icon_lifeguard": "\f146",
-    "ds_icon_line-type": "\f147",
-    "ds_icon_line-width": "\f148",
-    "ds_icon_link-out": "\f149",
-    "ds_icon_link": "\f14a",
-    "ds_icon_list-view": "\f14b",
-    "ds_icon_maximize-arrow": "\f14c",
-    "ds_icon_minimize-arrow": "\f14d",
-    "ds_icon_minimize": "\f14e",
-    "ds_icon_mobile-touch": "\f14f",
-    "ds_icon_mobile": "\f150",
-    "ds_icon_moon": "\f151",
-    "ds_icon_note": "\f152",
-    "ds_icon_organization": "\f153",
-    "ds_icon_paint-cube": "\f154",
-    "ds_icon_palette": "\f155",
-    "ds_icon_panels": "\f156",
-    "ds_icon_play-solid": "\f157",
-    "ds_icon_play": "\f158",
-    "ds_icon_print": "\f159",
-    "ds_icon_projects": "\f15a",
-    "ds_icon_refresh": "\f15b",
-    "ds_icon_resources": "\f15c",
-    "ds_icon_rocket": "\f15d",
-    "ds_icon_route": "\f15e",
-    "ds_icon_screen": "\f15f",
-    "ds_icon_search": "\f160",
-    "ds_icon_settings": "\f161",
-    "ds_icon_star-solid": "\f162",
-    "ds_icon_star": "\f163",
-    "ds_icon_stop": "\f164",
-    "ds_icon_sun": "\f165",
-    "ds_icon_switch": "\f166",
-    "ds_icon_tablet-mobile": "\f167",
-    "ds_icon_time": "\f168",
-    "ds_icon_uncollapse": "\f169",
-    "ds_icon_unlink": "\f16a",
-    "ds_icon_upload": "\f16b",
-    "ds_icon_vertical-settings": "\f16c",
-    "ds_icon_video": "\f16d",
-    "ds_icon_warning-solid": "\f16e",
-    "ds_icon_warning": "\f16f",
-);
+.icon-xs {
+  font-size: 0.75em;
+}
 
-.icon-ds_icon_academy:before {
-    content: map-get($icomoon-map, "ds_icon_academy");
-}
-.icon-ds_icon_add-folder:before {
-    content: map-get($icomoon-map, "ds_icon_add-folder");
-}
-.icon-ds_icon_add-link:before {
-    content: map-get($icomoon-map, "ds_icon_add-link");
-}
-.icon-ds_icon_add:before {
-    content: map-get($icomoon-map, "ds_icon_add");
-}
-.icon-ds_icon_arrange-items:before {
-    content: map-get($icomoon-map, "ds_icon_arrange-items");
-}
-.icon-ds_icon_arrow-45-left-down:before {
-    content: map-get($icomoon-map, "ds_icon_arrow-45-left-down");
-}
-.icon-ds_icon_arrow-45-left-up:before {
-    content: map-get($icomoon-map, "ds_icon_arrow-45-left-up");
-}
-.icon-ds_icon_arrow-45-right-down:before {
-    content: map-get($icomoon-map, "ds_icon_arrow-45-right-down");
-}
-.icon-ds_icon_arrow-45-right-up:before {
-    content: map-get($icomoon-map, "ds_icon_arrow-45-right-up");
-}
-.icon-ds_icon_arrow-down:before {
-    content: map-get($icomoon-map, "ds_icon_arrow-down");
-}
-.icon-ds_icon_arrow-left:before {
-    content: map-get($icomoon-map, "ds_icon_arrow-left");
-}
-.icon-ds_icon_arrow-link-right:before {
-    content: map-get($icomoon-map, "ds_icon_arrow-link-right");
-}
-.icon-ds_icon_arrow-right:before {
-    content: map-get($icomoon-map, "ds_icon_arrow-right");
-}
-.icon-ds_icon_arrow-up:before {
-    content: map-get($icomoon-map, "ds_icon_arrow-up");
-}
-.icon-ds_icon_bell-solid:before {
-    content: map-get($icomoon-map, "ds_icon_bell-solid");
-}
-.icon-ds_icon_bell:before {
-    content: map-get($icomoon-map, "ds_icon_bell");
-}
-.icon-ds_icon_block-user:before {
-    content: map-get($icomoon-map, "ds_icon_block-user");
-}
-.icon-ds_icon_branch:before {
-    content: map-get($icomoon-map, "ds_icon_branch");
-}
-.icon-ds_icon_card-view:before {
-    content: map-get($icomoon-map, "ds_icon_card-view");
-}
-.icon-ds_icon_change-arrows:before {
-    content: map-get($icomoon-map, "ds_icon_change-arrows");
-}
-.icon-ds_icon_check-solid:before {
-    content: map-get($icomoon-map, "ds_icon_check-solid");
-}
-.icon-ds_icon_check:before {
-    content: map-get($icomoon-map, "ds_icon_check");
-}
-.icon-ds_icon_checklist:before {
-    content: map-get($icomoon-map, "ds_icon_checklist");
-}
-.icon-ds_icon_chevron-down:before {
-    content: map-get($icomoon-map, "ds_icon_chevron-down");
-}
-.icon-ds_icon_chevron-left:before {
-    content: map-get($icomoon-map, "ds_icon_chevron-left");
-}
-.icon-ds_icon_chevron-right:before {
-    content: map-get($icomoon-map, "ds_icon_chevron-right");
-}
-.icon-ds_icon_chevron-up:before {
-    content: map-get($icomoon-map, "ds_icon_chevron-up");
-}
-.icon-ds_icon_chevron2-down:before {
-    content: map-get($icomoon-map, "ds_icon_chevron2-down");
-}
-.icon-ds_icon_chevron2-left:before {
-    content: map-get($icomoon-map, "ds_icon_chevron2-left");
-}
-.icon-ds_icon_chevron2-right:before {
-    content: map-get($icomoon-map, "ds_icon_chevron2-right");
-}
-.icon-ds_icon_chevron2-up:before {
-    content: map-get($icomoon-map, "ds_icon_chevron2-up");
-}
-.icon-ds_icon_close:before {
-    content: map-get($icomoon-map, "ds_icon_close");
-}
-.icon-ds_icon_code:before {
-    content: map-get($icomoon-map, "ds_icon_code");
-}
-.icon-ds_icon_collapse:before {
-    content: map-get($icomoon-map, "ds_icon_collapse");
-}
-.icon-ds_icon_comment:before {
-    content: map-get($icomoon-map, "ds_icon_comment");
-}
-.icon-ds_icon_copy:before {
-    content: map-get($icomoon-map, "ds_icon_copy");
-}
-.icon-ds_icon_crono:before {
-    content: map-get($icomoon-map, "ds_icon_crono");
-}
-.icon-ds_icon_dashboard:before {
-    content: map-get($icomoon-map, "ds_icon_dashboard");
-}
-.icon-ds_icon_datepicker:before {
-    content: map-get($icomoon-map, "ds_icon_datepicker");
-}
-.icon-ds_icon_datetimepicker:before {
-    content: map-get($icomoon-map, "ds_icon_datetimepicker");
-}
-.icon-ds_icon_delete-solid:before {
-    content: map-get($icomoon-map, "ds_icon_delete-solid");
-}
-.icon-ds_icon_delete:before {
-    content: map-get($icomoon-map, "ds_icon_delete");
-}
-.icon-ds_icon_desktop:before {
-    content: map-get($icomoon-map, "ds_icon_desktop");
-}
-.icon-ds_icon_document-dash-search:before {
-    content: map-get($icomoon-map, "ds_icon_document-dash-search");
-}
-.icon-ds_icon_document-dash:before {
-    content: map-get($icomoon-map, "ds_icon_document-dash");
-}
-.icon-ds_icon_document-search:before {
-    content: map-get($icomoon-map, "ds_icon_document-search");
-}
-.icon-ds_icon_document:before {
-    content: map-get($icomoon-map, "ds_icon_document");
-}
-.icon-ds_icon_download:before {
-    content: map-get($icomoon-map, "ds_icon_download");
-}
-.icon-ds_icon_draganddrop:before {
-    content: map-get($icomoon-map, "ds_icon_draganddrop");
-}
-.icon-ds_icon_drop:before {
-    content: map-get($icomoon-map, "ds_icon_drop");
-}
-.icon-ds_icon_edit:before {
-    content: map-get($icomoon-map, "ds_icon_edit");
-}
-.icon-ds_icon_ellipsis:before {
-    content: map-get($icomoon-map, "ds_icon_ellipsis");
-}
-.icon-ds_icon_error-solid:before {
-    content: map-get($icomoon-map, "ds_icon_error-solid");
-}
-.icon-ds_icon_error:before {
-    content: map-get($icomoon-map, "ds_icon_error");
-}
-.icon-ds_icon_eye:before {
-    content: map-get($icomoon-map, "ds_icon_eye");
-}
-.icon-ds_icon_filter-close:before {
-    content: map-get($icomoon-map, "ds_icon_filter-close");
-}
-.icon-ds_icon_filter-solid:before {
-    content: map-get($icomoon-map, "ds_icon_filter-solid");
-}
-.icon-ds_icon_filter:before {
-    content: map-get($icomoon-map, "ds_icon_filter");
-}
-.icon-ds_icon_flash:before {
-    content: map-get($icomoon-map, "ds_icon_flash");
-}
-.icon-ds_icon_folder:before {
-    content: map-get($icomoon-map, "ds_icon_folder");
-}
-.icon-ds_icon_grid:before {
-    content: map-get($icomoon-map, "ds_icon_grid");
-}
-.icon-ds_icon_help-solid:before {
-    content: map-get($icomoon-map, "ds_icon_help-solid");
-}
-.icon-ds_icon_help:before {
-    content: map-get($icomoon-map, "ds_icon_help");
-}
-.icon-ds_icon_home:before {
-    content: map-get($icomoon-map, "ds_icon_home");
-}
-.icon-ds_icon_image:before {
-    content: map-get($icomoon-map, "ds_icon_image");
-}
-.icon-ds_icon_indeterminate-solid:before {
-    content: map-get($icomoon-map, "ds_icon_indeterminate-solid");
-}
-.icon-ds_icon_indeterminate:before {
-    content: map-get($icomoon-map, "ds_icon_indeterminate");
-}
-.icon-ds_icon_info-solid:before {
-    content: map-get($icomoon-map, "ds_icon_info-solid");
-}
-.icon-ds_icon_info:before {
-    content: map-get($icomoon-map, "ds_icon_info");
-}
-.icon-ds_icon_lifeguard:before {
-    content: map-get($icomoon-map, "ds_icon_lifeguard");
-}
-.icon-ds_icon_line-type:before {
-    content: map-get($icomoon-map, "ds_icon_line-type");
-}
-.icon-ds_icon_line-width:before {
-    content: map-get($icomoon-map, "ds_icon_line-width");
-}
-.icon-ds_icon_link-out:before {
-    content: map-get($icomoon-map, "ds_icon_link-out");
-}
-.icon-ds_icon_link:before {
-    content: map-get($icomoon-map, "ds_icon_link");
-}
-.icon-ds_icon_list-view:before {
-    content: map-get($icomoon-map, "ds_icon_list-view");
-}
-.icon-ds_icon_maximize-arrow:before {
-    content: map-get($icomoon-map, "ds_icon_maximize-arrow");
-}
-.icon-ds_icon_minimize-arrow:before {
-    content: map-get($icomoon-map, "ds_icon_minimize-arrow");
-}
-.icon-ds_icon_minimize:before {
-    content: map-get($icomoon-map, "ds_icon_minimize");
-}
-.icon-ds_icon_mobile-touch:before {
-    content: map-get($icomoon-map, "ds_icon_mobile-touch");
-}
-.icon-ds_icon_mobile:before {
-    content: map-get($icomoon-map, "ds_icon_mobile");
-}
-.icon-ds_icon_moon:before {
-    content: map-get($icomoon-map, "ds_icon_moon");
-}
-.icon-ds_icon_note:before {
-    content: map-get($icomoon-map, "ds_icon_note");
-}
-.icon-ds_icon_organization:before {
-    content: map-get($icomoon-map, "ds_icon_organization");
-}
-.icon-ds_icon_paint-cube:before {
-    content: map-get($icomoon-map, "ds_icon_paint-cube");
-}
-.icon-ds_icon_palette:before {
-    content: map-get($icomoon-map, "ds_icon_palette");
-}
-.icon-ds_icon_panels:before {
-    content: map-get($icomoon-map, "ds_icon_panels");
-}
-.icon-ds_icon_play-solid:before {
-    content: map-get($icomoon-map, "ds_icon_play-solid");
-}
-.icon-ds_icon_play:before {
-    content: map-get($icomoon-map, "ds_icon_play");
-}
-.icon-ds_icon_print:before {
-    content: map-get($icomoon-map, "ds_icon_print");
-}
-.icon-ds_icon_projects:before {
-    content: map-get($icomoon-map, "ds_icon_projects");
-}
-.icon-ds_icon_refresh:before {
-    content: map-get($icomoon-map, "ds_icon_refresh");
-}
-.icon-ds_icon_resources:before {
-    content: map-get($icomoon-map, "ds_icon_resources");
-}
-.icon-ds_icon_rocket:before {
-    content: map-get($icomoon-map, "ds_icon_rocket");
-}
-.icon-ds_icon_route:before {
-    content: map-get($icomoon-map, "ds_icon_route");
-}
-.icon-ds_icon_screen:before {
-    content: map-get($icomoon-map, "ds_icon_screen");
-}
-.icon-ds_icon_search:before {
-    content: map-get($icomoon-map, "ds_icon_search");
-}
-.icon-ds_icon_settings:before {
-    content: map-get($icomoon-map, "ds_icon_settings");
-}
-.icon-ds_icon_star-solid:before {
-    content: map-get($icomoon-map, "ds_icon_star-solid");
-}
-.icon-ds_icon_star:before {
-    content: map-get($icomoon-map, "ds_icon_star");
-}
-.icon-ds_icon_stop:before {
-    content: map-get($icomoon-map, "ds_icon_stop");
-}
-.icon-ds_icon_sun:before {
-    content: map-get($icomoon-map, "ds_icon_sun");
-}
-.icon-ds_icon_switch:before {
-    content: map-get($icomoon-map, "ds_icon_switch");
-}
-.icon-ds_icon_tablet-mobile:before {
-    content: map-get($icomoon-map, "ds_icon_tablet-mobile");
-}
-.icon-ds_icon_time:before {
-    content: map-get($icomoon-map, "ds_icon_time");
-}
-.icon-ds_icon_uncollapse:before {
-    content: map-get($icomoon-map, "ds_icon_uncollapse");
-}
-.icon-ds_icon_unlink:before {
-    content: map-get($icomoon-map, "ds_icon_unlink");
-}
-.icon-ds_icon_upload:before {
-    content: map-get($icomoon-map, "ds_icon_upload");
-}
-.icon-ds_icon_vertical-settings:before {
-    content: map-get($icomoon-map, "ds_icon_vertical-settings");
-}
-.icon-ds_icon_video:before {
-    content: map-get($icomoon-map, "ds_icon_video");
-}
-.icon-ds_icon_warning-solid:before {
-    content: map-get($icomoon-map, "ds_icon_warning-solid");
-}
-.icon-ds_icon_warning:before {
-    content: map-get($icomoon-map, "ds_icon_warning");
+.icon-sm {
+  font-size: 0.875em;
+}
+
+.icon-1x {
+  font-size: 1em;
+}
+
+.icon-2x {
+  font-size: 2em;
+}
+
+.icon-3x {
+  font-size: 3em;
+}
+
+.icon-4x {
+  font-size: 4em;
+}
+
+.icon-5x {
+  font-size: 5em;
+}
+
+.icon-6x {
+  font-size: 6em;
+}
+
+.icon-7x {
+  font-size: 7em;
+}
+
+.icon-8x {
+  font-size: 8em;
+}
+
+.icon-9x {
+  font-size: 9em;
+}
+
+.icon-10x {
+  font-size: 10em;
+}
+
+.icon-fw {
+  text-align: center;
+  width: 1.25em;
+}
+
+.icon-border {
+  border: solid 0.08em #eee;
+  border-radius: 0.1em;
+  padding: 0.2em 0.25em 0.15em;
+}
+
+.icon-pull-left {
+  float: left;
+}
+
+.icon-pull-right {
+  float: right;
+}
+
+.icon.icon-pull-left {
+  margin-right: 0.3em;
+}
+
+.icon.icon-pull-right {
+  margin-left: 0.3em;
+}
+
+
+.ds-icon-academy::before {
+  content: "\ea01";
+}
+
+.ds-icon-add::before {
+  content: "\ea02";
+}
+
+.ds-icon-add-folder::before {
+  content: "\ea03";
+}
+
+.ds-icon-add-link::before {
+  content: "\ea04";
+}
+
+.ds-icon-arrange-items::before {
+  content: "\ea05";
+}
+
+.ds-icon-arrow-45-left-down::before {
+  content: "\ea06";
+}
+
+.ds-icon-arrow-45-left-up::before {
+  content: "\ea07";
+}
+
+.ds-icon-arrow-45-right-down::before {
+  content: "\ea08";
+}
+
+.ds-icon-arrow-45-right-up::before {
+  content: "\ea09";
+}
+
+.ds-icon-arrow-down::before {
+  content: "\ea0a";
+}
+
+.ds-icon-arrow-left::before {
+  content: "\ea0b";
+}
+
+.ds-icon-arrow-link-right::before {
+  content: "\ea0c";
+}
+
+.ds-icon-arrow-right::before {
+  content: "\ea0d";
+}
+
+.ds-icon-arrow-up::before {
+  content: "\ea0e";
+}
+
+.ds-icon-bell::before {
+  content: "\ea0f";
+}
+
+.ds-icon-bell-solid::before {
+  content: "\ea10";
+}
+
+.ds-icon-block-user::before {
+  content: "\ea11";
+}
+
+.ds-icon-branch::before {
+  content: "\ea12";
+}
+
+.ds-icon-card-view::before {
+  content: "\ea13";
+}
+
+.ds-icon-change-arrows::before {
+  content: "\ea14";
+}
+
+.ds-icon-check::before {
+  content: "\ea15";
+}
+
+.ds-icon-check-solid::before {
+  content: "\ea16";
+}
+
+.ds-icon-checklist::before {
+  content: "\ea17";
+}
+
+.ds-icon-chevron-down::before {
+  content: "\ea18";
+}
+
+.ds-icon-chevron-left::before {
+  content: "\ea19";
+}
+
+.ds-icon-chevron-right::before {
+  content: "\ea1a";
+}
+
+.ds-icon-chevron-up::before {
+  content: "\ea1b";
+}
+
+.ds-icon-chevron2-down::before {
+  content: "\ea1c";
+}
+
+.ds-icon-chevron2-left::before {
+  content: "\ea1d";
+}
+
+.ds-icon-chevron2-right::before {
+  content: "\ea1e";
+}
+
+.ds-icon-chevron2-up::before {
+  content: "\ea1f";
+}
+
+.ds-icon-close::before {
+  content: "\ea20";
+}
+
+.ds-icon-code::before {
+  content: "\ea21";
+}
+
+.ds-icon-collapse::before {
+  content: "\ea22";
+}
+
+.ds-icon-comment::before {
+  content: "\ea23";
+}
+
+.ds-icon-copy::before {
+  content: "\ea24";
+}
+
+.ds-icon-crono::before {
+  content: "\ea25";
+}
+
+.ds-icon-dashboard::before {
+  content: "\ea26";
+}
+
+.ds-icon-datepicker::before {
+  content: "\ea27";
+}
+
+.ds-icon-datetimepicker::before {
+  content: "\ea28";
+}
+
+.ds-icon-delete::before {
+  content: "\ea29";
+}
+
+.ds-icon-delete-solid::before {
+  content: "\ea2a";
+}
+
+.ds-icon-desktop::before {
+  content: "\ea2b";
+}
+
+.ds-icon-document::before {
+  content: "\ea2c";
+}
+
+.ds-icon-document-dash::before {
+  content: "\ea2d";
+}
+
+.ds-icon-document-dash-search::before {
+  content: "\ea2e";
+}
+
+.ds-icon-document-search::before {
+  content: "\ea2f";
+}
+
+.ds-icon-download::before {
+  content: "\ea30";
+}
+
+.ds-icon-drop::before {
+  content: "\ea32";
+}
+
+.ds-icon-edit::before {
+  content: "\ea33";
+}
+
+.ds-icon-ellipsis::before {
+  content: "\ea34";
+}
+
+.ds-icon-error::before {
+  content: "\ea35";
+}
+
+.ds-icon-error-solid::before {
+  content: "\ea36";
+}
+
+.ds-icon-eye::before {
+  content: "\ea37";
+}
+
+.ds-icon-filter::before {
+  content: "\ea38";
+}
+
+.ds-icon-filter-close::before {
+  content: "\ea39";
+}
+
+.ds-icon-filter-solid::before {
+  content: "\ea3a";
+}
+
+.ds-icon-flash::before {
+  content: "\ea3b";
+}
+
+.ds-icon-folder::before {
+  content: "\ea3c";
+}
+
+.ds-icon-grid::before {
+  content: "\ea3d";
+}
+
+.ds-icon-help::before {
+  content: "\ea3e";
+}
+
+.ds-icon-help-solid::before {
+  content: "\ea3f";
+}
+
+.ds-icon-home::before {
+  content: "\ea40";
+}
+
+.ds-icon-image::before {
+  content: "\ea41";
+}
+
+.ds-icon-indeterminate::before {
+  content: "\ea42";
+}
+
+.ds-icon-indeterminate-solid::before {
+  content: "\ea43";
+}
+
+.ds-icon-info::before {
+  content: "\ea44";
+}
+
+.ds-icon-info-solid::before {
+  content: "\ea45";
+}
+
+.ds-icon-lifeguard::before {
+  content: "\ea46";
+}
+
+.ds-icon-line-type::before {
+  content: "\ea47";
+}
+
+.ds-icon-line-width::before {
+  content: "\ea48";
+}
+
+.ds-icon-link::before {
+  content: "\ea49";
+}
+
+.ds-icon-link-out::before {
+  content: "\ea4a";
+}
+
+.ds-icon-list-view::before {
+  content: "\ea4b";
+}
+
+.ds-icon-maximize-arrow::before {
+  content: "\ea4c";
+}
+
+.ds-icon-minimize::before {
+  content: "\ea4d";
+}
+
+.ds-icon-minimize-arrow::before {
+  content: "\ea4e";
+}
+
+.ds-icon-mobile::before {
+  content: "\ea4f";
+}
+
+.ds-icon-mobile-touch::before {
+  content: "\ea50";
+}
+
+.ds-icon-moon::before {
+  content: "\ea51";
+}
+
+.ds-icon-note::before {
+  content: "\ea52";
+}
+
+.ds-icon-organization::before {
+  content: "\ea53";
+}
+
+.ds-icon-paint-cube::before {
+  content: "\ea54";
+}
+
+.ds-icon-palette::before {
+  content: "\ea55";
+}
+
+.ds-icon-panels::before {
+  content: "\ea56";
+}
+
+.ds-icon-play::before {
+  content: "\ea57";
+}
+
+.ds-icon-play-solid::before {
+  content: "\ea58";
+}
+
+.ds-icon-print::before {
+  content: "\ea59";
+}
+
+.ds-icon-projects::before {
+  content: "\ea5a";
+}
+
+.ds-icon-refresh::before {
+  content: "\ea5b";
+}
+
+.ds-icon-resources::before {
+  content: "\ea5c";
+}
+
+.ds-icon-rocket::before {
+  content: "\ea5d";
+}
+
+.ds-icon-route::before {
+  content: "\ea5e";
+}
+
+.ds-icon-screen::before {
+  content: "\ea5f";
+}
+
+.ds-icon-search::before {
+  content: "\ea60";
+}
+
+.ds-icon-settings::before {
+  content: "\ea61";
+}
+
+.ds-icon-star::before {
+  content: "\ea62";
+}
+
+.ds-icon-star-solid::before {
+  content: "\ea63";
+}
+
+.ds-icon-stop::before {
+  content: "\ea64";
+}
+
+.ds-icon-sun::before {
+  content: "\ea65";
+}
+
+.ds-icon-switch::before {
+  content: "\ea66";
+}
+
+.ds-icon-tablet-mobile::before {
+  content: "\ea67";
+}
+
+.ds-icon-time::before {
+  content: "\ea68";
+}
+
+.ds-icon-uncollapse::before {
+  content: "\ea69";
+}
+
+.ds-icon-unlink::before {
+  content: "\ea6a";
+}
+
+.ds-icon-upload::before {
+  content: "\ea6b";
+}
+
+.ds-icon-vertical-settings::before {
+  content: "\ea6c";
+}
+
+.ds-icon-video::before {
+  content: "\ea6d";
+}
+
+.ds-icon-warning::before {
+  content: "\ea6e";
+}
+
+.ds-icon-warning-solid::before {
+  content: "\ea6f";
 }
